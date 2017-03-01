@@ -5,12 +5,16 @@ if theme.comment.enable && !page.comment_disable
 
     script.
         var url_parts = window.location.href.split("?");
-        var disqus_url = url_parts[0];
+        var disqus_config = function () {
+            this.page.url = url_parts[0];
+            this.page.identifier = url_parts[0;]
+        };
         (function () {
             var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
             dsq.async = true;
             dsq.src = "//#{theme.comment.disqus}.disqus.com/embed.js";
+            s.setAttribute('data-timestamp', +new Date());
             (document.head || d.body ).appendChild(dsq);
         })();
 
