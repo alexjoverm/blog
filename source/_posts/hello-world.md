@@ -30,6 +30,7 @@ Typescript
 export class Paco {
   constructor(a) {
     this.b = a
+    this.c = a
   }
 
   static hola(){
