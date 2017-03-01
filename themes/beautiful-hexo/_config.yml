@@ -1,0 +1,58 @@
+navbar-links:
+    Archive: /archives
+    About: /about
+
+avatar: /alex.jpg
+favicon: /alex.jpg
+
+header:
+    title: "Alex Jover Morales"
+    motto: Modern javascript tips, tools, and tricks!
+    bigimgs:
+        - src: /bigimgs/meetup1.jpg
+          desc:
+
+rss: /atom.xml
+googlefonts:
+  - "Lora:400,700,400italic,700italic"
+  - "Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+
+highlight:
+  enable: true
+# or use any highlight.js style
+#  style_path: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css"
+  style_path: "/css/highlight.css"
+
+links:
+  rss:
+    link: '/atom.xml'
+    title: RSS
+    icon: fa-rss
+    enable: true
+  twitter:
+    link: 'https://twitter.com/alexjoverm'
+    title: Twitter
+    icon: fa-twitter
+    enable: true
+  github:
+    link: 'https://github.com/alexjoverm'
+    title: GitHub
+    icon: fa-github
+    enable: true
+  linkin:
+    link: https://www.linkedin.com/in/alex-jover-morales-994752102/
+    title: LinkedIn
+    icon: fa-linkedin
+    enable: true
+  stackoverflow:
+    link: http://stackoverflow.com/users/4191146/alex-jm
+    title: StackOverflow
+    icon: fa-stack-overflow
+    enable: true
+
+google_analytics:
+
+comment:
+  enable: true
+  disqus: alexjover
+
