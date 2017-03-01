@@ -10,34 +10,30 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## Quick Start
 
-### Create a new post
-
-{% codeblock %}
-hexo new "My New Post"
-{% endcodeblock %}
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
 ### Run server
 
-``` bash
-$ hexo server
+```javascript
+export class Paco {
+  constructor(a) {
+    this.b = a
+  }
+
+  static hola(){
+    return 'hey'
+  }
+}
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+Typescript
 
-### Generate static files
+```typescript
+export class Paco {
+  constructor(a) {
+    this.b = a
+  }
 
-``` bash
-$ hexo generate
+  static hola(){
+    return 'hey'
+  }
+}
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)

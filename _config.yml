@@ -33,11 +33,13 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'okaidia'
+  line_number: false
 highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace:
+  enable: false
 
 # Category & Tag
 default_category: uncategorized
