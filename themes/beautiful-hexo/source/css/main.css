@@ -451,7 +451,23 @@ footer .theme-by {
     width: 100%;
     height: 220px;
   }
-  .intro-header.big-img .page-heading,
+  .intro-header.big-img .page-heading {
+    padding: 35px 0;
+  }
+  .intro-header.big-img .page-heading h1 {
+    font-size: 30px;
+  }
+  .intro-header.big-img .page-heading hr {
+    margin: 12px auto;
+    border-width: 3px;
+  }
+  .intro-header.big-img .page-heading .header-links {
+    margin-top: 20px;
+  }
+  .intro-header.big-img .page-heading .page-subheading {
+    font-size: 16px;
+    letter-spacing: -0.03em;
+  }
   .intro-header.big-img .post-heading {
     display: none;
   }
