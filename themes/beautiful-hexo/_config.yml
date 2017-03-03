@@ -6,8 +6,8 @@ avatar: /alex.jpg
 favicon: /alex.jpg
 
 header:
-    title: "Alex Jover Morales"
-    motto: Modern javascript tips, tools, and tricks!
+    title: "Alex Jover"
+    motto: Software & javascript tips and tricks!
     bigimgs:
         - src: /bigimgs/meetup1.jpg
           desc:
