@@ -18,6 +18,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
+  position: relative;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
@@ -107,6 +108,14 @@ img {
   letter-spacing: 1px;
 }
 
+.navbar-custom .navbar-brand {
+  padding-left: 0;
+}
+
+.navbar-custom .navbar-toggle {
+  margin-right: 0;
+}
+
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -127,6 +136,10 @@ img {
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+
+  .navbar-custom .navbar-brand {
+    padding-left: 15px;
   }
 
   .navbar-custom.top-nav-short {
@@ -327,6 +340,11 @@ footer .theme-by {
   margin: 80px 0 20px;
   position: relative;
 }
+
+.intro-header.no-img {
+  margin: 110px 0 10px;
+}
+
 .intro-header.big-img {
   background: no-repeat center center;
   -webkit-background-size: cover;
@@ -411,8 +429,8 @@ footer .theme-by {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  .intro-header {
-    margin-top: 130px;
+  .intro-header.no-img {
+    margin-top: 140px;
   }
   .intro-header.big-img {
     margin-top: 75px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
@@ -423,6 +441,9 @@ footer .theme-by {
   }
   .intro-header .page-heading h1 {
     font-size: 60px;
+  }
+  .intro-header.no-img .page-heading h1 {
+    font-size: 50px;
   }
   .intro-header .post-heading h1 {
     font-size: 35px;
@@ -619,4 +640,15 @@ table tr td :last-child {
   background: white;
   font-size: 11px;
   line-height: 22px;
+}
+
+h2 .headerlink:before, h3 .headerlink:before, h4 .headerlink:before {
+  /*display: none;*/
+  content: "#";
+  position: absolute;
+  left: -20px;
+}
+
+h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:before {
+  display: block;
 }
