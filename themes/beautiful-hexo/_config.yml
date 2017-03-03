@@ -1,5 +1,6 @@
 navbar-links:
     Archive: /archives
+    Tags: /tags
     About: /about
 
 avatar: /alex.jpg

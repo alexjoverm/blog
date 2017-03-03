@@ -26,7 +26,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: #008AFF;
 }
 blockquote {
   color: #808080;
@@ -64,12 +64,12 @@ hr.small {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #008AFF;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #008AFF;
 }
 img::selection {
   color: white;
@@ -118,7 +118,7 @@ img {
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #0085a1;
+  color: #008AFF;
 }
 
 @media only screen and (min-width: 768px) {
@@ -292,7 +292,7 @@ footer .theme-by {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: #0085a1;
+  color: #008AFF;
 }
 
 .post-preview .post-title {
@@ -512,8 +512,8 @@ footer .theme-by {
 .pager li a:hover,
 .pager li a:focus {
   color: #FFF;
-  background: #0085a1;
-  border: 1px solid #0085a1;
+  background: #008AFF;
+  border: 1px solid #008AFF;
 }
 
 .pager {
@@ -581,7 +581,42 @@ table tr td :last-child {
 
 .tag:focus, .tag:hover {
   text-decoration: none;
-  color: #0085a1
+  color: #008AFF;
 }
 
+.tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 25px 0;
+  text-align: center;
+}
 
+.tag-list .tag-list-item {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+}
+
+.tag-list .tag-list-link {
+  padding: 6px 12px;
+  border: 1px solid #008AFF;
+  border-radius: 3px;
+}
+
+.tag-list .tag-list-link:hover {
+  text-decoration: none;
+  color:#005cab;
+  border: 1px solid #005cab;
+}
+
+.tag-list .tag-list-count {
+  position: absolute;
+  right: -10px;
+  bottom: -16px;
+  width: 22px;
+  height: 20px;
+  color: #008AFF;
+  background: white;
+  font-size: 11px;
+  line-height: 22px;
+}

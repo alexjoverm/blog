@@ -43,6 +43,8 @@ highlight:
 
 # Category & Tag
 default_category: uncategorized
+tag_generator:
+  per_page: 10
 category_map:
 tag_map:
 
