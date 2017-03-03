@@ -643,10 +643,20 @@ table tr td :last-child {
 }
 
 h2 .headerlink:before, h3 .headerlink:before, h4 .headerlink:before {
-  /*display: none;*/
+  display: none;
   content: "#";
   position: absolute;
+  padding-right: 20px;
+}
+
+h2 .headerlink:before {
+  left: -24px;
+}
+h3 .headerlink:before {
   left: -20px;
+}
+h4 .headerlink:before {
+  left: -17px;
 }
 
 h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:before {
