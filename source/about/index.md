@@ -52,4 +52,26 @@ Others that I haven't touched yet, but interested in:
 
 ## Spare time
 
-I love to meet with friends, family, getting lost in the nature, practice body combat, running, and spend time with my lovely cat.
+I love to meet with friends, family, travel, getting lost in the nature, practice body combat, running, and spend time with my lovely cat.
+
+
+{% raw %}
+<div class="about fluid-container">
+  <div class="row">
+    <div class="col-sm-6">
+      <img class="img-responsive" src="/about/kiara.jpg"></img>
+    </div>
+    <div class="col-sm-6">
+      <img class="img-responsive" src="/about/kiara2.jpg"></img>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <img class="img-responsive" src="/about/salzburg.jpg"></img>
+    </div>
+    <div class="col-sm-6">
+      <img class="img-responsive" src="/about/nature.jpg"></img>
+    </div>
+  </div>
+</div>
+{% endraw %}

@@ -662,3 +662,12 @@ h4 .headerlink:before {
 h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:before {
   display: block;
 }
+
+@media only screen and (min-width: 768px) {
+  .about .col-sm-6:first-child {
+    padding-right: 0;
+  }
+  .about .col-sm-6:last-child {
+    padding-left: 0;
+  }
+}
