@@ -10,7 +10,7 @@ We'll see here how to setup [Webpack 2](https://webpack.js.org), along with [Typ
 
 <!-- more -->
 
-Last weekend I updated [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter), a zero-config starter repo for writting a [TypeScript](https://www.typescriptlang.org/)  library, with [tree-shaking](https://webpack.js.org/guides/tree-shaking), [babel-preset-env](https://github.com/babel/babel-preset-env), and more optimizations.
+Last weekend I updated [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter), a zero-config starter repo for writting a [TypeScript](https://www.typescriptlang.org/)  library, with [tree-shaking](https://webpack.js.org/guides/tree-shaking), [babel-preset-env](https://github.com/babel/babel-preset-env), and more:
 
 {% twitter https://twitter.com/alexjoverm/status/838681719993663488 %}
 
@@ -106,7 +106,7 @@ Now, when you have your `webpack.config.js` setup, if you run `webpack`, you'll 
 /* harmony export (immutable) */ __webpack_exports__["a"] = sayHello;
 // This function isn't used anywhere
 function sayBye() {
-  console.log('Hello')
+  console.log('Bye')
 }
 ...
 ```
