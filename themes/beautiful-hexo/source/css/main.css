@@ -671,3 +671,12 @@ h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:b
     padding-left: 0;
   }
 }
+
+.MediaCard--mediaForward .MediaCard-widthConstraint, .twitter-tweet::shadow .MediaCard-widthConstraint {
+    max-height: 280px;
+}
+
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
+}
