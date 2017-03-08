@@ -44,7 +44,7 @@ links:
     icon: fa-stack-overflow
     enable: true
 
-google_analytics:
+google_analytics: UA-93226517-1
 
 comment:
   enable: true
