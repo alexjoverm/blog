@@ -12,11 +12,15 @@ What could go wrong by building a hackaton project with [Apollo](http://dev.apol
 
 <!-- more -->
 
+{% asset_img hackaton.jpg Hackaton %}
+
 Last Friday 17th March 2017, [@josepramon](https://twitter.com/josepramon), [@esclapes](https://twitter.com/esclapes) and I participated together in an internal hackaton of [Coosto](https://www.coosto.com/en/). The topic was to create something with the topic "Eindhoven". It was nice to see the variety of projects presented.
 
-We wanted to play with [Apollo](http://dev.apollodata.com/), [GraphQL](http://graphql.org), and server-side rendering in [Vue](https://vuejs.org/) (with [Nuxt](https://nuxtjs.org/)), to get a feeling on whether it is beneficial to introduce them in the company. So we made **Dog shit**, an app that collects data from [Eindhoven Open Data](https://data.eindhoven.nl/pages/home/) and [Google Places API](https://developers.google.com/places) in order to show places in Eindhoven where you can walk your dog, and what's around.
+We wanted to play with [Apollo](http://dev.apollodata.com/), [GraphQL](http://graphql.org), and server-side rendering in [Vue](https://vuejs.org/) (with [Nuxt](https://nuxtjs.org/)), to get a feeling on whether it is beneficial to introduce them in the company. So we made [Dog shit](https://github.com/esclapes/coosto-hackathon), an app that collects data from [Eindhoven Open Data](https://data.eindhoven.nl/pages/home/) and [Google Places API](https://developers.google.com/places) in order to show places in Eindhoven where you can walk your dog, and what's around.
 
-You can find the result [project on Github](https://github.com/esclapes/coosto-hackathon).
+You can find the result [project on Github](https://github.com/esclapes/coosto-hackathon). It has the following architecture:
+
+{% asset_img diagram.jpg "Dog Shit architecture" %}
 
 _Note: opinions in the article are personal and based on this experienced_
 
@@ -25,7 +29,7 @@ _Note: opinions in the article are personal and based on this experienced_
 **[GraphQL](http://graphql.org)** is a query language spec that Facebook developed on 2012. It serves exactly one purpose, and it does it really well: 
 
 {% blockquote %}
-**I'll give the frontend what it's asking for, and I'll take care of getting that data in the best way**
+I'll give the frontend what it's asking for, and I'll take care of getting that data in the best way
 {% endblockquote %}
 
 It definitely nails that, we were amazed by how powerful is that and how pleasant the developer experience was. GraphQL:
