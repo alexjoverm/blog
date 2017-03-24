@@ -26,7 +26,7 @@ _Note: opinions in the article are personal and based on this experienced_
 
 ### GraphQL
 
-**[GraphQL](http://graphql.org)** is a query language spec that Facebook developed on 2012. It serves exactly one purpose, and it does it really well: 
+**[GraphQL](http://graphql.org)** is a query language spec that Facebook developed on 2012. It serves exactly one purpose, and it does it really well:
 
 {% blockquote %}
 I'll give the frontend what it's asking for, and I'll take care of getting that data in the best way
@@ -65,18 +65,18 @@ We tried [vue-apollo](https://github.com/Akryum/vue-apollo), but we didn't have 
 
 ### Nuxt
 
-We had a sour-sweet experience here, let me elaborate on that.
+We felt the power and easyness of Nuxt, but also we got a sour-sweet experience here, let me elaborate on that.
 
 [Nuxt](https://nuxtjs.org/) is a higher-level framework for writing universal Vue applications. It makes very easy to achieve server side rendering and you don't have to worry about any of the [server side rendering considerations](https://vuejs.org/v2/guide/ssr.html#Build-Process-Routing-and-Vuex-State-Hydration) such as caching, routing, state, build process, etc. It is driven by conventions which is what makes very easy to don't care about most things an let the framework manage that.
 
-Those conventions has their pitfalls: when you need something more flexible and you cannot fit to those conventions, then this is not the right tool for you. In many cases this is true, specially for medium-large apps.
+Those conventions have their pitfalls: when you need something more flexible and more control that you cannot fit to those conventions, then it is not the right tool for you. In our case this is true.
 
-The bottomline is if you can stick to the conventions, is perfect for you. Otherwise you must manage the server side rendering yourself. In the [Vue docs](https://vuejs.org/v2/guide/ssr.html#Build-Process-Routing-and-Vuex-State-Hydration) you can find some resources to master this for complex applications.
+The bottom line is if you can stick to the conventions, is perfect for you. Otherwise you must manage the server side rendering yourself. In the [Vue docs](https://vuejs.org/v2/guide/ssr.html#Build-Process-Routing-and-Vuex-State-Hydration) you can find some resources to master this for complex applications.
 
 ## Conclusion
 
 There are some areas that we didn't have time for it, such as integrating a state management tool (Redux or Vuex), so we covered the basics in this experiment.
 
-We found Apollo/GraphQL as a very powerful tool for medium and large apps, it does really well what is made for. Nuxt makes building universal Vue apps be a kid game, but first check if it fits properly with your project. Tools that strongly integrate technologies, such as vue-apollo or Nuxt itself, may not be the best solution if you have specific needs and you need control. In that case you can always use the "raw" tools.
+We found Apollo/GraphQL as a very powerful tool for medium and large apps, it does really well what is made for. Nuxt makes building universal Vue apps be a kid game, but first check if it fits properly with your project. Tools that strongly integrate technologies, such as vue-apollo or Nuxt itself, have their advantages, but first check if they are the best solution for your case. If not, you can always use the "raw" tools.
 
 Any questions? Post them below or reach me in Twitter as [@alexjoverm](https://twitter.com/alexjoverm). Don't hesitate to sharing it!
