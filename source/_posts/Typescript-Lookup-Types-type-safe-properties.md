@@ -10,9 +10,9 @@ Typescript 2.1 introduced lookup types. What are they for? In which cases are th
 
 <!-- more -->
 
-That's something I was wondering for a while. I read [the official docs](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html) and [Marius Schulz post](https://blog.mariusschulz.com/2017/01/06/typescript-2-1-keyof-and-lookup-types) where quite well explain it, but didn't quite get the use of it. I needed to come across a real world case where I had to use it.
+That's something I was wondering for a while. I read [the official docs](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html) and [Marius Schulz post](https://blog.mariusschulz.com/2017/01/06/typescript-2-1-keyof-and-lookup-types) where quite well explain it, but didn't totally get the use of it. I needed to come across a real world case where I had to use it.
 
-Then I made a [PR to Jest on DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/14867) repository for adding the `spyOn` function introduced in Jest 19. That's when I got the grasp of it and finally understood it.
+Then I made a [PR to Jest on DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/14867) repository for adding the `spyOn` function introduced in [Jest 19](https://facebook.github.io/jest/). That's when I finally understood it.
 
 ## What exactly are Lookup types?
 
@@ -66,6 +66,11 @@ function spyOn<O, M extends keyof O>(object: O, method: M)
 spyOn(bike, 'blabla') // now TS throws an error :)
 spyOn(bike, 'ride') // This works
 ```
+
+If you still don't understand the `spyOn` declaration, basically is saying:
+
+ - `<O, M extends keyof O>`: `O` is any object, and `M` is a property of `O`
+ - `object: O, method: M`: we expect `O` (any object) as a first parameter, and `M` (a property of `O` as a second)
 
 Do you see now the power of lookup types? You can dynamically generate string literal union types! That'll make your type definitions much more accurate ;)
 
