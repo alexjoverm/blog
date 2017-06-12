@@ -3,9 +3,9 @@ title: About me
 date: 2017-03-03 17:43:57
 ---
 
-Hi there! I'm Alex Jover, a passionate FullStack developer from Spain. I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writting here or working on [open source and side projects](https://github.com/alexjoverm). I'm an agile practitioner.
+Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
 
-I'm focused all software craftmanship stuff, architecture, patterns, best practices and so. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. Interested on the human side of coding.
+I'm software craftmanship, architecture, patterns and best practices practicioner. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. TypeScript lover. Interested on the human side of coding.
 
 ## Public speaking
 
@@ -22,10 +22,18 @@ I'm focused all software craftmanship stuff, architecture, patterns, best practi
 
 I run some open source projects:
 
-- [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager for javascript and typescript, made for humans
-- [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): Starter kit with zero-config for building a library in typescript, featuring webpack, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
+- [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): Starter kit with zero-config for building a library in typescript, featuring RollupJS, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
+- [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager written in TypeScript, made for humans
 
-I'm part of some [Github organizations](https://github.com/alexjoverm) and contribute in other projects. Some of my PR landed on repos such as [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), [TypeScript-Handbook](https://github.com/Microsoft/TypeScript-Handbook), [vue-cli](https://github.com/vuejs/vue-cli), [HexoJS/site](https://github.com/hexojs/site), [KeyboardJS](https://github.com/RobertWHurst/KeyboardJS), [all-contributors-cli](https://github.com/jfmengels/all-contributors-cli), [@ngrx/store logger](https://github.com/btroncone/ngrx-store-logger)...
+I'm part of some [Github organizations](https://github.com/alexjoverm) and contribute in other projects. Some of my PR landed on repos such as:
+ - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
+ - [TypeScript-Handbook](https://github.com/Microsoft/TypeScript-Handbook)
+ - [Kaop-TS](https://github.com/k1r0s/kaop-ts)
+ - [vue-cli](https://github.com/vuejs/vue-cli)
+ - [HexoJS/site](https://github.com/hexojs/site)
+ - [KeyboardJS](https://github.com/RobertWHurst/KeyboardJS)
+ - [all-contributors-cli](https://github.com/jfmengels/all-contributors-cli)
+ - [@ngrx/store logger](https://github.com/btroncone/ngrx-store-logger)...
 
 ## Interests
 
