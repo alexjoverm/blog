@@ -10,6 +10,8 @@ Typescript 2.1 introduced lookup types. What are they for? In which cases are th
 
 <!-- more -->
 
+**_Wait, a video explaining Lookup Types?_ Yes! Check it out on [Egghead.io](https://egghead.io/instructors/alex-jover-morales)!**
+
 That's something I was wondering for a while. I read [the official docs](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html) and [Marius Schulz post](https://blog.mariusschulz.com/2017/01/06/typescript-2-1-keyof-and-lookup-types) where quite well explain it, but didn't totally get the use of it. I needed to come across a real world case where I had to use it.
 
 Then I made a [PR to Jest on DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/14867) repository for adding the `spyOn` function introduced in [Jest 19](https://facebook.github.io/jest/). That's when I finally understood it.

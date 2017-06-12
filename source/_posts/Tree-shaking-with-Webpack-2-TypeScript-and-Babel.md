@@ -10,11 +10,11 @@ We'll see here how to setup [Webpack 2](https://webpack.js.org), along with [Typ
 
 <!-- more -->
 
-Last weekend I updated [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter), a zero-config starter repo for writting a [TypeScript](https://www.typescriptlang.org/)  library, with [tree-shaking](https://webpack.js.org/guides/tree-shaking), [babel-preset-env](https://github.com/babel/babel-preset-env), and more:
+Some time ago I updated [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter), a zero-config starter repo for writting a [TypeScript](https://www.typescriptlang.org/)  library, with [tree-shaking](https://webpack.js.org/guides/tree-shaking), [babel-preset-env](https://github.com/babel/babel-preset-env), and more:
 
 {% twitter https://twitter.com/alexjoverm/status/838681719993663488 %}
 
-So I thought, why not sharing that to the people? Hope you find it useful and safes you some time I had to spend :)
+Right now it uses RollupJS, but same concepts apply. So I thought, why not sharing that to the people? Hope you find it useful and safes you some time I had to spend :)
 
 ## What is really tree-shaking?
 
@@ -98,7 +98,7 @@ Anyways, whatever preset you use, you must indicate `module: false` in your `.ba
 
 ### 3. Let's see the results
 
-Now, when you have your `webpack.config.js` setup, if you run `webpack`, you'll see within the generated output an unsued harmony comment, like:
+Now, when you have your `webpack.config.js` setup, if you run `webpack`, you'll see within the generated output an unused harmony comment, like:
 
 ```javascript
 ...
@@ -115,6 +115,6 @@ And if we run `webpack -p` for production build, that code will be stripped out.
 
 ## Try it yourself!
 
-[typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter) uses tree-shaking! Download the repo, follow the instructions and, be curious and try the code we used at the beginning of this article! You can use the commands `npm run build:dev` and `npm run build` which calls webpack.
+[typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter) uses tree-shaking! Download the repo, follow the instructions and, be curious and try the code we used at the beginning of this article! Right now it uses RollupJS, but same tree-shaking happens when you run `npm run build`. If you wanna check the Webpack version, check out [this commit](https://github.com/alexjoverm/typescript-library-starter/tree/edd71c19b8d1dcd0b42dc19e0e4ee4b8a7216250) in particular to see how it was.
 
 If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
