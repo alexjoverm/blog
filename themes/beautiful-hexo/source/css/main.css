@@ -680,3 +680,21 @@ h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:b
   margin-left: auto;
   margin-right: auto;
 }
+
+.top-nav-short .new-badge:after{
+  top: -1px;
+}
+
+.new-badge:after {
+    display: inline-block;
+    content: "New";
+    color: white;
+    font-size: 8px;
+    background: #008AFF;
+    position: absolute;
+    border-radius: 15px;
+    line-height: 17px;
+    padding: 0 3px;
+    top: -5px;
+    right: 0;
+}

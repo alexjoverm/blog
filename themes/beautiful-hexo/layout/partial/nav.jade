@@ -13,7 +13,10 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-custom
                     ul.nav.navbar-nav.navbar-right
                         each value, key in theme["navbar-links"]
                             li
-                                a(href=url_for(value))!= key
+                                if value.class
+                                    a(href=url_for(value.link), class=value.class)!= key
+                                else
+                                    a(href=url_for(value))!= key
                 .avatar-container
                     .avatar-img-border
                         a(href=url_for())
