@@ -9,8 +9,6 @@ tags:
 
 <!-- more -->
 
-{% asset_img parrot.jpg "Parrot image" %}
-
 Recently, [@vjeux](https://twitter.com/Vjeux), one of the authors of Prettier, announced TypeScript support in the following tweet:
 
 {% twitter https://twitter.com/Vjeux/status/870670634908475392 %}
@@ -51,7 +49,7 @@ The installation is straightforward, once you setup [TSLint](https://palantir.gi
 npm i -D tslint-config-prettier
 ```
 
-Then add it to the end of your `tslint.json` file:
+Add it to the end of your `tslint.json` file:
 
 ```json
 {
@@ -61,6 +59,10 @@ Then add it to the end of your `tslint.json` file:
   ]
 }
 ```
+
+Now we can use Prettier and TSLint without any problem!
+
+{% asset_img prettier.gif "Using Prettier" %}
 
 I must thank [@vjeux for pointing me out](https://twitter.com/Vjeux/status/871796320792608768) to this solution and [@JBlack](https://twitter.com/JBlaak) for the time to [review tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier/pull/1).
 
