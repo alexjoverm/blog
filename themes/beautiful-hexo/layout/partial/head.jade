@@ -5,14 +5,19 @@ meta(name="author", content=config.author)
 
 link(rel="icon", href=url_for(theme.favicon))
 
-title
-   block site_title
-       = config.title
-block description
+block head_metadata
+    title= config.title
     meta(name="description", content=config.description)
 
-link(rel="alternate", type="application/rss+xml", title=config.title, href=url_for("/atom.xml"))
+meta(name="author", content=config.author)
+meta(name="copyright", content=config.author)
+link(rel="author", type="text/html", href=theme.links.twitter.link)
+each item in theme.links
+    - var name = item.title.toUpperCase()
+    if item.title != 'RSS'
+        link(rel="me", type="text/html", href=item.link)
 
+link(rel="alternate", type="application/rss+xml", title=config.title, href=url_for("/atom.xml"))
 link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 link(rel="stylesheet", href=url_for("/css/bootstrap.min.css"))
 link(rel="stylesheet", href=url_for("/css/main.css"))

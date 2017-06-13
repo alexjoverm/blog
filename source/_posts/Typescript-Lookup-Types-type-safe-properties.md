@@ -1,5 +1,6 @@
 ---
 title: 'TypeScript Lookup Types: type-safe properties'
+description: Typescript 2.1 introduced lookup types. What are they for? In which cases are they useful?
 date: 2017-04-11 12:55:23
 tags:
  - TypeScript

@@ -1,5 +1,6 @@
 ---
 title: Use Prettier with TSLint and be happy
+description: Prettier support for TypeScript just landed. Let's see how tslint-config-prettier helps to seamlessly combine it with TSLint
 date: 2017-06-12 16:36:23
 tags:
  - TypeScript

@@ -1,5 +1,6 @@
 ---
 title: Tree shaking with Webpack 2, TypeScript and Babel
+description: We'll see here how to setup Webpack 2, along with TypeScript and Babel to achieve dead code elimination with tree-shaking
 date: 2017-03-06 10:37:33
 tags:
  - Webpack

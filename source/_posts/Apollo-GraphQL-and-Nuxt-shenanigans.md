@@ -1,5 +1,6 @@
 ---
 title: 'Apollo, GraphQL, Vue and Nuxt shenanigans!'
+description: What could go wrong by building a hackaton project with Apollo, GraphQLhttp://graphql.org, Vue and Nuxt?
 date: 2017-03-23 10:46:07
 tags:
  - GraphQL
