@@ -5,22 +5,11 @@ include partial/post-meta
 block head_metadata
     title= page.title + " | " + config.author
     meta(name="description", content=page.description)
-    link(rel="canonical", content=page.permalink)
 
-    meta(name="twitter:card", content="summary")
-    meta(name="twitter:site", content="@alexjoverm")
-    meta(name="twitter:creator", content="@alexjoverm")
     meta(name="twitter:title", content=page.title)
     meta(name="twitter:description", content=page.description)
-    meta(name="twitter:image", content=url_for(theme.avatar))
-
-    meta(name="og:site_name", content=config.title)
-    meta(name="og:locale", content="en_EN")
-    meta(name="og:type", content="article")
     meta(name="og:title", content=page.title)
     meta(name="og:description", content=page.description)
-    meta(name="og:url", content=page.permalink)
-    meta(name="og:image", content=url_for(theme.avatar))
 
     meta(name="article:author", content="https://www.facebook.com/alex.jovermorales")
     meta(name="article:published_time", content=page.date.toISOString())
@@ -45,15 +34,6 @@ block header
                             +post_meta(page.date, page.tags)
 
 block content
-    div
-    != console.log(page.title)
-    != console.log(theme.links.twitter)
-    != console.log(page.description)
-    != console.log(config.author)
-    != console.log(page.permalink)
-    != console.log(page.date.toISOString())
-    != console.log(page.updated.toISOString())
-    div
     .container
         .row
             .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
