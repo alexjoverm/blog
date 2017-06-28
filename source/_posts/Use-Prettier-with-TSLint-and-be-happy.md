@@ -10,6 +10,8 @@ tags:
 
 <!-- more -->
 
+**_Wait, a video explaining "Use Prettier with TSLint"?_ Yes! Check it out on [Egghead.io](https://egghead.io/lessons/typescript-use-prettier-with-tslint-without-conflicts-c39670eb)!**
+
 Recently, [@vjeux](https://twitter.com/Vjeux), one of the authors of Prettier, announced TypeScript support in the following tweet:
 
 {% twitter https://twitter.com/Vjeux/status/870670634908475392 %}
