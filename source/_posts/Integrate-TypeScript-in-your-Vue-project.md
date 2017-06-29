@@ -132,7 +132,7 @@ Ideally, you'd use the TypeScript 2.3 `strict` compiler option in your `tsconfig
  - `noImplicitThis`
  - `alwaysStrict`
 
-However, in reality, if you have a medium/large codebase, using strict option will make you spend really a huge effort and time solving all the type shortage.
+However, if you have a medium/large codebase, using strict option will make you spend really a huge effort and time solving all the type shortage.
 
 For that case, a good way to integrate TypeScript is to start with the most flexible configuration, and as you add more type coverage to your codebase, start to enable individually the flags mentioned above, till you get to the point that you can apply the `strict` option, so you can approach it in a pragmatic way.
 
