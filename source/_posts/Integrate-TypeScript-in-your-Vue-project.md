@@ -47,7 +47,7 @@ The most important part is the `allowSyntheticDefaultImports` setting. Since Vue
 
 Setting `"module": "es2015"` would make the code [tree-shakeable](https://alexjoverm.github.io/2017/03/06/Tree-shaking-with-Webpack-2-TypeScript-and-Babel/) by producing ESM (EcmaScript Modules).
 
-### 2. Add `ts-loader` webpack plugin
+### 2. Add `ts-loader` and webpack tweaks
 
 Install `typescript` an `ts-loader` with npm:
 
@@ -69,6 +69,19 @@ module: {
         }
       },
     ...
+```
+
+In there, rename the entry to `.ts` and add it to the extensions:
+
+```javascript
+...
+entry: {
+  app: './src/main.ts'
+},
+...
+resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
+...
 ```
 
 ### 3. Add `es-module: true` to `build/vue-loader.conf.js`
@@ -125,7 +138,7 @@ At this point, TypeScript could already point you out to some errors you haven't
 
 Still, you must add your own types by using interfaces, types, enums, classes and whatever you need. That way you'll add more type coverage that TypeScript will use to apply static typing, assuring type safety.
 
-Ideally, you'd use the TypeScript 2.3 `strict` compiler option in your `tsconfig.json` because it'll bring you the most type safety. [Marius Schulz](https://twitter.com/mariusschulz) has a [well explained article] (https://blog.mariusschulz.com/2017/06/09/typescript-2-3-the-strict-compiler-option) about this. By TypeScript 2.3, the strict option is a group of 4 options, but in future releases it could add more:
+Ideally, you'd use the TypeScript 2.3 `strict` compiler option in your `tsconfig.json` because it'll bring you the most type safety. [Marius Schulz](https://twitter.com/mariusschulz) has a [well explained article](https://blog.mariusschulz.com/2017/06/09/typescript-2-3-the-strict-compiler-option) about this. By TypeScript 2.3, the strict option is a group of 4 options, but in future releases it could add more:
 
  - `strictNullChecks`
  - `noImplicitAny`
