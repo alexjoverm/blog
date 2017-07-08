@@ -122,7 +122,7 @@ If your editor is yelling at the line `import App from './App'` in `main.js` fil
 ```typescript
 declare module "*.vue" {
   import Vue from 'vue'
-  export default typeof Vue
+  export default Vue
 }
 ```
 
