@@ -43,13 +43,15 @@ new Vue({
 })
 ```
 
+By wrapping the `import` function into an arrow function, Vue will execute it only when it gets requested, loading the module in that moment.
+
 ## Lazy load in Vue router
 
 Vue router has built in support for [lazy loading](https://router.vuejs.org/en/advanced/lazy-loading.html). It's as simple as importing your components with the `import` function. Say we wanna lazy load a Login component in the _/login_ route:
 
 ```javascript
 // Instead of: import Login from './login'
-const Login = import ('./login')
+const Login = () => import('./login')
 
 new VueRouter({
   routes: [
