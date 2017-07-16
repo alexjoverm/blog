@@ -698,3 +698,7 @@ h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:b
     top: -5px;
     right: 0;
 }
+
+code[class*="language-"], pre[class*="language-"] {
+  font-size: 15px;
+}
