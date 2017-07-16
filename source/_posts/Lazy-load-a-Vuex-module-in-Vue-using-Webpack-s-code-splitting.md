@@ -1,0 +1,89 @@
+---
+title: Lazy loading in Vue using Webpack's code splitting
+description: When a Vue app gets large, lazy loading components, routes or Vuex modules using Webpack's code splitting will boost it by loading pieces of code only when needed.
+date: 2017-07-16 01:05:47
+tags:
+  - Vue
+  - Vuex
+  - Webpack
+---
+
+When a [Vue](https://vuejs.org/) app gets large, lazy loading components, routes or [Vuex](https://vuex.vuejs.org/en) modules using [Webpack's code splitting](https://webpack.js.org/guides/lazy-loading/) will boost it by loading pieces of code only when needed.
+
+<!-- more -->
+
+{% asset_img axe.jpg Axe %}
+
+We could apply lazy loading and code splitting in 3 different levels in a Vue app:
+
+ - Components, also known as [async components](https://vuejs.org/v2/guide/components.html#Async-Components)
+ - Router
+ - Vuex modules
+
+But there is something they all have in common: they use [dynamic import](https://github.com/tc39/proposal-dynamic-import), which is understood by Webpack since version 2.
+
+## Lazy load in Vue components
+
+This is well explained in the ["Load components when needed with Vue async]components"(https://egghead.io/lessons/load-components-when-needed-with-vue-async-components) on Egghead.
+
+It's as simple as using the `import` function when registering a component:
+
+```javascript
+Vue.component('AsyncCmp', () => import('./AsyncCmp'))
+```
+
+And using local registration:
+
+```javascript
+new Vue({
+  // ...
+  components: {
+    'AsyncCmp': () => import('./AsyncCmp')
+  }
+})
+```
+
+## Lazy load in Vue router
+
+Vue router has built in support for [lazy loading](https://router.vuejs.org/en/advanced/lazy-loading.html). It's as simple as importing your components with the `import` function. Say we wanna lazy load a Login component in the _/login_ route:
+
+```javascript
+// Instead of: import Login from './login'
+const Login = import ('./login')
+
+new VueRouter({
+  routes: [
+    { path: '/login', component: Login }
+  ]
+})
+```
+
+## Lazy load a Vuex module
+
+Vuex has a `registerModule` method that allow us to dynamically create Vuex modules. If we take into account that `import` function returns a promise with the ES Module as the payload, we could use it to lazy load a module:
+
+```javascript
+const store = new Vuex.Store()
+
+...
+
+// Assume there is a "login" module we wanna load
+import('./store/login').then(loginModule => {
+  store.registerModule('login', loginModule)
+})
+```
+
+## Conclusion
+
+Lazy loading is made extremely simple with Vue and Webpack. Using what you've just read you can start splitting up your app in chunks from different sides and load them when needed, lightening the initial load of the app.
+
+If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
+
+
+
+
+
+
+
+
+
