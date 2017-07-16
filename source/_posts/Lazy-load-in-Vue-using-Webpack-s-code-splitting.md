@@ -24,7 +24,7 @@ But there is something they all have in common: they use [dynamic import](https:
 
 ## Lazy load in Vue components
 
-This is well explained in the ["Load components when needed with Vue async]components"(https://egghead.io/lessons/load-components-when-needed-with-vue-async-components) on Egghead.
+This is well explained in the ["Load components when needed with Vue async components"](https://egghead.io/lessons/load-components-when-needed-with-vue-async-components) on Egghead.
 
 It's as simple as using the `import` function when registering a component:
 
