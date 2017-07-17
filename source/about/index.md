@@ -26,10 +26,12 @@ I run some open source projects:
 - [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager written in TypeScript, made for humans
 
 I'm part of some [Github organizations](https://github.com/alexjoverm) and contribute in other projects. Some of my PR landed on repos such as:
+
+ - [vue-cli](https://github.com/vuejs/vue-cli)
+ - [Vuex](https://github.com/vuejs/vuex)
  - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
  - [TypeScript-Handbook](https://github.com/Microsoft/TypeScript-Handbook)
  - [Kaop-TS](https://github.com/k1r0s/kaop-ts)
- - [vue-cli](https://github.com/vuejs/vue-cli)
  - [HexoJS/site](https://github.com/hexojs/site)
  - [KeyboardJS](https://github.com/RobertWHurst/KeyboardJS)
  - [all-contributors-cli](https://github.com/jfmengels/all-contributors-cli)
