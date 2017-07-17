@@ -45,6 +45,16 @@ new Vue({
 
 By wrapping the `import` function into an arrow function, Vue will execute it only when it gets requested, loading the module in that moment.
 
+If the component importing is using a [named export](http://2ality.com/2014/09/es6-modules-final.html#named-exports-several-per-module), you can use object destructuring on the returned Promise. For example, for the UiAlert component from [KeenUI](https://github.com/JosephusPaye/Keen-UI):
+
+```javascript
+...
+components: {
+  UiAlert: () => import('keen-ui').then(({ UiAlert }) => UiAlert)
+}
+...
+```
+
 ## Lazy load in Vue router
 
 Vue router has built in support for [lazy loading](https://router.vuejs.org/en/advanced/lazy-loading.html). It's as simple as importing your components with the `import` function. Say we wanna lazy load a Login component in the _/login_ route:
