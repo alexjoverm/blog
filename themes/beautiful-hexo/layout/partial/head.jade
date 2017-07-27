@@ -8,6 +8,20 @@ link(rel="author", type="text/html", href=theme.links.twitter.link)
 link(rel="icon", href=url_for(theme.favicon))
 link(rel="canonical", content=page.permalink)
 
+// Add to home screen for Android and modern mobile browsers
+link(rel='manifest', href='/manifest.json')
+meta(name='theme-color', content='#008aff')
+
+// Add to home screen for Safari on iOS
+meta(name='apple-mobile-web-app-capable', content='yes')
+meta(name='apple-mobile-web-app-status-bar-style', content='default')
+meta(name='apple-mobile-web-app-title', content='Alex Jover Blog')
+link(rel='apple-touch-icon', href='/images/icons/icon-152x152.png')
+
+// Add to home screen for Windows
+meta(name='msapplication-TileImage', content='/images/icons/icon-152x152.png')
+meta(name='msapplication-TileColor', content='#000000')
+
 block head_metadata
     title= config.title
     meta(name="description", content=config.description)
@@ -35,14 +49,14 @@ each item in theme.links
         link(rel="me", type="text/html", href=item.link)
 
 link(rel="alternate", type="application/rss+xml", title=config.title, href=url_for("/atom.xml"))
-link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
-link(rel="stylesheet", href=url_for("/css/bootstrap.min.css"))
-link(rel="stylesheet", href=url_for("/css/main.css"))
+link(rel="stylesheet", type="text/css", href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+link(rel="stylesheet", type="text/css", href=url_for("/css/bootstrap.min.css"))
+link(rel="stylesheet", type="text/css", href=url_for("/css/main.css"))
 
 if theme.highlight.enable
-    link(rel="stylesheet", href=url_for(theme.highlight.style_path))
+    link(rel="stylesheet", type="text/css", href=url_for(theme.highlight.style_path))
 
 if theme.googlefonts
     each font in theme.googlefonts
-        link(rel="stylesheet", href="//fonts.googleapis.com/css?family="+font)
+        link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family="+font)
 
