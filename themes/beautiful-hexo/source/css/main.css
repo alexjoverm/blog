@@ -672,6 +672,16 @@ h2:hover .headerlink:before, h3:hover .headerlink:before, h4:hover .headerlink:b
   }
 }
 
+@media only screen and (min-width: 500px) {
+  .img-vertical {
+    text-align: center;
+  }
+
+  .img-vertical img {
+    max-width: 300px;
+  }
+}
+
 .MediaCard--mediaForward .MediaCard-widthConstraint, .twitter-tweet::shadow .MediaCard-widthConstraint {
     max-height: 280px;
 }
