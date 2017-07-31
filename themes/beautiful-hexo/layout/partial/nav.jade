@@ -11,13 +11,11 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-custom
                     a(class="navbar-brand", href=url_for()) Blog
                 #main-navbar.collapse.navbar-collapse
                     ul.nav.navbar-nav.navbar-right
+                        li.search
+                            include algolia
                         each value, key in theme["navbar-links"]
                             li
                                 if value.class
                                     a(href=url_for(value.link), class=value.class)!= key
                                 else
                                     a(href=url_for(value))!= key
-                .avatar-container
-                    .avatar-img-border
-                        a(href=url_for())
-                            img(class="avatar-img", alt="avatar" src=url_for(theme.avatar))

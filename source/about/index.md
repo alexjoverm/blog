@@ -3,6 +3,10 @@ title: About me
 date: 2017-03-03 17:43:57
 ---
 
+<div style="width: 100%; text-align: center">
+{% img avatar-img-border /alex.jpg 140 140 "'Alex avatar'" "'Alex avatar'" %}
+</div>
+
 Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
 
 I'm software craftmanship, architecture, patterns and best practices practicioner. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. TypeScript lover. Interested on the human side of coding.

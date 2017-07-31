@@ -12,6 +12,10 @@ header.header-section(class={ 'has-img' : display_images })
       .row
         .col-md-10.col-md-offset-1
             .page-heading
+              .avatar-container
+                    .avatar-img-border
+                        a(href=url_for())
+                            img(class="avatar-img", alt="avatar" src=url_for(theme.avatar))
               h1!= theme.header.title
               hr.small
               span.page-subheading!= theme.header.motto
