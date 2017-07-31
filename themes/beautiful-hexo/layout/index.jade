@@ -5,9 +5,9 @@ block header
 
 block content
     div(class="container", role="main")
-        include partial/signup_form
         .row
             .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                include partial/signup_form
                 .posts-list
                     - page.posts.each(function (post) {
                     article.post-preview
