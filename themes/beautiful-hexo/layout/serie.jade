@@ -1,0 +1,31 @@
+extends partial/base
+
+block head_metadata
+  - let desc = "Serie made of " + page.posts.length + " posts"
+  title= page.name + " | " + config.author
+  meta(name="description", content=desc)
+  meta(name="twitter:title", content=page.name)
+  meta(name="twitter:description", content=desc)
+  meta(name="og:title", content=page.name)
+  meta(name="og:description", content=desc)
+
+block header
+  header.header-section
+    .intro-header.no-img
+
+block content
+  div(class="container", role="main")
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        h1= page.name
+        each post in page.posts
+          li
+            a(href=url_for(post.path), alt=post.title)= post.title
+
+
+
+
+
+
+
+

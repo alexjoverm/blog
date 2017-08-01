@@ -1,4 +1,6 @@
-script(src=url_for("/js/sw-register.js"))
+if process.argv.indexOf('server') === -1
+  script(src=url_for("/js/sw-register.js"))
+
 script(src=url_for("/js/jquery-1.11.2.min.js"))
 script(src=url_for("/js/bootstrap.min.js"))
 script(src=url_for("/js/main.js"))
@@ -21,8 +23,11 @@ script.
     templates: {
     //'suggestion' templating function used to render a single suggestion
     suggestion: function(suggestion) {
-      return '<a href="'+ suggestion.permalink +'">' +
+      let link = '<a href="'+ suggestion.permalink +'">' +
         suggestion._highlightResult.title.value + '</a>'
+
+      // @Todo: add <span> with type before the link
+      return link
       }
     }
   })

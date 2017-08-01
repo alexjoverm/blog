@@ -1,0 +1,32 @@
+extends partial/base
+
+block head_metadata
+  title= 'Series' + " | " + config.author
+  meta(name="description", content="Curated series or collection of blog posts")
+  meta(name="twitter:title", content="Series")
+  meta(name="twitter:description", content="Curated series or collection of blog posts")
+  meta(name="og:title", content="Series")
+  meta(name="og:description", content="Curated series or collection of blog posts")
+
+block header
+  header.header-section
+      .intro-header.no-img
+
+block content
+  div(class="container", role="main")
+    .row
+        .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+          h1 Series
+          each serie in page
+            h4= serie.name
+            span= serie.posts.length + " posts"
+            ul
+              each post in serie.posts
+                li
+                  a(href=url_for(post.path), alt=post.title)= post.title
+
+
+
+
+
+
