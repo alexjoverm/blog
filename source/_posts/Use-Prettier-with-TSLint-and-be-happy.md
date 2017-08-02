@@ -4,6 +4,7 @@ description: Prettier support for TypeScript just landed. Let's see how tslint-c
 date: 2017-06-12 16:36:23
 tags:
  - TypeScript
+serie: PACO balbjsakj asblkjsa
 ---
 
 [Prettier](https://github.com/prettier/prettier) support for [TypeScript](https://www.typescriptlang.org/) just landed. Let's see how [tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier) helps to seamlessly combine it with [TSLint](https://palantir.github.io/tslint/).

@@ -5,7 +5,7 @@ date: 2017-06-28 11:17:45
 tags:
  - TypeScript
  - Vue
-serie: PEPE
+serie: Learn CSS from Aaron Garcia and be awesome!
 ---
 
 You have a [Vue](https://vuejs.org/) project and you heard about all things [TypeScript](https://www.typescriptlang.org/) can help you with. You decide to start using TypeScript. Here you'll see how to do that in an approachable and pragmatic way.

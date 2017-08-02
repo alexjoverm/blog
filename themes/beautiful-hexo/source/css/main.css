@@ -595,14 +595,14 @@ table tr td :last-child {
 
 .tag-list .tag-list-link {
   padding: 6px 12px;
-  border: 1px solid #008AFF;
-  border-radius: 3px;
+  background: #008AFF;
+  border-radius: 2px;
+  color: white;
 }
 
 .tag-list .tag-list-link:hover {
   text-decoration: none;
-  color:#005cab;
-  border: 1px solid #005cab;
+  color:white;
 }
 
 .tag-list .tag-list-count {
@@ -613,8 +613,10 @@ table tr td :last-child {
   height: 20px;
   color: #008AFF;
   background: white;
-  font-size: 11px;
+  font-size: 0.75em;
   line-height: 22px;
+  border-radius: 50px;
+  font-weight: 600;
 }
 
 h2 .headerlink:before, h3 .headerlink:before, h4 .headerlink:before {
@@ -822,5 +824,29 @@ code[class*="language-"], pre[class*="language-"] {
 .aa-suggestion:hover, .aa-suggestion.aa-cursor {
   background-color: rgba(215, 215, 215, 0.35);
 }
+
+.title-quoted {
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
+.page-title {
+  margin: 0 0 35px 0;
+}
+
+.series .title {
+  margin: 45px 0 20px 0;
+}
+
+.series .title a {
+  color: #404040;
+}
+
+.series-list li {
+  margin: 5px 0;
+}
+
+
 
 

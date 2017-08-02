@@ -1,21 +1,38 @@
 'use strict';
 
 const slugize = require('hexo-util').slugize
+const fs = require('fs')
+const path = require('path')
 
 function formatSeries(locals) {
-  return locals.posts
+  const filtered = locals.posts
     .filter(post => post.serie)
-    .reduce((acum, post) => {
+
+    filtered.sort((l, r) => l.date < r.date)
+
+    return filtered.reduce((acum, post) => {
       let serie = acum.find(serie => serie.name === post.serie)
 
       if (serie) {
         serie.posts.push(post)
       } else {
-        acum.push({ name: post.serie, posts: [post] })
+        acum.push({ name: post.serie, slug: slugize(post.serie), posts: [post] })
       }
 
       return acum
     }, [])
+}
+
+// To use from generated file
+function formatSeriesFromFile() {
+    const series = JSON.parse(fs.readFileSync(
+        path.resolve(process.cwd(), 'source', 'series.json')
+    ))
+
+    return series.map(serie => {
+        serie.posts = serie.posts.map(post => hexo.locals.get('posts').find(p => p.title === post.title))
+        return serie
+    })
 }
 
 hexo.extend.generator.register('series', function(locals) {
@@ -30,13 +47,11 @@ hexo.extend.generator.register('series', function(locals) {
 
 hexo.extend.generator.register('serie', function(locals) {
   return formatSeries(locals)
-    .map(serie => {
-      return {
-        path: 'series/' + slugize(serie.name) + '/index.html',
+    .map(serie => ({
+        path: 'series/' + serie.slug + '/index.html',
         data: serie,
         layout: 'serie'
-      }
-    })
+    }))
 })
 
 hexo.extend.filter.register('before_post_render', function(postInfo) {

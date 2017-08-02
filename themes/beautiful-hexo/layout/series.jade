@@ -16,14 +16,21 @@ block content
   div(class="container", role="main")
     .row
         .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-          h1 Series
-          each serie in page
-            h4= serie.name
-            span= serie.posts.length + " posts"
-            ul
-              each post in serie.posts
-                li
-                  a(href=url_for(post.path), alt=post.title)= post.title
+          h1.title-quoted.page-title
+            | "Curated&nbsp;
+            strong Series&nbsp;
+            | of Articles"
+
+          section.series
+            each serie in page
+              h3.title
+                a(href=url_for('series/' + serie.slug), alt=serie.name)= serie.name
+              //- span= serie.posts.length + " posts"
+              ol.series-list
+                each post in serie.posts
+                  li
+                    a(href=url_for(post.path), alt=post.title)= post.title
+
 
 
 

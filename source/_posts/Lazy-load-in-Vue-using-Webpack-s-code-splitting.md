@@ -7,7 +7,7 @@ tags:
   - Vuex
   - Webpack
 
-serie: PEPE
+serie: Learn CSS from Aaron Garcia and be awesome!
 ---
 
 When a [Vue](https://vuejs.org/) app gets large, lazy loading components, routes or [Vuex](https://vuex.vuejs.org/en) modules using [Webpack's code splitting](https://webpack.js.org/guides/lazy-loading/) will boost it by loading pieces of code only when needed.
