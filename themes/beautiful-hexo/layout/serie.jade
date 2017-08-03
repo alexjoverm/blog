@@ -22,6 +22,8 @@ block content
         section.description
           != page.description
 
+        img(src=page.image, alt="")
+
         ol.series-list
           each post in page.posts
             li

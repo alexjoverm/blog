@@ -84,4 +84,4 @@ algolia:
   indexName: blog
 
 series:
-  file: source/series.json
+  folder: series

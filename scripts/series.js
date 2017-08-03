@@ -40,7 +40,7 @@ function formatSeriesFromFile(file) {
 }
 
 hexo.extend.generator.register('series', function(locals) {
-  const series = formatSeriesFromFile(hexo.config.series.file)
+  const series = formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
 
   return {
     path: 'series/index.html',
@@ -50,11 +50,21 @@ hexo.extend.generator.register('series', function(locals) {
 })
 
 hexo.extend.generator.register('serie', function(locals) {
-  return formatSeriesFromFile(hexo.config.series.file)
+  return formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
     .map(serie => ({
         path: 'series/' + serie.permalink + '/index.html',
         data: serie,
         layout: 'serie'
+    }))
+})
+
+hexo.extend.generator.register('serie-img', function(locals) {
+  return formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
+    .map(serie => ({
+        path: 'series/' + serie.permalink + '/' + serie.image,
+        data () {
+            return fs.createReadStream(path.join(hexo.config.series.folder, serie.image))
+        }
     }))
 })
 
