@@ -32,6 +32,8 @@ function formatSeriesFromFile(file) {
     return series.map(serie => {
         serie.permalink = slugize(serie.title)
         serie.date = new Date(serie.date)
+        serie.rawImage = serie.image
+        serie.image = path.join('..', serie.image)
         serie.posts = serie.posts.map(post => {
             return hexo.locals.get('posts').data.find(p => p.title === post.title) || post
         })
@@ -61,9 +63,9 @@ hexo.extend.generator.register('serie', function(locals) {
 hexo.extend.generator.register('serie-img', function(locals) {
   return formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
     .map(serie => ({
-        path: 'series/' + serie.permalink + '/' + serie.image,
+        path: 'series/' + serie.rawImage,
         data () {
-            return fs.createReadStream(path.join(hexo.config.series.folder, serie.image))
+            return fs.createReadStream(path.join(hexo.config.series.folder, serie.rawImage))
         }
     }))
 })

@@ -1,13 +1,12 @@
 extends partial/base
 
 block head_metadata
-  - let desc = "Serie made of " + page.posts.length + " posts"
-  title= page.name + " | " + config.author
-  meta(name="description", content=desc)
-  meta(name="twitter:title", content=page.name)
-  meta(name="twitter:description", content=desc)
+  title= page.title + " | " + config.author
+  meta(name="description", content=page.description)
+  meta(name="twitter:title", content=page.title)
+  meta(title="twitter:description", content=page.description)
   meta(name="og:title", content=page.name)
-  meta(name="og:description", content=desc)
+  meta(name="og:description", content=page.description)
 
 block header
   header.header-section
