@@ -82,3 +82,6 @@ algolia:
   applicationID: 6252178E0A
   apiKey: ead5c5a5a82108a54f04c9f610a54ee2
   indexName: blog
+
+series:
+  file: source/series.json

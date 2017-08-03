@@ -17,12 +17,18 @@ block content
   div(class="container", role="main")
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        h1.page-title= page.name
+        h1.page-title= page.title
+
+        section.description
+          != page.description
 
         ol.series-list
           each post in page.posts
             li
-              a(href=url_for(post.path), alt=post.title)= post.title
+              if post.path
+                a(href=url_for(post.path), alt=post.title)= post.title
+              else
+                = post.title
 
 
 

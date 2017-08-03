@@ -16,7 +16,7 @@ function formatSeries(locals) {
       if (serie) {
         serie.posts.push(post)
       } else {
-        acum.push({ name: post.serie, slug: slugize(post.serie), posts: [post] })
+        acum.push({ name: post.serie, permalink: slugize(post.serie), posts: [post] })
       }
 
       return acum
@@ -24,19 +24,23 @@ function formatSeries(locals) {
 }
 
 // To use from generated file
-function formatSeriesFromFile() {
+function formatSeriesFromFile(file) {
     const series = JSON.parse(fs.readFileSync(
-        path.resolve(process.cwd(), 'source', 'series.json')
+        path.resolve(process.cwd(), file)
     ))
 
     return series.map(serie => {
-        serie.posts = serie.posts.map(post => hexo.locals.get('posts').find(p => p.title === post.title))
+        serie.permalink = slugize(serie.title)
+        serie.date = new Date(serie.date)
+        serie.posts = serie.posts.map(post => {
+            return hexo.locals.get('posts').data.find(p => p.title === post.title) || post
+        })
         return serie
     })
 }
 
 hexo.extend.generator.register('series', function(locals) {
-  const series = formatSeries(locals)
+  const series = formatSeriesFromFile(hexo.config.series.file)
 
   return {
     path: 'series/index.html',
@@ -46,9 +50,9 @@ hexo.extend.generator.register('series', function(locals) {
 })
 
 hexo.extend.generator.register('serie', function(locals) {
-  return formatSeries(locals)
+  return formatSeriesFromFile(hexo.config.series.file)
     .map(serie => ({
-        path: 'series/' + serie.slug + '/index.html',
+        path: 'series/' + serie.permalink + '/index.html',
         data: serie,
         layout: 'serie'
     }))

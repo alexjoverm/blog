@@ -24,13 +24,15 @@ block content
           section.series
             each serie in page
               h3.title
-                a(href=url_for('series/' + serie.slug), alt=serie.name)= serie.name
+                a(href=url_for('series/' + serie.permalink), alt=serie.title)= serie.title
               //- span= serie.posts.length + " posts"
               ol.series-list
                 each post in serie.posts
                   li
-                    a(href=url_for(post.path), alt=post.title)= post.title
-
+                    if post.path
+                      a(href=url_for(post.path), alt=post.title)= post.title
+                    else
+                      = post.title
 
 
 

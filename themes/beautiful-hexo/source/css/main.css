@@ -843,6 +843,11 @@ code[class*="language-"], pre[class*="language-"] {
   color: #404040;
 }
 
+.series .title a:hover {
+  color: #008AFF;
+  text-decoration: none;
+}
+
 .series-list li {
   margin: 5px 0;
 }

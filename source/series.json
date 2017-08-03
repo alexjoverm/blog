@@ -1,7 +1,9 @@
 [{
-  "title": "",
-  "description": "",
+  "title": "LJS FLSAKFDJ ASD;LKJ",
+  "description": "lelelelele",
+  "date": "2017-08-11T10:20:30Z",
   "posts": [
-    { "title": "Title" }
+    { "title": "Apollo, GraphQL, Vue and Nuxt shenanigans!" },
+    { "title": "Apoll Nuxt shenanigans!" }
   ]
 }]

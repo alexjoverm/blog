@@ -6,7 +6,6 @@ tags:
  - GraphQL
  - Apollo
  - Vue
-serie: Learn CSS from Aaron Garcia and be awesome!
 ---
 
 What could go wrong by building a hackaton project with [Apollo](http://dev.apollodata.com/), [GraphQL](http://graphql.org), [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/)?
