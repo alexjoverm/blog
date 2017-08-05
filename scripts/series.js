@@ -1,131 +1,142 @@
-'use strict';
+"use strict"
 
-const slugize = require('hexo-util').slugize
-const fs = require('fs')
-const path = require('path')
+const slugize = require("hexo-util").slugize
+const fs = require("fs")
+const path = require("path")
 
 function formatSeries(locals) {
-  const filtered = locals.posts
-    .filter(post => post.serie)
+  const filtered = locals.posts.filter(post => post.serie)
 
-    filtered.sort((l, r) => l.date < r.date)
+  filtered.sort((l, r) => l.date < r.date)
 
-    return filtered.reduce((acum, post) => {
-      let serie = acum.find(serie => serie.name === post.serie)
+  return filtered.reduce((acum, post) => {
+    let serie = acum.find(serie => serie.name === post.serie)
 
-      if (serie) {
-        serie.posts.push(post)
-      } else {
-        acum.push({ name: post.serie, permalink: slugize(post.serie), posts: [post] })
-      }
+    if (serie) {
+      serie.posts.push(post)
+    } else {
+      acum.push({
+        name: post.serie,
+        permalink: slugize(post.serie),
+        posts: [post]
+      })
+    }
 
-      return acum
-    }, [])
+    return acum
+  }, [])
+}
+
+function getSeries() {
+  const file = path.join(hexo.config.series.folder, "series.json")
+  return JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)))
 }
 
 // To use from generated file
 function formatSeriesFromFile(file) {
-    const series = JSON.parse(fs.readFileSync(
-        path.resolve(process.cwd(), file)
-    ))
+  const series = getSeries()
 
-    return series.map(serie => {
-        serie.permalink = slugize(serie.title)
-        serie.date = new Date(serie.date)
-        serie.imagePath = path.join(hexo.config.series.folder, serie.image)
-        serie.posts = serie.posts.map(post => {
-            return hexo.locals.get('posts').data.find(p => p.title === post.title) || post
-        })
-        return serie
+  return series.map(serie => {
+    serie.permalink = slugize(serie.title)
+    serie.date = new Date(serie.date)
+    serie.imagePath = path.join(hexo.config.series.folder, serie.image)
+    serie.posts = serie.posts.map(post => {
+      return (
+        hexo.locals.get("posts").data.find(p => p.title === post.title) || post
+      )
     })
+    return serie
+  })
 }
 
-hexo.extend.generator.register('series', function(locals) {
-  const series = formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
+hexo.extend.generator.register("series", function(locals) {
+  if(hexo.config.series.enabled) {
+    const series = formatSeriesFromFile()
 
-  return {
-    path: 'series/index.html',
-    data: series,
-    layout: 'series'
+    return {
+        path: "series/index.html",
+        data: series,
+        layout: "series"
+    }
   }
 })
 
-hexo.extend.generator.register('serie', function(locals) {
-  return formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
-    .map(serie => ({
-        path: 'series/' + serie.permalink + '/index.html',
+hexo.extend.generator.register("serie", function(locals) {
+  if(hexo.config.series.enabled) {
+    return formatSeriesFromFile().map(serie => ({
+        path: "series/" + serie.permalink + "/index.html",
         data: serie,
-        layout: 'serie'
+        layout: "serie"
     }))
+  }
 })
 
-hexo.extend.generator.register('serie-img', function(locals) {
-  return formatSeriesFromFile(path.join(hexo.config.series.folder, 'series.json'))
-    .map(serie => ({
-        path: 'series/' + serie.image,
-        data () {
-            return fs.createReadStream(path.join(hexo.config.series.folder, serie.image))
+hexo.extend.generator.register("serie-img", function(locals) {
+  if(hexo.config.series.enabled) {
+    return formatSeriesFromFile().map(serie => ({
+        path: "series/" + serie.image,
+        data() {
+        return fs.createReadStream(
+            path.join(hexo.config.series.folder, serie.image)
+        )
         }
     }))
+  }
 })
 
-hexo.extend.filter.register('before_post_render', function(postInfo) {
-    var config = hexo.config.post_series || {};
-    var posts = hexo.locals.get('posts');
+hexo.extend.filter.register("before_post_render", function(currentPost) {
+  if(hexo.config.series.enabled) {
+    const series = getSeries()
 
-    var postsInSameSeries = posts.data.reduce(function(result, post) {
-        if (post.series && post.series === postInfo.series) {
-            result.push({
-                'id' : post.id,
-                'title' : post.title,
-                'path' : post.path,
-                'permalink' : post.permalink,
-                'date' : post.date
-            });
+    series.forEach(serie =>
+        serie.posts.forEach(post => {
+        if (post.title === currentPost.title) {
+            currentPost.serie = serie
         }
-        return result;
-    }, []);
+        })
+    )
+  }
+})
 
-    postsInSameSeries.sort(function(left, right) {
-        if (config.reverse_sort) {
-            return left.date < right.date;
-        }
-        return left.date > right.date;
-    });
+hexo.extend.helper.register("posts_in_same_serie", function(currentPost) {
+    let result = ""
 
-    postInfo.postsInSameSeries = postsInSameSeries;
-});
+    if (hexo.config.series.enabled && currentPost.serie) {
+        const serie = formatSeriesFromFile().find(
+        s => s.title === currentPost.serie.title
+        )
+        const posts = serie.posts
 
-hexo.extend.tag.register('posts_in_same_series', function (args) {
-    var postInfo = this;
+        result = `
+            <div class="post-serie">
+                <header>
+                    <span class="serie-badge">Serie</span>
+                    <a href="${serie.permalink}" alt="${serie.title}">
+                        ${serie.title}
+                    </a>
+                </header>
 
-    if (postInfo.postsInSameSeries.size === 0) {
-        return '';
+                <ol class="post-list">
+                    ${posts.map(post => `
+                        <li ${isSamePost(post, currentPost) && 'class="current"'}>
+                            ${post.permalink && !isSamePost(post, currentPost) ? `
+                                <a href="${isDevMode() ? '/' + post.path : post.permalink}" alt="${post.title}">
+                                    ${post.title}
+                                </a>
+                            `: post.title}
+                        </li>`
+                    ).join('')}
+                </ol>
+            </div>
+        `
     }
 
-    var config = hexo.config.post_series;
+    return result
+})
 
-    var postSeriesHtmlSegments = ['<div class="post-series">'];
-    if (config.list_title) {
-        postSeriesHtmlSegments = postSeriesHtmlSegments.concat([ '<div class="post-series-title">', config.list_title, '</div>' ]);
-    }
-    postSeriesHtmlSegments.push('<ul class="post-series-list">');
+function isSamePost(p, c) {
+    return p.title === c.title
+}
 
-    postInfo.postsInSameSeries.reduce(function(result, post) {
-        result.push('<li class="post-series-list-item"><a href="');
-        result.push(isRunningInLocalServerMode() ? '/' + post.path : post.permalink);
-        result.push(config.open_in_new_tab ? '" target="_blank">' : '">');
-        result.push(post.title);
-        result.push('</a></li>');
-        return result;
-    }, postSeriesHtmlSegments);
-
-    postSeriesHtmlSegments.push('</ul></div>');
-
-    var postSeriesHtml = postSeriesHtmlSegments.join('');
-    return postSeriesHtml;
-});
-
-function isRunningInLocalServerMode() {
-   return process.argv.indexOf('server') > -1 || process.argv.indexOf('s') > -1;
+function isDevMode() {
+  return process.argv.indexOf("server") > -1 || process.argv.indexOf("s") > -1
 }

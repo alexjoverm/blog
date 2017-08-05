@@ -1,10 +1,13 @@
 [{
-  "title": "LJS FLSAKFDJ ASD;LKJ",
+  "title": "Learn CSS with Aaron Garcia and be awesome!",
   "description": "lelelelele",
   "date": "2017-08-11T10:20:30Z",
   "image": "tree.jpeg",
   "posts": [
     { "title": "Apollo, GraphQL, Vue and Nuxt shenanigans!" },
-    { "title": "Apoll Nuxt shenanigans!" }
+    { "title": "Tree shaking with Webpack 2, TypeScript and Babel" },
+    { "title": "Integrate TypeScript in your Vue project" },
+    { "title": "Apoll Nuxt shenanigans!" },
+    { "title": "Lorem ipsum dolor sit amet... Claro Paco" }
   ]
 }]

@@ -852,6 +852,41 @@ code[class*="language-"], pre[class*="language-"] {
   margin: 5px 0;
 }
 
+.post-serie {
+  position: relative;
+  padding: 24px 25px 18px 25px;
+  border: 1px solid #008AFF;
+}
 
+.post-serie header {
+  padding: 0 0 25px 75px;
+  font-size: 1em;
+}
+
+.post-serie header a {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.post-serie li {
+  padding: 4px 0;
+}
+
+.post-serie li.current {
+  font-weight: 600;
+}
+
+.post-serie li.current:before {
+  content: "=>"
+}
+
+.post-serie .serie-badge {
+  background: #008AFF;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 22px;
+  padding: 4px 12px;
+}
 
 
