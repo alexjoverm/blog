@@ -31,15 +31,20 @@ block head_metadata
     meta(name="og:description", content=config.description)
 
 - var avatarUrl = config.url + url_for(theme.avatar)
-meta(name="twitter:card", content="summary")
+
+block twitter_card
+    meta(name="twitter:card", content="summary")
+
+block metadata_image
+    meta(name="og:image", content=avatarUrl)
+    meta(name="twitter:image", content=avatarUrl)
+
 meta(name="twitter:site", content="@alexjoverm")
 meta(name="twitter:creator", content="@alexjoverm")
-meta(name="twitter:image", content=avatarUrl)
 
 meta(name="og:site_name", content=config.title)
 meta(name="og:locale", content="en_EN")
 meta(name="og:type", content="article")
-meta(name="og:image", content=avatarUrl)
 meta(name="og:url", content=page.permalink)
 meta(name="article:author", content="https://www.facebook.com/alex.jovermorales")
 

@@ -8,6 +8,13 @@ block head_metadata
   meta(name="og:title", content=page.name)
   meta(name="og:description", content=page.description)
 
+block twitter_card
+  meta(name="twitter:card", content="summary_large_image")
+
+block metadata_image
+    meta(name="og:image", content=url_for(page.imagePath))
+    meta(name="twitter:image", content=url_for(page.imagePath))
+
 block header
   header.header-section
     .intro-header.no-img
@@ -21,7 +28,7 @@ block content
         section.description
           != page.description
 
-        img(src=page.image, alt="")
+        img(src=url_for(page.imagePath), alt="")
 
         ol.series-list
           each post in page.posts
