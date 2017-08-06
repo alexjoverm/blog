@@ -23,12 +23,14 @@ block content
   div(class="container", role="main")
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        h1.page-title= page.title
-
-        section.description
-          != page.description
-
-        img(src=url_for(page.imagePath), alt="")
+        .row
+          .col-sm-8
+            h1.page-title.serie-title= page.title
+          .col-sm-4.serie-image
+            img(src=url_for(page.imagePath), alt="")
+          .col-sm-8
+            section.description
+              != page.description
 
         ol.series-list
           each post in page.posts

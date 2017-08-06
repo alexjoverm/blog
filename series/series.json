@@ -1,10 +1,10 @@
 [{
   "title": "Learn advanced Vue.js tips & tricks",
-  "description": "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption and has grown the ecosystem.</p><p>In this series I'll show you some stuff you can do with Vue.js that go beyond the basics and lean towards production apps and good use of patterns and technologies.</p>",
+  "description": "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption.</p><p>In this series I'll show you some stuff you can do with Vue.js that go beyond the basics and lean towards production apps.</p>",
   "image": "vue.png",
   "posts": [
     { "title": "Lazy Loading in Vue using Webpack's Code Splitting" },
-    { "title": "Write Unit Tests with vue-test-utils and Jest in Vue" },
+    { "title": "Write Unit Tests with vue-test-utils and Jest in Vue", "meta": "https://github.com/eddyerburgh/vue-test-utils-jest-example/blob/master/test/specs/List.spec.js , https://www.youtube.com/watch?v=pqp0PsPBO_0"},
     { "title": "Internationalize a Vue app using vue-i18n"},
     { "title": "Restrict access to Routes using Vue Route Guards", "meta": "https://router.vuejs.org/en/advanced/navigation-guards.html"},
     { "title": "Use Dynamic Components in Vue" },
@@ -13,7 +13,7 @@
 },
 {
   "title": "Level up Vue.js Apps with TypeScript",
-  "description": "<p>TypeScript is a JavaScript superset that adds static typing to your codebase, allowing to easy-catch bugs in compile time. It also adds an amazing developer experience with it's first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth, and some patterns it allows.</p>",
+  "description": "<p>TypeScript adds an amazing developer experience with first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth, and some patterns it opens.</p>",
   "image": "vue.png",
   "posts": [
     { "title": "Integrate TypeScript in your Vue project" },

@@ -15,7 +15,7 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-custom
                             include algolia
                         each value, key in theme["navbar-links"]
                             li
-                                if value.class
+                                if typeof value.link === 'string'
                                     a(href=url_for(value.link), class=value.class)!= key
                                 else
                                     a(href=url_for(value))!= key

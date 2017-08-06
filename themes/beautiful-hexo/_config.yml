@@ -2,7 +2,7 @@ navbar-links:
     Videos:
       link: https://egghead.io/instructors/alex-jover-morales
     # Series: /series
-    Tags: /tags
+    # Tags: /tags
     Archive: /archives
     About: /about
 

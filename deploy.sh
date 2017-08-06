@@ -1,5 +1,6 @@
 #!/bin/bash
 
+hexo clean
 hexo generate -f
 hexo algolia
 sw-precache --config sw-config.js

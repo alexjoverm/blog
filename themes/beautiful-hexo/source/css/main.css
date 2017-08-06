@@ -889,4 +889,34 @@ code[class*="language-"], pre[class*="language-"] {
   padding: 4px 12px;
 }
 
+/* Serie page */
+.serie-title {
+
+}
+
+.serie-image {
+  text-align: center;
+}
+
+.serie-image img {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media(max-width: 767px) {
+  .serie-image {
+    width: 100%;
+  }
+}
+
+@media(min-width: 768px) {
+  .serie-image {
+    float: right;
+  }
+
+  .serie-title {
+    margin-bottom: 5px;
+  }
+}
+
 
