@@ -117,5 +117,3 @@ And if we run `webpack -p` for production build, that code will be stripped out.
 ## Try it yourself!
 
 [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter) uses tree-shaking! Download the repo, follow the instructions and, be curious and try the code we used at the beginning of this article! Right now it uses RollupJS, but same tree-shaking happens when you run `npm run build`. If you wanna check the Webpack version, check out [this commit](https://github.com/alexjoverm/typescript-library-starter/tree/edd71c19b8d1dcd0b42dc19e0e4ee4b8a7216250) in particular to see how it was.
-
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!

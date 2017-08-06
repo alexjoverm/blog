@@ -4,7 +4,6 @@ description: Typescript 2.1 introduced lookup types. What are they for? In which
 date: 2017-04-11 12:55:23
 tags:
  - TypeScript
-serie: PACO balbjsakj asblkjsa
 ---
 
 Typescript 2.1 introduced lookup types. What are they for? In which cases are they useful?
@@ -77,5 +76,4 @@ If you still don't understand the `spyOn` declaration, basically is saying:
 
 Do you see now the power of lookup types? You can dynamically generate string literal union types! That'll make your type definitions much more accurate ;)
 
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
 

@@ -3,6 +3,7 @@ navbar-links:
       class: new-badge
       link: https://egghead.io/instructors/alex-jover-morales
     # Series: /series
+    Tags: /tags
     Archive: /archives
     About: /about
 

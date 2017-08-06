@@ -1,11 +1,12 @@
 ---
-title: Lazy loading in Vue using Webpack's code splitting
+title: Lazy Loading in Vue using Webpack's Code Splitting
 description: When a Vue app gets large, lazy loading components, routes or Vuex modules using Webpack's code splitting will boost it by loading pieces of code only when needed.
 date: 2017-07-16 01:05:47
 tags:
   - Vue
   - Vuex
   - Webpack
+  - JavaScript
 
 serie: Learn CSS from Aaron Garcia and be awesome!
 ---
@@ -91,7 +92,7 @@ import('./store/login').then(loginModule => {
 
 Lazy loading is made extremely simple with Vue and Webpack. Using what you've just read you can start splitting up your app in chunks from different sides and load them when needed, lightening the initial load of the app.
 
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
+
 
 
 

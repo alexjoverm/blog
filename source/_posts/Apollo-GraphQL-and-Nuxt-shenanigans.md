@@ -5,7 +5,7 @@ date: 2017-03-23 10:46:07
 tags:
  - GraphQL
  - Apollo
- - Vue
+ - VueJS
 ---
 
 What could go wrong by building a hackaton project with [Apollo](http://dev.apollodata.com/), [GraphQL](http://graphql.org), [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/)?
@@ -78,5 +78,3 @@ The bottom line is if you can stick to the conventions, is perfect for you. Othe
 There are some areas that we didn't have time for it, such as integrating a state management tool (Redux or Vuex), so we covered the basics in this experiment.
 
 We found Apollo/GraphQL as a very powerful tool for medium and large apps, it does really well what is made for. Nuxt makes building universal Vue apps be a kid game, but first check if it fits properly with your project. Tools that strongly integrate technologies, such as vue-apollo or Nuxt itself, have their advantages, but first check if they are the best solution for your case. If not, you can always use the "raw" tools.
-
-Any questions? Post them below or reach me in Twitter as [@alexjoverm](https://twitter.com/alexjoverm). Don't hesitate to sharing it!

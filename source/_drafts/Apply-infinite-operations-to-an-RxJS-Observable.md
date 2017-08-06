@@ -3,7 +3,7 @@ title: Apply infinite operations to an RxJS Observable
 description: Learn how easy is to apply a set of operations to a RxJS Observable in JavaScript
 tags:
  - RxJS
- - Javascript
+ - JavaScript
 ---
 
 Learn how easy is to apply a set of operations to a RxJS Observable in JavaScript
@@ -79,6 +79,4 @@ mapped.subscribe(res => console.log("Res: " + res))
 ```
 
 Go to [this jsbin](http://jsbin.com/qucihequdu/edit?js,console) and start playing with it!
-
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
 

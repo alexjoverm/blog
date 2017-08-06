@@ -3,6 +3,7 @@ title: How I made a Progressive Web App out of my Blog
 description: I wanted to learn about PWA (Progressive Web Apps), so I decided to make this blog a PWA
 tags:
   - PWA
+  - JavaScript
 ---
 
 One day I wanted to learn about PWA (Progressive Web App), so I though: What's better than do it with my own blog?
@@ -149,8 +150,5 @@ And best of all, the blog is **fully working offline**, so go try out turning of
 ## Conclusion
 
 It's amazing to learn new stuff, specially such early technologies as Progressive Web Apps, but is even better to learn it by applying it to a real project of yourself!
-
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
-
 
 

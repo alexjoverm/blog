@@ -153,9 +153,6 @@ For that case, a good way to integrate TypeScript is to start with the most flex
 
 TypeScript brings you type safety to your codebase from the very start, but the more types you define, the more easy to detect bugs and errors and to make the code maintainable. Vue from version 2 is shipped with typings, so we can make use of them. They become more powerful when you use OOP (Object Oriented Programming) in Vue, but will see that in another post.
 
-If you like it, please go and share it! You can follow me on this blog or on twitter as [@alexjoverm](https://twitter.com/alexjoverm). Any questions? Shoot!
-
-
 
 
 

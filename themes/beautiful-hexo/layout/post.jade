@@ -40,6 +40,7 @@ block content
                 != posts_in_same_serie(page)
                 article(role="main", class="blog-post")
                     != page.content
+                    != end_post(page)
                 ul.pager.blog-pager
                     if page.prev
                         li.previous
