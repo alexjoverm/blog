@@ -5,14 +5,15 @@
   "posts": [
     { "title": "Lazy Loading in Vue using Webpack's Code Splitting" },
     { "title": "Write Unit Tests with vue-test-utils and Jest in Vue" },
+    { "title": "Internationalize a Vue app using vue-i18n"},
+    { "title": "Restrict access to Routes using Vue Route Guards", "meta": "https://router.vuejs.org/en/advanced/navigation-guards.html"},
     { "title": "Use Dynamic Components in Vue" },
-    { "title": "Create Higher Order Components using Render Functions and JSX in Vue", "meta": "Use render a list based on its type example" },
-    { "title": "Create Higher Order Components using Render Functions and JSX in Vue"}
+    { "title": "Create Higher Order Components using Render Functions and JSX in Vue", "meta": "Use render a list based on its type example" }
   ]
 },
 {
   "title": "Level up Vue.js Apps with TypeScript",
-  "description": "<p>TypeScript is a JavaScript superset that adds static typing to your codebase, allowing to easy-catch bugs in compile time. It also adds an amazing developer experience with it's first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth.</p>",
+  "description": "<p>TypeScript is a JavaScript superset that adds static typing to your codebase, allowing to easy-catch bugs in compile time. It also adds an amazing developer experience with it's first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth, and some patterns it allows.</p>",
   "image": "vue.png",
   "posts": [
     { "title": "Integrate TypeScript in your Vue project" },
