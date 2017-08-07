@@ -1,10 +1,14 @@
 ---
 title: How I made a Progressive Web App out of my Blog
-description: I wanted to learn about PWA (Progressive Web Apps), so I decided to make this blog a PWA
 tags:
   - PWA
   - JavaScript
+description: >-
+  I wanted to learn about PWA (Progressive Web Apps), so I decided to make this
+  blog a PWA
+date: 2017-08-07 12:42:29
 ---
+
 
 One day I wanted to learn about PWA (Progressive Web App), so I though: What's better than do it with my own blog?
 

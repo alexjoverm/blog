@@ -84,5 +84,5 @@ algolia:
   indexName: blog
 
 series:
-  enabled: true
+  enabled: false
   folder: series
