@@ -843,7 +843,7 @@ code[class*="language-"], pre[class*="language-"] {
   color: #404040;
 }
 
-.series .title a:hover {
+.series .title a:hover, .series .title a:focus {
   color: #008AFF;
   text-decoration: none;
 }

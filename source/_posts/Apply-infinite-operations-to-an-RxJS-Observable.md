@@ -1,10 +1,14 @@
 ---
 title: Apply infinite operations to an RxJS Observable
-description: Learn how easy is to apply a set of operations to a RxJS Observable in JavaScript
 tags:
- - RxJS
- - JavaScript
+  - RxJS
+  - JavaScript
+description: >-
+  Learn how easy is to apply a set of operations to a RxJS Observable in
+  JavaScript
+date: 2017-08-07 08:27:38
 ---
+
 
 Learn how easy is to apply a set of operations to a RxJS Observable in JavaScript
 
