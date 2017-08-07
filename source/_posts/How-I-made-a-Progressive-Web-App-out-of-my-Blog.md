@@ -9,7 +9,6 @@ description: >-
 date: 2017-08-07 12:42:29
 ---
 
-
 One day I wanted to learn about PWA (Progressive Web App), so I though: What's better than doing it with my own blog?
 
 <!-- more -->

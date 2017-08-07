@@ -714,9 +714,6 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 .signup-form input, .signup-form button {
-  color: white;
-  border: 0;
-  border-radius: 0;
   font-size: 16px;
   padding: 10px 12px;
   height: auto;
@@ -724,18 +721,8 @@ code[class*="language-"], pre[class*="language-"] {
 
 .signup-form input {
   background: #0179de;
-}
-
-.signup-form button {
-  color: #0084f2;
-  background: white;
-  text-transform: uppercase;
-}
-
-.signup-form button:hover, .signup-form button:focus {
   color: white;
-  background: #005397;
-  outline: 0;
+  border: 0;
 }
 
 .signup-form .form-control::-webkit-input-placeholder {
@@ -890,9 +877,6 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 /* Serie page */
-.serie-title {
-
-}
 
 .serie-image {
   text-align: center;
@@ -918,5 +902,53 @@ code[class*="language-"], pre[class*="language-"] {
     margin-bottom: 5px;
   }
 }
+
+#update-message {
+  padding: 20px;
+  background-color: #008AFF;
+  color: white;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  -webkit-transform: translateX(380px);
+  -ms-transform: translateX(380px);
+  transform: translateX(380px);
+  opacity: 0;
+  -webkit-transition: transform 1s, opacity 1s;
+  -moz-transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s;
+}
+
+#update-message.show {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#update-message button{
+  margin-left: 18px;
+  padding: 10px 12px;
+}
+
+.button-white {
+  max-width: 100%;
+  color: #0084f2;
+  background: white;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: 0;
+  font-size: 16px;
+}
+
+.button-white:hover, .button-white:focus {
+  color: white;
+  background: #005397;
+  outline: 0;
+}
+
+
+
+
 
 
