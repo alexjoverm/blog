@@ -723,6 +723,7 @@ code[class*="language-"], pre[class*="language-"] {
   background: #0179de;
   color: white;
   border: 0;
+  border-radius: 0;
 }
 
 .signup-form .form-control::-webkit-input-placeholder {
@@ -904,6 +905,7 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 #update-message {
+  z-index: 99;
   padding: 20px;
   background-color: #008AFF;
   color: white;
