@@ -1,5 +1,17 @@
 // Dean Attali / Beautiful Jekyll 2016
 
+function isExpired(date) {
+  const duration = 40 * 24 * 60 * 60 * 1000 // 40 days
+
+  return (new Date() - date) > duration
+}
+
+function checkShowFormNeeded() {
+  var date = localStorage.getItem('blog_formDate')
+
+  return !!!date && isExpired(new Date(date))
+}
+
 var main = {
 
   bigImgEl : null,
@@ -14,13 +26,13 @@ var main = {
             $(".navbar").removeClass("top-nav-short");
         }
 
-        console.log($(this).scrollTop())
-        console.log(($('main.post-content').height() / 2))
-
-        if($(this).scrollTop() > ($('main.post-content').height() / 2)){
-          $('#signup-form-modal').addClass('show')
-        } else {
-          $('#signup-form-modal').removeClass('show')
+        if($('main.post-content').length) {
+          if($(this).scrollTop() > ($('main.post-content').height() / 2.5)) {
+            if (checkShowFormNeeded()) {
+              $('#signup-form-modal').addClass('show')
+              localStorage.setItem('blog_formDate', new Date())
+            }
+          }
         }
     }));
 
@@ -73,6 +85,10 @@ var main = {
 
     // show the big header image
     main.initImgs();
+
+    $('#signup-form-modal .form-backdrop, #signup-form-modal .close-button').on('click', function(e) {
+      $('#signup-form-modal').removeClass('show')
+    })
   },
 
   initImgs : function() {

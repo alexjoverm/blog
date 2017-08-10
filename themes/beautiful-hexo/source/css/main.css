@@ -711,7 +711,7 @@ code[class*="language-"], pre[class*="language-"] {
   padding: 0;
   line-height: 0;
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 0;
   width: 25px;
   height: 25px;
@@ -754,14 +754,23 @@ code[class*="language-"], pre[class*="language-"] {
 
 #signup-form-modal {
   position: fixed;
-  top: 15px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.7);
   z-index: -10;
   transition: opacity 1s;
   opacity: 0;
+}
+
+#signup-form-modal .form-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.7);
 }
 
 #signup-form-modal.show {
@@ -777,6 +786,7 @@ code[class*="language-"], pre[class*="language-"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10001;
 }
 
 #signup-form-modal .signup-form .fields {
