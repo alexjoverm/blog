@@ -7,13 +7,22 @@ var main = {
 
   init : function() {
     // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
+    $(window).scroll($.debounce(200, function() {
         if ($(".navbar").offset().top > 50) {
             $(".navbar").addClass("top-nav-short");
         } else {
             $(".navbar").removeClass("top-nav-short");
         }
-    });
+
+        console.log($(this).scrollTop())
+        console.log(($('main.post-content').height() / 2))
+
+        if($(this).scrollTop() > ($('main.post-content').height() / 2)){
+          $('#signup-form-modal').addClass('show')
+        } else {
+          $('#signup-form-modal').removeClass('show')
+        }
+    }));
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {

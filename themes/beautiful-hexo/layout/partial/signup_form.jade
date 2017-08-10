@@ -3,13 +3,14 @@
 form.form.signup-form(action='https://github.us16.list-manage.com/subscribe/post', method='POST')
   input(type='hidden', name='u', value='534e314884644825b957a5eee')
   input(type='hidden', name='id', value='e05e60374d')
+  div.close-button &times;
 
   h4.text-center Get upcoming Guides, Series, EBooks and Courses!
 
-  .col-sm-4
+  .col-sm-4.fields
     input#MERGE0.form-control(type='email', required, placeholder='Your email', autocapitalize='off', autocorrect='off', name='MERGE0')
-  .col-sm-4
+  .col-sm-4.fields
     input#MERGE1.form-control(type='text', name='MERGE1', placeholder='Your name')
-  .col-sm-4
+  .col-sm-4.fields
     button.button-white.btn.btn-block(type='submit') Subscribe
 

@@ -34,7 +34,9 @@ block header
                             +post_meta(page.date, page.tags)
 
 block content
-    .container
+    #signup-form-modal
+        include partial/signup_form
+    main.post-content.container
         .row
             .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
                 != posts_in_same_serie(page)
@@ -49,7 +51,8 @@ block content
                         li.next
                             a(href=url_for(page.next.path), data-toggle="tooltip", data-placement="top", title=page.next.title)= __('next_post')
 
-                include partial/signup_form
+                #signup-form-footer
+                    include partial/signup_form
                 include partial/comment
 
 

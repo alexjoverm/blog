@@ -705,6 +705,19 @@ code[class*="language-"], pre[class*="language-"] {
   overflow: hidden;
 }
 
+.signup-form div.close-button {
+  display: none;
+  font-size: 25px;
+  padding: 0;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
 .signup-form > div {
   padding: 6px;
 }
@@ -739,6 +752,40 @@ code[class*="language-"], pre[class*="language-"] {
   color: #a1cdf3;
 }
 
+#signup-form-modal {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: -10;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+#signup-form-modal.show {
+  z-index: 9999;
+  opacity: 1;
+}
+
+#signup-form-modal .signup-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#signup-form-modal .signup-form .fields {
+  width: 100%;
+}
+
+#signup-form-modal .signup-form .close-button {
+  display: block;
+}
 
 /* Algolia search box */
 .search-box-container {
