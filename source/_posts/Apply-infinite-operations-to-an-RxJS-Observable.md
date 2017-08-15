@@ -6,8 +6,9 @@ tags:
 description: >-
   Learn how easy is to apply a set of operations to a RxJS Observable in
   JavaScript
-date: 2017-08-07 08:27:38
+date: 2017-08-14 08:27:38
 ---
+
 
 
 Learn how easy is to apply a set of operations to a RxJS Observable in JavaScript
@@ -49,7 +50,7 @@ stream.subscribe(res => console.log("Res: " + res))
 
 How's it possible that we added 3 map operations, and we get `Res: 0`? It's like we didn't do anything at all.
 
-Simple, because **observables are immutable**. So, whenever you apply an operator, it's returning a new observable. Avoid side effects is one point of FP (Functional Programming), and RxJS is a FRP (Functional Reactive Programming) library. It's a common pitfall to think that the operators return a mutated version of their same instance.
+Simple: because **observables are immutable**. So, whenever you apply an operator, it's returning a new observable. Avoiding side effects is one point of FP (Functional Programming), and RxJS is a FRP (Functional Reactive Programming) library. It's a common pitfall to think that the operators return a mutated version of their same instance.
 
 ## The solution
 

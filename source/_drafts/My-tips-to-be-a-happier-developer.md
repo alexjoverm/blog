@@ -1,5 +1,5 @@
 ---
-title: Top 4 tips to be a happier developer
+title: My tips to be a happier developer
 description: Learn a few tips to be a happier and better developer and be a better team player
 tags:
  - Human side
