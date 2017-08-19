@@ -922,7 +922,15 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 .post-serie li.current:before {
-  content: "=>"
+  content: " ";
+  position: absolute;
+  left: 0;
+  margin-top: 4px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid #008aff;
 }
 
 .post-serie .serie-badge {

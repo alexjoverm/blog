@@ -45,7 +45,7 @@ function formatSeriesFromFile(file) {
       )
     })
     return serie
-  })
+  }).filter(serie => serie.published !== false)
 }
 
 hexo.extend.generator.register("series", function(locals) {
@@ -102,7 +102,7 @@ hexo.extend.helper.register("posts_in_same_serie", function(currentPost) {
 
     if (hexo.config.series.enabled && currentPost.serie) {
         const serie = formatSeriesFromFile().find(
-        s => s.title === currentPost.serie.title
+          s => s.title === currentPost.serie.title
         )
         const posts = serie.posts
 
@@ -110,7 +110,7 @@ hexo.extend.helper.register("posts_in_same_serie", function(currentPost) {
             <div class="post-serie">
                 <header>
                     <span class="serie-badge">Serie</span>
-                    <a href="${serie.permalink}" alt="${serie.title}">
+                    <a href="/series/${serie.permalink}" alt="${serie.title}">
                         ${serie.title}
                     </a>
                 </header>

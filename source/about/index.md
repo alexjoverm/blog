@@ -11,23 +11,13 @@ Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instru
 
 I'm software craftmanship, architecture, patterns and best practices practicioner. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. TypeScript lover. Interested on the human side of coding.
 
-## Public speaking
-
-- [Open Sourcing and the road ahead](https://docs.google.com/presentation/d/11xNQroYsmKTpLfzQewJWL4NCm1VEETIN9YLFDzgwBkM/edit?usp=sharing), February 2017, Alicante
-- [Functional Reactive Programming in JS](https://goo.gl/6nujMv), January 2017, [AlicanteFrontend](https://www.meetup.com/Alicante-Frontend/events/236821806/)
-- [State of Frontend](https://goo.gl/6nujMv), December 2016, [AlicanteFrontend](https://www.meetup.com/Alicante-Frontend/events/236112157/),
-- [Redux, the right way](https://goo.gl/oBQq5v), December 2016, Alicante (Internal meetup at Coosto)
-- [Angular 2 and Redux workshop](https://goo.gl/chyFAh), November 2016, [DevMeetings Madrid](https://www.meetup.com/DevMeetings-Madrid/events/235570340/)
-- [Angular 2 and Redux workshop](https://goo.gl/chyFAh), October 2016, [DevMeetings Valencia](https://www.meetup.com/DevMeetings-Valencia/events/234262507/)
-- [RxJS 5 workshop](https://goo.gl/X8BSL5), June 2016, Eindhoven (Internal meetup at Coosto)
-- [Angular by practise: building DBCityFinder](https://goo.gl/m2ts24), December 2015, [Alicante Tech](https://www.meetup.com/AlicanteTech/events/225370473/), [Tutorial](https://github.com/alexjoverm/MeetUp_DBCityFinder)
-
 ## Open source
 
-I run some open source projects:
+I run some open source projects, with hundreds of Github Stars and more than 20K monthly downloads:
 
 - [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): Starter kit with zero-config for building a library in typescript, featuring RollupJS, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
-- [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager written in TypeScript, made for humans
+- [tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier): Use tslint with prettier without any conflict
+- [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager written in TypeScript, made for humans. First Open Source project made in [Coosto](https://github.com/coosto)
 
 I'm part of some [Github organizations](https://github.com/alexjoverm) and contribute in other projects. Some of my PR landed on repos such as:
 
@@ -40,6 +30,17 @@ I'm part of some [Github organizations](https://github.com/alexjoverm) and contr
  - [KeyboardJS](https://github.com/RobertWHurst/KeyboardJS)
  - [all-contributors-cli](https://github.com/jfmengels/all-contributors-cli)
  - [@ngrx/store logger](https://github.com/btroncone/ngrx-store-logger)...
+
+## Public speaking
+
+- [Open Sourcing and the road ahead](https://docs.google.com/presentation/d/11xNQroYsmKTpLfzQewJWL4NCm1VEETIN9YLFDzgwBkM/edit?usp=sharing), February 2017, Alicante
+- [Functional Reactive Programming in JS](https://goo.gl/6nujMv), January 2017, [AlicanteFrontend](https://www.meetup.com/Alicante-Frontend/events/236821806/)
+- [State of Frontend](https://goo.gl/6nujMv), December 2016, [AlicanteFrontend](https://www.meetup.com/Alicante-Frontend/events/236112157/),
+- [Redux, the right way](https://goo.gl/oBQq5v), December 2016, Alicante (Internal meetup at Coosto)
+- [Angular 2 and Redux workshop](https://goo.gl/chyFAh), November 2016, [DevMeetings Madrid](https://www.meetup.com/DevMeetings-Madrid/events/235570340/)
+- [Angular 2 and Redux workshop](https://goo.gl/chyFAh), October 2016, [DevMeetings Valencia](https://www.meetup.com/DevMeetings-Valencia/events/234262507/)
+- [RxJS 5 workshop](https://goo.gl/X8BSL5), June 2016, Eindhoven (Internal meetup at Coosto)
+- [Angular by practise: building DBCityFinder](https://goo.gl/m2ts24), December 2015, [Alicante Tech](https://www.meetup.com/AlicanteTech/events/225370473/), [Tutorial](https://github.com/alexjoverm/MeetUp_DBCityFinder)
 
 ## Interests
 

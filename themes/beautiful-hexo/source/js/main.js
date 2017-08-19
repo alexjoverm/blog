@@ -20,12 +20,6 @@ var main = {
   init : function() {
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll($.debounce(200, function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-        }
-
         if($('main.post-content').length) {
           if($(this).scrollTop() > ($('main.post-content').height() / 2.5)) {
             if (checkShowFormNeeded()) {
