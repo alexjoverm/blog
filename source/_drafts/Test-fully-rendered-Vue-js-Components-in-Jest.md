@@ -11,7 +11,7 @@ Let's see how to use vue-test-utils to test a fully rendered component tree.
 
 <!-- more -->
 
-In {% post_link Write-the-first-Vue.js-Component-Unit-Test-in-Jest Write the first Vue.js Component Unit Test in Jest %} we've seen how to use Shallow Rendering to test a component in isolation, preventing the components sub-tree from rendering.
+In {% post_link Write-the-first-Vue.js-Component-Unit-Test-in-Jest "Write the first Vue.js Component Unit Test in Jest" %} we've seen how to use Shallow Rendering to test a component in isolation, preventing the components sub-tree from rendering.
 
 But in some cases, we could want to test components that behave as a group, or [molecules](http://atomicdesign.bradfrost.com/chapter-2/#molecules) as stated in Atomic Design. Keep in mind that this apply to [Presentational Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), since they're unaware of app state and logic. In most case, you'd want to use Shallow Rendering for Container components.
 
@@ -83,6 +83,8 @@ describe('MessageList.test.js', () => {
   })
 })
 ```
+
+ > Btw, have you realized about the `beforeEach` thing? That's a very clean way to create a clean component before each test, which is very important in unit testing, since it defines that test shouldn't depend on each other.
 
 Both `mount` and `shallow` use exactly the same API, the difference is in the rendering. I'll show you progressively the API along in this series.
 

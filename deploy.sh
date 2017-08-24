@@ -2,7 +2,7 @@
 
 hexo clean
 hexo generate -f
-if [[ $# -eq 1 ] &&  $1 == "algolia" ]; then
+if [[ $# -eq 1 && $1 == "algolia" ]]; then
   hexo algolia
 fi
 sw-precache --config sw-config.js

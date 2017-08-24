@@ -4,8 +4,12 @@ tags:
   - VueJS
   - JavaScript
   - Testing
-description: Learn how to write unit tests for VueJS components with the official tools and the Jest framework.
+description: >-
+  Learn how to write unit tests for VueJS components with the official tools and
+  the Jest framework.
+date: 2017-08-21 08:25:40
 ---
+
 
 Learn how to write unit tests with the official VueJS tools and the Jest framework.
 
@@ -44,7 +48,7 @@ npm i -D jest jest-vue-preprocessor babel-jest
 
 [`jest-vue-preprocessor`](https://github.com/vire/jest-vue-preprocessor) is needed for making jest understand `.vue` files, and [`babel-jest`](https://github.com/babel/babel-jest) for the integration with Babel.
 
-As per `vue-test-utils`, it hasn't been released yet, but for now you can add it to your `package.json` from the source:
+As per `vue-test-utils`, it **hasn't been released yet**, but for now you can add it to your `package.json` from the source:
 
 ```json
 "devDependencies": {

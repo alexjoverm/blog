@@ -2,11 +2,11 @@ extends partial/base
 
 block head_metadata
   title= page.title + " | " + config.author
-  meta(name="description", content=page.description)
+  meta(name="description", content=strip_html(page.description))
   meta(name="twitter:title", content=page.title)
-  meta(title="twitter:description", content=page.description)
+  meta(title="twitter:description", content=strip_html(page.description))
   meta(name="og:title", content=page.name)
-  meta(name="og:description", content=page.description)
+  meta(name="og:description", content=strip_html(page.description))
 
 block twitter_card
   meta(name="twitter:card", content="summary_large_image")

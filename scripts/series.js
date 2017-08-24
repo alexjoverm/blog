@@ -104,30 +104,33 @@ hexo.extend.helper.register("posts_in_same_serie", function(currentPost) {
         const serie = formatSeriesFromFile().find(
           s => s.title === currentPost.serie.title
         )
-        const posts = serie.posts
 
-        result = `
-            <div class="post-serie">
-                <header>
-                    <span class="serie-badge">Serie</span>
-                    <a href="/series/${serie.permalink}" alt="${serie.title}">
-                        ${serie.title}
-                    </a>
-                </header>
+        if (serie) {
+          const posts = serie.posts
 
-                <ol class="post-list">
-                    ${posts.map(post => `
-                        <li ${isSamePost(post, currentPost) && 'class="current"'}>
-                            ${post.permalink && !isSamePost(post, currentPost) ? `
-                                <a href="${isDevMode() ? '/' + post.path : post.permalink}" alt="${post.title}">
-                                    ${post.title}
-                                </a>
-                            `: post.title}
-                        </li>`
-                    ).join('')}
-                </ol>
-            </div>
-        `
+          result = `
+              <div class="post-serie">
+                  <header>
+                      <span class="serie-badge">Serie</span>
+                      <a href="/series/${serie.permalink}" alt="${serie.title}">
+                          ${serie.title}
+                      </a>
+                  </header>
+
+                  <ol class="post-list">
+                      ${posts.map(post => `
+                          <li ${isSamePost(post, currentPost) && 'class="current"'}>
+                              ${post.permalink && !isSamePost(post, currentPost) ? `
+                                  <a href="${isDevMode() ? '/' + post.path : post.permalink}" alt="${post.title}">
+                                      ${post.title}
+                                  </a>
+                              `: post.title}
+                          </li>`
+                      ).join('')}
+                  </ol>
+              </div>
+          `
+        }
     }
 
     return result
