@@ -9,17 +9,18 @@ tags:
 description: Learn about testing the State, Computed Properties and Methods, the core logic of Vue.js components.
 ---
 
-Learn about testing Properties, Computed Properties and Methods, the core logic of Vue.js components.
+Learn about testing State, Computed Properties and Methods, the core logic of Vue.js components.
 
 <!-- more -->
 
-Testing Web Components, thus Vue components, it's a lot about testing the interaction. Components have in and outs, also known as properties and custom events. These describe how the components communicate with each other.
+There is not much to test in the state, since is just data at a given time. So we'll test its value along the way while making tests.
 
+## Computed Properties
 
-## State
+Example of passing a property, changing it with `setProp` and test it
 
 ## Methods
 
-### Mocking Dependencies with Jest
+Example of form component, with a copy on the internal state
 
-## Computed Properties
+### Mocking Dependencies with Jest

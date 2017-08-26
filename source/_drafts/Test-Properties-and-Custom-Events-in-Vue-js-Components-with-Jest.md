@@ -4,10 +4,10 @@ tags:
   - VueJS
   - JavaScript
   - Testing
-description: Properties and Custom Events are the communication wires of Vue.js Component.
+description: Learn different ways to test properties, events and custom events
 ---
 
-
+There are different ways to test properties, events and custom events.
 
 <!-- more -->
 
@@ -90,7 +90,8 @@ Properties can have validation rules, ensuring that a property is required or it
 props: {
   message: {
     type: String,
-    required: true
+    required: true,
+    validator: message => message.length > 1
   }
 }
 ```
@@ -103,9 +104,7 @@ class Message {}
 props: {
   message: {
     type: Message, // It's compared using instance of
-    required: true,
-    validator(message) {
-      return message.someProp > 1
+    ...
     }
   }
 }
@@ -118,21 +117,7 @@ Whenever a validation rule is not fulfilled, Vue shows a console.error. For exam
 (found in <Root>)
 ```
 
-By the date of writing, vue-test-utils doesn't have any utility to test this. But we can access the `vm.$option` ourselves. In there we'll found the expanded proper:
-
-```javascript
-it('message is of type string', () => {
-  let spy = jest.spyOn(console, 'error')
-  cmp = createCmp({ message: 1 })
-  expect(spy).toBeCalled()
-
-  spy.mockReset() // or mockRestore() to completely remove the mock
-})
-```
-
-Be aware to call `spy.mockReset()` at the end of the test, so following tests don't share the state of the spy.
-
-We could be more specific in the tests, so we can ensure that it's a Vue property error:
+By the date of writing, vue-test-utils doesn't have any utility to test this. We could use `jest.spyOn` to test it:
 
 ```javascript
 it('message is of type string', () => {
@@ -140,13 +125,35 @@ it('message is of type string', () => {
   cmp = createCmp({ message: 1 })
   expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Invalid prop'))
 
-  spy.mockReset()
+  spy.mockReset() // or mockRestore() to completely remove the mock
 })
 ```
 
-With `expect.stringContaining` we can pass a substring to match against. This way we're ensuring it's a `[Vue warn]: Invalid prop` error.
+Here we're spying on the console.error function, and checking that it shows a message containing a specific string. This is not an ideal way to check it, since we're spying on global objects and relying on side effects.
 
-Let's test as well that the property is required, and that it passes validity when everything is correct. Also, we could refactor de spy creation/reset on the `afterEach` hook, wrapping it into another nested `describe`. The whole test suite is:
+Fortunately, there is an easier way to do it, which is by checking `vm.$options`. Here's where Vue stores the component options "expanded". With expanded I mean: you can define your properties in a different ways:
+
+```javascript
+props: ['message']
+
+// or
+
+props: {
+  message: String
+}
+
+// or
+
+props: {
+  message: {
+    type: String
+  }
+}
+```
+
+But they all will end up in the most expanded object form (like the last one). So if we check the `cmp.vm.$option.props.message`, for the first case, they all will be in the `{ type: X }` format (although for the first example it will be `{ type: null}`)
+
+With this in mind, we could write a test suite to test that asserts that the `message` property has the expected validation rules:
 
 ```javascript
 describe('Message.test.js', () => {
@@ -154,26 +161,21 @@ describe('Message.test.js', () => {
   describe('Properties', () => {
     ...
     describe('Validation', () => {
-      let spy = jest.spyOn(console, 'error')
-
-      afterEach(() => spy.mockReset())
+      const message = createCmp().vm.$options.props.message
 
       it('message is of type string', () => {
-        cmp = createCmp({ message: 1 })
-        expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Invalid prop'))
+        expect(message.type).toBe(String)
       })
 
       it('message is required', () => {
-        cmp = createCmp()
-        expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Missing required prop'))
+        expect(message.required).toBeTruthy()
       })
 
-      it('message is OK when called with expected props', () => {
-        cmp = createCmp({ message: 'hey' })
-        expect(spy).not.toBeCalled()
+      it('message has at least length 2', () => {
+        expect(message.validator && message.validator('a')).toBeFalsy()
+        expect(message.validator && message.validator('aa')).toBeTruthy()
       })
     })
-  ...
 ```
 
 ## Custom Events
