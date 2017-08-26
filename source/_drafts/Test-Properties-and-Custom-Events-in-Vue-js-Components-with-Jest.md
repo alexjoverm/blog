@@ -17,6 +17,165 @@ In Unit Testing, testing the in and outs (properties and custom events) means to
 
 ## Properties
 
+When we are testing component properties, we can test how the component behave when we pass them certain properties. But before going on, an important note:
+
+> To pass properties to components, use `propsData`, and not `props`. The last one is to define properties, not to pass them data.
+
+First create a `Message.test.js` file and add the following code:
+
+```javascript
+describe('Message.test.js', () => {
+  let cmp
+
+  describe('Properties', () => {
+    // @TODO
+  })
+})
+```
+
+We group test cases within a `describe` expression, and they can be nested. So we can use this strategy to group the tests for properties and events separately.
+
+Then we'll create a helper factory function to create a message component, give some properties
+
+```javascript
+const createCmp = propsData => mount(Message, { propsData })
+```
+
+### Testing property existence
+
+Two obvious things we can test is that a property exists, or it doesn't. Remember that the `Message.vue` component has a `message` property, so let's assert that it receives correctly that property. vue-test-utils comes with a `hasProp(prop, value)` function, which is very handy for this case:
+
+```javascript
+it('has a message property', () => {
+  cmp = createCmp({ message: 'hey' })
+  expect(cmp.hasProp('message', 'hey')).toBeTruthy()
+})
+```
+
+The properties behave in a way that they will be received only if they're declared in the component. Meaning that if we pass a **property that is not defined, it won't be received**. So to check for the no existence of a property, the same test as above with another property should return `false`:
+
+```javascript
+it('has no cat property', () => {
+  cmp = createCmp({ cat: 'hey' })
+  expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+})
+```
+
+We can test the **default value** as well. Go to `Message.vue` and change the props as follows:
+
+```javascript
+props: {
+  message: String,
+  author: {
+    type: String,
+    default: 'Paco'
+  }
+},
+```
+
+Then the test could be:
+
+```javascript
+it('Paco is the default author', () => {
+  cmp = createCmp({ message: 'hey' })
+  expect(cmp.hasProp('author', 'Paco')).toBeTruthy()
+})
+```
+
+### Asserting properties validation
+
+Properties can have validation rules, ensuring that a property is required or it is of a determined type. Let's write the `message` property as follows:
+
+```javascript
+props: {
+  message: {
+    type: String,
+    required: true
+  }
+}
+```
+
+Going further, you could use custom constructors types or custom validation rules, as you can see in [the docs](https://vuejs.org/v2/guide/components.html#Prop-Validation). Don't do this right now, I'm just showing it as an example:
+
+```javascript
+class Message {}
+...
+props: {
+  message: {
+    type: Message, // It's compared using instance of
+    required: true,
+    validator(message) {
+      return message.someProp > 1
+    }
+  }
+}
+```
+
+Whenever a validation rule is not fulfilled, Vue shows a console.error. For example, for `createCmp({ message: 1 })`, the next error will be shown:
+
+```
+[Vue warn]: Invalid prop: type check failed for prop "message". Expected String, got Number.
+(found in <Root>)
+```
+
+By the date of writing, vue-test-utils doesn't have any utility to test this. But we can access the `vm.$option` ourselves. In there we'll found the expanded proper:
+
+```javascript
+it('message is of type string', () => {
+  let spy = jest.spyOn(console, 'error')
+  cmp = createCmp({ message: 1 })
+  expect(spy).toBeCalled()
+
+  spy.mockReset() // or mockRestore() to completely remove the mock
+})
+```
+
+Be aware to call `spy.mockReset()` at the end of the test, so following tests don't share the state of the spy.
+
+We could be more specific in the tests, so we can ensure that it's a Vue property error:
+
+```javascript
+it('message is of type string', () => {
+  let spy = jest.spyOn(console, 'error')
+  cmp = createCmp({ message: 1 })
+  expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Invalid prop'))
+
+  spy.mockReset()
+})
+```
+
+With `expect.stringContaining` we can pass a substring to match against. This way we're ensuring it's a `[Vue warn]: Invalid prop` error.
+
+Let's test as well that the property is required, and that it passes validity when everything is correct. Also, we could refactor de spy creation/reset on the `afterEach` hook, wrapping it into another nested `describe`. The whole test suite is:
+
+```javascript
+describe('Message.test.js', () => {
+  ...
+  describe('Properties', () => {
+    ...
+    describe('Validation', () => {
+      let spy = jest.spyOn(console, 'error')
+
+      afterEach(() => spy.mockReset())
+
+      it('message is of type string', () => {
+        cmp = createCmp({ message: 1 })
+        expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Invalid prop'))
+      })
+
+      it('message is required', () => {
+        cmp = createCmp()
+        expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Missing required prop'))
+      })
+
+      it('message is OK when called with expected props', () => {
+        cmp = createCmp({ message: 'hey' })
+        expect(spy).not.toBeCalled()
+      })
+    })
+  ...
+```
+
 ## Custom Events
 
 We can test at least two things in Custom Events:
@@ -85,25 +244,20 @@ export default {
 </script>
 ```
 
-Now it's time to write a unit test. Create a `test/Message.spec.js` file and prepare the barebones of the test case _"Assert that `Message` components triggers a `message-clicked` when a message gets clicked"_ that we mentioned before:
+Now it's time to write a unit test. Create a nested describe within the `test/Message.spec.js` file and prepare the barebones of the test case _"Assert that `Message` components triggers a `message-clicked` when a message gets clicked"_ that we mentioned before:
 
 ```javascript
-import { mount } from 'vue-test-utils'
-import Message from '../src/components/Message'
-
+...
 describe('Message.test.js', () => {
-  let cmp
-
-  beforeEach(() => {
-    cmp = mount(Message, {
-      propsData: {
-        message: 'Cat'
-      }
+  ...
+  describe('Events', () => {
+    beforeEach(() => {
+      cmp = createCmp({ message: 'Cat' })
     })
-  })
 
-  it('calls handleClick when click on message', () => {
-    // @TODO
+    it('calls handleClick when click on message', () => {
+      // @TODO
+    })
   })
 })
 ```
