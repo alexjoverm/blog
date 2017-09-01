@@ -7,9 +7,9 @@
       { "title": "Write the first Vue.js Component Unit Test in Jest" },
       { "title": "Test Deeply Rendered Vue.js Components in Jest" },
       { "title": "Test Styles and Structure of Vue.js Components in Jest", "meta": "https://github.com/vuejs/vue-test-utils/blob/master/types/index.d.ts"},
-      { "title": "Test State, Computed Properties and Methods in Vue.js Components with Jest" },
       { "title": "Test Properties and Custom Events in Vue.js Components with Jest" },
-      { "title": "Test Life Cycle Hooks in Vue.js Components with Jest" },
+      { "title": "Test Computed Properties and Watchers in Vue.js Components with Jest" },
+      { "title": "Test Methods and Mock Dependencies in Vue.js with Jest" },
       { "title": "Test Vue.js Slots in Jest" },
       { "title": "Enhance Jest configuration with Module Aliases" }
     ]

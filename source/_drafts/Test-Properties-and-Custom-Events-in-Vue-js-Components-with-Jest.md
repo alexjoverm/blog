@@ -342,8 +342,6 @@ it('Calls handleMessageClick when @message-click happens', () => {
 
 I'll leave up to you to test what `handleMessageClicked` does ;).
 
->Note that if inside `handleMessageClicked` any side effects are performed, such a call to an external `http.get` or whatever, they must be mocked as explained in {% post_link Test-State-Computed-Properties-and-Methods-in-Vue-js-Components-with-Jest "Test State, Computed Properties and Methods in Vue.js Components with Jest" %}
-
 ## Wrapping up
 
 Here we've seen several cases to test properties and events. `vue-test-utils`, the official Vue testing tools, makes this much easier indeed.

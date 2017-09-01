@@ -5,7 +5,9 @@ tags:
   - JavaScript
   - Testing
 description: Let's see how to use vue-test-utils to test a fully rendered component tree.
+date: 2017-08-28 11:00:50
 ---
+
 
 Let's see how to use vue-test-utils to test a fully rendered component tree.
 
@@ -123,4 +125,4 @@ export default {
 
 Then if you run the tests again with `npm t`, you'll see the `"CREATED!"` text in the terminal output. So, be cautious.
 
-Remember you can find the [full example on Github](https://github.com/alexjoverm/vue-testing-series/tree/https://github.com/alexjoverm/vue-testing-series/tree/Test-fully-rendered-Vue-js-Components-in-Jest).
+You can find the [full example on Github](https://github.com/alexjoverm/vue-testing-series/tree/https://github.com/alexjoverm/vue-testing-series/tree/Test-fully-rendered-Vue-js-Components-in-Jest).
