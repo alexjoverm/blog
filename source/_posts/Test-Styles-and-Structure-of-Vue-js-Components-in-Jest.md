@@ -4,8 +4,12 @@ tags:
   - VueJS
   - JavaScript
   - Testing
-description: vue-test-utils provide us with a set of utilities to assert on Vue.js components.
+description: >-
+  vue-test-utils provide us with a set of utilities to assert on Vue.js
+  components.
+date: 2017-09-04 08:36:01
 ---
+
 
 [vue-test-utils](https://github.com/vuejs/vue-test-utils) provide us with a set of utilities to assert on Vue.js components.
 

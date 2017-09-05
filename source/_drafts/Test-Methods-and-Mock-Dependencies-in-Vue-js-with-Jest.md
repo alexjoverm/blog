@@ -4,10 +4,10 @@ tags:
   - VueJS
   - JavaScript
   - Testing
-description: Methods can become cumbersome when they use module dependencies. Learn in this article how to cope with that.
+description: Learn how to test methods and cope with mocking module dependencies.
 ---
 
-Methods can become cumbersome when they use module dependencies. Learn in this article how to cope with that.
+Learn how to test methods and cope with mocking module dependencies.
 
 <!-- more -->
 
