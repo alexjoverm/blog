@@ -169,7 +169,7 @@ it('Messages are inserted in a ul.list-messages element', () => {
 })
 ```
 
-And that should be ok to go. The slots option has the following  also accept a component declaration, and even an array, so we could write:
+And that should be ok to go. The slots option has the following also accept a component declaration, and even an array, so we could write:
 
 ```javascript
 import AnyComponent from 'anycomponent'
@@ -181,19 +181,130 @@ mount(MessageList, {
 })
 ```
 
+The problem with that is that is very limited, you cannot override props for example, and we need that for the `Message` component since it has a required property. This should affect on the cases that you really need to test slots with the expected components. For example, if you wanna make sure that `MessageList` expects only `Message` components as slots. That's [on track and at some point it will land in vue-test-utils](https://github.com/vuejs/vue-test-utils/issues/41#issue-255235880).
+
+As a workaround, we can accomplish that by using a [render function](https://vuejs.org/v2/guide/render-function.html). So we can rewrite the test to be more specific:
+
+```javascript
+beforeEach(() => {
+  const messageWrapper = {
+    render(h) {
+      return h(Message, { props: { message: 'hey' }  })
+    }
+  }
+
+  cmp = mount(MessageList, {
+    slots: {
+      default: messageWrapper
+    }
+  })
+})
+
+it('Messages are inserted in a ul.list-messages element', () => {
+  const list = cmp.find('ul.list-messages')
+  expect(list.find(Message).isVueInstance()).toBe(true)
+})
+```
+
 ## Testing Named Slots
 
-## Testing Slots Functionality
+The unnamed slot we used above is called the _default slot_, but we can have multiple slots by using named exports. Let's add a header to the `MessageList.vue` component:
 
+```html
+<template>
+  <div>
+    <header class="list-header">
+      <slot name="header">
+        This is a default header
+      </slot>
+    </header>
+    <ul class="list-messages">
+        <slot/>
+    </ul>
+  </div>
+</template>
+```
 
+By using `<slot name="header">` we're defining another slot for the header. You can see a `This is a default header` text inside the slot, that's displayed as the default content when a slot is not passed to the component, and that's applicable to the default slot.
 
-   -----  Tests: we're passing instances of Message  -----
+Then, from `App.vue` we can use add a header to the `MessageList` component by using the `slot="header"` attribute:
 
-So, what can we test with it? Well... that's totally up to you. You could test anything related to the VNode or the Vue component instance, such as testing slots properties, making sure they handle whatever event...
+```html
+<template>
+  <div id="app">
+    <MessageList>
+      <header slot="header">
+        Awesome header
+      </header>
+      <Message
+          @message-clicked="handleMessageClick"
+          :message="message"
+          v-for="message in messages"
+          :key="message"/>
+    </MessageList>
+  </div>
+</template>
+```
 
+It's time to write a unit test for it. Testing named slots is just as testing a default slot, the same dynamics apply. So, we can start by testing that the header slot is rended within the `<header class="list-header">` element, and it renders a default text when no header slot is passed by. In `MessageList.test.js`:
+
+```javascript
+it('Header slot renders a default header text', () => {
+  const header = cmp.find('.list-header')
+  expect(header.text().trim()).toBe('This is a default header')
+})
+```
+
+Then, the same but checking the default content gets replaced when we mock the header slot:
+
+```javascript
+it('Header slot is rendered withing .list-header', () => {
+  const component = mount(MessageList, {
+    slots: {
+      header: '<div>What an awesome header</div>'
+    }
+  })
+
+  const header = component.find('.list-header')
+  expect(header.text().trim()).toBe('What an awesome header')
+})
+```
+
+See that the header slot used in this last test is wrapped in a `<div>`. It's important the slots are wrapped in an html tag, otherwise vue-test-utils will complain.
+
+## Testing Slot Components Functionality
+
+We've test how and where the slots render, and probably that's what we mostly need. However, it doesn't end there. If you pass component instances as slots, just as we're doing in the default slot with Message, you can test functionality related to it.
+
+Be careful on what you test here, this is probably something you don't need to do in most cases, since the functional tests of a component should belong to that component test. When talking about testing slots functionality, we test how a slot must behave **in the context of the component where that slot is used**, and that's something is not very common. Normally we just pass the slot and forget about it. So don't get too stick to the following example, it's just to show you the tool, then you must use it if you need it.
+
+Let's say that, for whatever reason, in the context of the `MessageList` component, all the `Message` components must have a length higher than 5. We can test that like:
+
+```javascript
+it('Message length is higher than 5', () => {
+  const messages = cmp.findAll(Message)
+  messages.wrappers.forEach(c => {
+    expect(c.vm.message.length).toBeGreaterThan(5)
+  })
+})
+```
+
+`findAll` returns an object containing an array of `wrappers` where we can access its `vm` component instance property. This test will fail because the message has a length of 3, so go to the `beforeEach` function and make it longer:
+
+```javascript
+beforeEach(() => {
+  const messageWrapper = {
+    render(h) {
+      return h(Message, { props: { message: 'hey yo' }  })
+    }
+  }
+...
+```
+
+Then it should pass.
 
 ## Conclusion
 
-When testing slots, only test what makes sense to test of that slot in that context. Don't test things related to the component used as the slot, because those test will belong to that component test. You won't need to test slot functionality very ofter probably, so don't get too stick to the examples used here, they're just to show the tools to be able to do the work.
+Testing slots is very simple, normally we'd like to test that they're placed and rendered as we want, so is just like testing style and structure knowing how slots behave or can be mocked. You won't need to test slot functionality very ofter probably. Keep in mind to test things only related to slots when you want to test slots, and think twice if what you're testing belongs to the slot test or the component test itself.
 
 You can find the code of this article [in this repo](https://github.com/alexjoverm/vue-testing-series/tree/test-slots).
