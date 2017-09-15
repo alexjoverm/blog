@@ -5,7 +5,9 @@ tags:
   - JavaScript
   - Testing
 description: Learn different ways to test properties, events and custom events
+date: 2017-09-11 09:30:31
 ---
+
 
 There are different ways to test properties, events and custom events.
 

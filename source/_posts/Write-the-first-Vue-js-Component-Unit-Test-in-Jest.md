@@ -209,8 +209,6 @@ Luckily, **Shallow Rendering** solves this nicely.
  - Testing only the component you want to test (that's what Unit Test stands for)
  - Avoid side effects that children components can have, such as making HTTP calls, calling store actions...
 
-For more info, [this article](http://engineering-blog.alphasights.com/testing-react-components-with-shallow-rendering/) explains it quite well.
-
 ## Testing a Component with vue-test-utils
 
 `vue-test-utils` provide us with Shallow Rendering among other features. We could rewrite the previous test as follows:

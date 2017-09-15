@@ -11,7 +11,7 @@ Learn how to test content distributed using slots and named slots.
 
 <!-- more -->
 
-Slots are the way the way to make content distribution happen in the web components world. Vue.js slots are made following the [Web Component specs](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md), meaning if you learn how to use them in Vue.js, that will be useful in the future ;).
+Slots are the way to make content distribution happen in the web components world. Vue.js slots are made following the [Web Component specs](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md), meaning that if you learn how to use them in Vue.js, that will be useful in the future ;).
 
 They make components structure to be much more flexible, moving the responsibility of managing the state to the parent component. For example, we can have a `List` component, and different kind of item components, such `ListItem` and `ListItemImage`. They'll be used like:
 
@@ -25,13 +25,13 @@ They make components structure to be much more flexible, moving the responsibili
 </template>
 ```
 
-The inner content of `List` is the slot itself, and its accessible via `<slot/>` tag. So the `List implementation looks like:
+The inner content of `List` is the slot itself, and its accessible via `<slot>` tag. So the `List` implementation looks like:
 
 ```html
 <template>
   <ul>
     <!-- slot here will equal to what's inside <List> -->
-    <slot/>
+    <slot></slot>
   </ul>
 </template>
 ```
@@ -114,13 +114,13 @@ Then, in `MessageList.vue`, we can remove the references to `Message`, looking l
 ```html
 <template>
     <ul class="list-messages">
-        <slot/>
+        <slot></slot>
     </ul>
 </template>
 
 <script>
 export default {
-  name: 'MessageList',
+  name: 'MessageList'
 }
 </script>
 ```
@@ -140,15 +140,13 @@ const children = this.$slots.default
   .filter(cmp => !!cmp)
 ```
 
-Let's see how to use them by practise in the following tests.
-
-## Testing slots
+## Testing Slots
 
 Probably what we want to test the most out of slots is where they end up in the component, and for that we can reuse the skills got in the article _{% post_link Test-Styles-and-Structure-in-Vue-js-and-Jest "Test Styles and Structure in Vue js and Jest" %}_.
 
 Right now, most of the tests in `MessageList.test.js` will fail, so let's remove them all (or comment them out), and focus on slot testing.
 
-One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallow` methods. So let's create a `beforeMethod` with the following code:
+One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallow` methods. So let's create a [`beforeEach` method](https://facebook.github.io/jest/docs/en/api.html#beforeeachfn) with the following code:
 
 ```javascript
 beforeEach(() => {
@@ -160,7 +158,7 @@ beforeEach(() => {
 })
 ```
 
-Since we just wanna test where the messages end up, it's ok to use `<div class="fake-msg"></div>`, in fact it doesn't matter at all. So then we can test it:
+Since we just want to test if the messages are rendered, we can search for `<div class="fake-msg"></div>` as follows:
 
 ```javascript
 it('Messages are inserted in a ul.list-messages element', () => {
@@ -169,7 +167,7 @@ it('Messages are inserted in a ul.list-messages element', () => {
 })
 ```
 
-And that should be ok to go. The slots option has the following also accept a component declaration, and even an array, so we could write:
+And that should be ok to go. The slots option also accepts a component declaration, and even an array, so we could write:
 
 ```javascript
 import AnyComponent from 'anycomponent'
@@ -181,7 +179,7 @@ mount(MessageList, {
 })
 ```
 
-The problem with that is that is very limited, you cannot override props for example, and we need that for the `Message` component since it has a required property. This should affect on the cases that you really need to test slots with the expected components. For example, if you wanna make sure that `MessageList` expects only `Message` components as slots. That's [on track and at some point it will land in vue-test-utils](https://github.com/vuejs/vue-test-utils/issues/41#issue-255235880).
+The problem with that is that is very limited, you cannot override props for example, and we need that for the `Message` component since it has a required property. This should affect the cases that you really need to test slots with the expected components. For example, if you wanna make sure that `MessageList` expects only `Message` components as slots. That's [on track and at some point it will land in vue-test-utils](https://github.com/vuejs/vue-test-utils/issues/41#issue-255235880).
 
 As a workaround, we can accomplish that by using a [render function](https://vuejs.org/v2/guide/render-function.html). So we can rewrite the test to be more specific:
 
@@ -219,7 +217,7 @@ The unnamed slot we used above is called the _default slot_, but we can have mul
       </slot>
     </header>
     <ul class="list-messages">
-        <slot/>
+        <slot></slot>
     </ul>
   </div>
 </template>
@@ -246,7 +244,7 @@ Then, from `App.vue` we can use add a header to the `MessageList` component by u
 </template>
 ```
 
-It's time to write a unit test for it. Testing named slots is just as testing a default slot, the same dynamics apply. So, we can start by testing that the header slot is rended within the `<header class="list-header">` element, and it renders a default text when no header slot is passed by. In `MessageList.test.js`:
+It's time to write a unit test for it. Testing named slots is just as testing a default slot, the same dynamics apply. So, we can start by testing that the header slot is rendered within the `<header class="list-header">` element, and it renders a default text when no header slot is passed by. In `MessageList.test.js`:
 
 ```javascript
 it('Header slot renders a default header text', () => {
@@ -272,11 +270,11 @@ it('Header slot is rendered withing .list-header', () => {
 
 See that the header slot used in this last test is wrapped in a `<div>`. It's important the slots are wrapped in an html tag, otherwise vue-test-utils will complain.
 
-## Testing Slot Components Functionality
+## Testing Contextual Slot Specs
 
 We've test how and where the slots render, and probably that's what we mostly need. However, it doesn't end there. If you pass component instances as slots, just as we're doing in the default slot with Message, you can test functionality related to it.
 
-Be careful on what you test here, this is probably something you don't need to do in most cases, since the functional tests of a component should belong to that component test. When talking about testing slots functionality, we test how a slot must behave **in the context of the component where that slot is used**, and that's something is not very common. Normally we just pass the slot and forget about it. So don't get too stick to the following example, it's just to show you the tool, then you must use it if you need it.
+Be careful on what you test here, this is probably something you don't need to do in most cases, since the functional tests of a component should belong to that component test. When talking about testing slots functionality, we test how a slot must behave **in the context of the component where that slot is used**, and that's something is not very common. Normally we just pass the slot and forget about it. So don't get too stick to the following example, It's only purpose is to demonstrate how the tool works.
 
 Let's say that, for whatever reason, in the context of the `MessageList` component, all the `Message` components must have a length higher than 5. We can test that like:
 
