@@ -19,42 +19,38 @@ block head_metadata
     each tag in page.tags.data
         meta(name="article:tag", content=tag.name)
 
-
-
 block header
-    header.header-section
-        .intro-header.no-img
-            .container
-                .row
-                    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-                        .post-heading
-                            h1= page.title
-                            if page.subtitle
-                                h2.post-subheading= page.subtitle
-                            +post_meta(page.date, page.tags)
 
 block content
     #signup-form-modal
         include partial/signup_form
         .form-backdrop
-    main.post-content.container
+    .container.sidebar-layout
         .row
-            .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-                != posts_in_same_serie(page)
-                article(role="main", class="blog-post")
-                    != page.content
-                    != end_post(page)
-                ul.pager.blog-pager
-                    if page.prev
-                        li.previous
-                            a(href=url_for(page.prev.path), data-toggle="tooltip", data-placement="top", title=page.prev.title)= __('prev_post')
-                    if page.next
-                        li.next
-                            a(href=url_for(page.next.path), data-toggle="tooltip", data-placement="top", title=page.next.title)= __('next_post')
+            .col-md-9.col-lg-9
+                header.header-section
+                    .intro-header.no-img
+                        .post-heading
+                            h1= page.title
+                            if page.subtitle
+                                h2.post-subheading= page.subtitle
+                            +post_meta(page.date, page.tags)
+                main.post-content
+                    .post-serie-container
+                        != posts_in_same_serie(page)
+                    article(role="main", class="blog-post")
+                        != page.content
+                        != end_post(page)
+                    ul.pager.blog-pager
+                        if page.prev
+                            li.previous
+                                a(href=url_for(page.prev.path), data-toggle="tooltip", data-placement="top", title=page.prev.title)= __('prev_post')
+                        if page.next
+                            li.next
+                                a(href=url_for(page.next.path), data-toggle="tooltip", data-placement="top", title=page.next.title)= __('next_post')
 
-                #signup-form-footer
-                    include partial/signup_form
-                include partial/comment
-
-
-
+            include partial/sidebar
+        .row
+            #signup-form-footer
+                include partial/signup_form
+            include partial/comment

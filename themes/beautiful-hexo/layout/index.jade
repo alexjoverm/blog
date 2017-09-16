@@ -4,9 +4,9 @@ block header
     include partial/index-header
 
 block content
-    div(class="container", role="main")
+    main.container.main-page-content
         .row
-            .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            .col-md-9.col-lg-9
                 include partial/signup_form
                 .posts-list
                     - page.posts.each(function (post) {
@@ -26,7 +26,7 @@ block content
                     if page.next
                         li.next
                             a(href=url_for("/" + config.pagination_dir + "/" + page.next))= __('next')
-
+            include partial/sidebar
 
 
 
