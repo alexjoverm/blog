@@ -1,13 +1,13 @@
 ---
-title: >-
-  Test Computed Properties and Watchers in Vue.js Components with
-  Jest
+title: Test Computed Properties and Watchers in Vue.js Components with Jest
 tags:
   - VueJS
   - JavaScript
   - Testing
 description: Learn about testing the Computed Properties and Watchers reactivity in Vue.js.
+date: 2017-09-18 11:25:20
 ---
+
 
 Learn about testing Computed Properties and Watchers reactivity in Vue.js.
 

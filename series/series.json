@@ -1,22 +1,42 @@
 [
   {
-    "title": "Unit Testing Vue.js Components with the Official Vue Testing Tools and Jest",
-    "description": "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption.</p><p>Here I'll show you how can you test Vue.js components using the official vue-test-utils.</p>",
+    "title":
+      "Unit Testing Vue.js Components with the Official Vue Testing Tools and Jest",
+    "description":
+      "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption.</p><p>Here I'll show you how can you test Vue.js components using the official vue-test-utils.</p>",
     "image": "vue.png",
     "posts": [
       { "title": "Write the first Vue.js Component Unit Test in Jest" },
       { "title": "Test Deeply Rendered Vue.js Components in Jest" },
-      { "title": "Test Styles and Structure of Vue.js Components in Jest", "meta": "https://github.com/vuejs/vue-test-utils/blob/master/types/index.d.ts"},
-      { "title": "Test Properties and Custom Events in Vue.js Components with Jest" },
-      { "title": "Test Computed Properties and Watchers in Vue.js Components with Jest" },
+      {
+        "title": "Test Styles and Structure of Vue.js Components in Jest",
+        "meta":
+          "https://github.com/vuejs/vue-test-utils/blob/master/types/index.d.ts"
+      },
+      {
+        "title":
+          "Test Properties and Custom Events in Vue.js Components with Jest"
+      },
+      {
+        "title":
+          "Test Computed Properties and Watchers in Vue.js Components with Jest"
+      },
       { "title": "Test Methods and Mock Dependencies in Vue.js with Jest" },
       { "title": "Test Vue.js Slots in Jest" },
       { "title": "Enhance Jest configuration with Module Aliases" }
     ]
   },
   {
+    "title": "Create a Progressive Web App from a Vue.js Single Page App",
+    "description": "<p>Progressive Web Applications</p>",
+    "image": "vue.png",
+    "published": false,
+    "posts": [{ "title": "Lazy Loading in Vue using Webpack's Code Splitting" }]
+  },
+  {
     "title": "Learn advanced Vue.js tips & tricks",
-    "description": "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption.</p><p>In this series I'll show you some stuff you can do with Vue.js that go beyond the basics and lean towards production apps.</p>",
+    "description":
+      "<p>Vue.js has become the framework of the year. It's very flexible, performant and easy to learn that lead to a massive adoption.</p><p>In this series I'll show you some stuff you can do with Vue.js that go beyond the basics and lean towards production apps.</p>",
     "image": "vue.png",
     "published": false,
     "posts": [
@@ -35,15 +55,22 @@
   },
   {
     "title": "Level up Vue.js Apps with TypeScript",
-    "description": "<p>TypeScript adds an amazing developer experience with first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth, and some patterns it opens.</p>",
+    "description":
+      "<p>TypeScript adds an amazing developer experience with first class intellisense and type inference. Vue.js is very cool out of the box. Do you imagine both combined together?</p><p>In this serie I'll show you how to use TypeScript in a Vue.js application in depth, and some patterns it opens.</p>",
     "image": "vue.png",
     "published": false,
     "posts": [
       { "title": "Integrate TypeScript in your Vue project" },
       { "title": "Create class based Vue components in TypeScript" },
       { "title": "Add Type Safety to a Vuex Store using TypeScript" },
-      { "title": "Use Dependency Injection and Inversion of Control containers in Vue and TypeScript with Inversify" },
-      { "title": "Use Aspect Oriented Programming in Vue and TypeScript with KaopTS" }
+      {
+        "title":
+          "Use Dependency Injection and Inversion of Control containers in Vue and TypeScript with Inversify"
+      },
+      {
+        "title":
+          "Use Aspect Oriented Programming in Vue and TypeScript with KaopTS"
+      }
     ]
   }
 ]

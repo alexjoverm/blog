@@ -5,7 +5,9 @@ tags:
   - JavaScript
   - Testing
 description: Learn how to test methods and cope with mocking module dependencies.
+date: 2017-09-25 08:18:23
 ---
+
 
 Learn how to test methods and cope with mocking module dependencies.
 
