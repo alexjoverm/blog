@@ -3,7 +3,7 @@
 /* --- General --- */
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #404040;
   position: relative;
@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
   position: relative;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 a {
@@ -59,7 +59,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 15px inherit;
 }
 
@@ -105,7 +105,7 @@ img {
 .navbar-custom {
   background: #0b87f0;
   border-bottom: 1px solid #0274d4;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .navbar-custom .nav li a {
@@ -192,7 +192,7 @@ img {
   position: relative;
 }
 .navbar-custom .nav .navlinks-parent:after {
-  content: " \25BC";
+  content: ' \25BC';
 }
 .navbar-custom .nav .navlinks-children {
   width: 100%;
@@ -314,7 +314,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -387,7 +387,7 @@ footer .theme-by {
   font-size: 27px;
   line-height: 1.1;
   display: block;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -412,7 +412,7 @@ footer .theme-by {
   padding: 5px 10px;
   font-size: 11px;
   color: #eee;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   right: 0;
   bottom: 0;
   display: none;
@@ -506,7 +506,7 @@ footer .theme-by {
 /* --- Pager --- */
 
 .pager li a {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
@@ -639,7 +639,7 @@ h2 .headerlink:before,
 h3 .headerlink:before,
 h4 .headerlink:before {
   display: none;
-  content: "#";
+  content: '#';
   position: absolute;
   padding-right: 20px;
 }
@@ -695,7 +695,7 @@ h4:hover .headerlink:before {
 
 .new-badge:after {
   display: inline-block;
-  content: "New";
+  content: 'New';
   color: white;
   font-size: 8px;
   background: #0b87f0;
@@ -713,8 +713,8 @@ h4:hover .headerlink:before {
   }
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   font-size: 15px;
 }
 
@@ -897,6 +897,15 @@ pre[class*="language-"] {
   background-color: rgba(215, 215, 215, 0.35);
 }
 
+.branding {
+  font-size: 0.7em;
+  text-align: right;
+  margin: 0.5em 0.2em 0.1em 0.2em;
+}
+.branding img {
+  height: 1.4em;
+}
+
 .title-quoted {
   font-weight: normal;
   font-style: italic;
@@ -954,7 +963,7 @@ pre[class*="language-"] {
 }
 
 .post-serie li.current:before {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: 0;
   margin-top: 4px;
