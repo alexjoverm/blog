@@ -5,7 +5,9 @@ tags:
   - JavaScript
   - Testing
 description: Learn how to test content distributed using slots and named slots.
+date: 2017-10-02 14:50:49
 ---
+
 
 Learn how to test content distributed using slots and named slots.
 
