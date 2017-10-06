@@ -7,6 +7,7 @@ tags:
 description: Let's see how to use vue-test-utils to test a fully rendered component tree.
 date: 2017-08-28 11:00:50
 ---
+# Test Deeply Rendered Vue.js Components in Jest
 
 
 Let's see how to use vue-test-utils to test a fully rendered component tree.

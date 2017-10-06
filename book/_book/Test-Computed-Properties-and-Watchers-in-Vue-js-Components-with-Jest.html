@@ -1,0 +1,542 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5. Test Computed Properties and Watchers in Vue.js Components with Jest · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Learn about testing the Computed Properties and Watchers reactivity in Vue.js.">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.html" />
+    
+    
+    <link rel="prev" href="Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Write-the-first-Vue-js-Component-Unit-Test-in-Jest.html">
+            
+                <a href="Write-the-first-Vue-js-Component-Unit-Test-in-Jest.html">
+            
+                    
+                    1. Write the first Vue.js Component Unit Test in Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Test-Deeply-Rendered-Vue-js-Components-in-Jest.html">
+            
+                <a href="Test-Deeply-Rendered-Vue-js-Components-in-Jest.html">
+            
+                    
+                    2. Test Deeply Rendered Vue.js Components in Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Test-Styles-and-Structure-of-Vue-js-Components-in-Jest.html">
+            
+                <a href="Test-Styles-and-Structure-of-Vue-js-Components-in-Jest.html">
+            
+                    
+                    3. Test Styles and Structure of Vue.js Components in Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.html">
+            
+                <a href="Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.html">
+            
+                    
+                    4. Test Properties and Custom Events in Vue.js Components with Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="Test-Computed-Properties-and-Watchers-in-Vue-js-Components-with-Jest.html">
+            
+                <a href="Test-Computed-Properties-and-Watchers-in-Vue-js-Components-with-Jest.html">
+            
+                    
+                    5. Test Computed Properties and Watchers in Vue.js Components with Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.html">
+            
+                <a href="Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.html">
+            
+                    
+                    6. Test Methods and Mock Dependencies in Vue.js with Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Test-Vue-js-Slots-in-Jest.html">
+            
+                <a href="Test-Vue-js-Slots-in-Jest.html">
+            
+                    
+                    7. Test Vue.js Slots in Jest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Enhance-Jest-configuration-with-Module-Aliases.html">
+            
+                <a href="Enhance-Jest-configuration-with-Module-Aliases.html">
+            
+                    
+                    8. Enhance Jest configuration with Module Aliases
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >5. Test Computed Properties and Watchers in Vue.js Components with Jest</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="test-computed-properties-and-watchers-in-vuejs-components-with-jest">Test Computed Properties and Watchers in Vue.js Components with Jest</h1>
+<p>Learn about testing Computed Properties and Watchers reactivity in Vue.js.</p>
+<!-- more -->
+<p>Computed properties and watchers are reactive parts of the logic of Vue.js components. They both serve totally different purposes, one is synchronous and the other asynchronous, which makes them behave slightly different.</p>
+<p>In this article we&apos;ll go through testing them and see what different cases we can find on the way.</p>
+<h2 id="computed-properties">Computed Properties</h2>
+<p>Computed properties are simple reactive functions that return data in another form. They behave exactly like the language standard <code>get/set</code> properties:</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">X</span> </span>{
+  ...
+
+  get fullName() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> <span class="hljs-subst">${this.surname}</span>`</span>
+  }
+
+  set fullName() {
+    ...
+  }
+}
+</code></pre>
+<p>In fact, when you&apos;re building class based Vue components, as I explain in my <a href="https://egghead.io/courses/use-typescript-to-develop-vue-js-web-applications" target="_blank">Egghead course &quot;Use TypeScript to Develop Vue.js Web Applications&quot;</a>, you&apos;ll write it just like that. If you&apos;re using plain objects, it&apos;d be:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  ...
+  computed: {
+    fullName() {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> <span class="hljs-subst">${this.surname}</span>`</span>
+    }
+  }
+}
+</code></pre>
+<p>And you can even add the <code>set</code> as follows:</p>
+<pre><code class="lang-javascript">computed: {
+    fullName: {
+      get() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> <span class="hljs-subst">${this.surname}</span>`</span>
+      },
+      set() {
+        ...
+      }
+    }
+  }
+</code></pre>
+<h3 id="testing-computed-properties">Testing Computed Properties</h3>
+<p>Testing a computed property is very simple, and probably sometimes you don&apos;t test a computed property exclusively, but test it as part of other tests. But most times it&apos;s good to have a test for it, whether that computed property is cleaning up an input, or combining data, we wanna make sure things work as intended. So let&apos;s begin.</p>
+<p>First of all, create a <code>Form.vue</code> component:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;inputValue&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;reversed&quot;</span>&gt;</span>{{ reversedInput }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  props: [<span class="hljs-string">&apos;reversed&apos;</span>],
+  data: () =&gt; ({
+    inputValue: <span class="hljs-string">&apos;&apos;</span>
+  }),
+  computed: {
+    reversedInput() {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.reversed ?
+        <span class="hljs-keyword">this</span>.inputValue.split(<span class="hljs-string">&quot;&quot;</span>).reverse().join(<span class="hljs-string">&quot;&quot;</span>) :
+        <span class="hljs-keyword">this</span>.inputValue
+    }
+  }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>It will show an input, and next to it the same string but reversed. It&apos;s just a silly example, but enough to test it.</p>
+<p>Now add it to <code>App.vue</code>, put it after the <code>MessageList</code> component, and remember to import it and include it within the <code>components</code> component option. Then, create a <code>test/Form.test.js</code> with the usual bare-bones we&apos;ve used in other tests:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { shallow } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-test-utils&apos;</span>
+<span class="hljs-keyword">import</span> Form <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../src/components/Form&apos;</span>
+
+describe(<span class="hljs-string">&apos;Form.test.js&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> cmp
+
+  beforeEach(() =&gt; {
+    cmp = shallow(Form)
+  })
+})
+</code></pre>
+<p>Now create a test suite with 2 test cases:</p>
+<pre><code class="lang-javascript">describe(<span class="hljs-string">&apos;Properties&apos;</span>, () =&gt; {
+  it(<span class="hljs-string">&apos;returns the string in normal order if reversed property is not true&apos;</span>, () =&gt; {
+    cmp.vm.inputValue = <span class="hljs-string">&apos;Yoo&apos;</span>
+    expect(cmp.vm.reversedInput).toBe(<span class="hljs-string">&apos;Yoo&apos;</span>)
+  })
+
+  it(<span class="hljs-string">&apos;returns the reversed string if reversed property is true&apos;</span>, () =&gt; {
+    cmp.vm.inputValue = <span class="hljs-string">&apos;Yoo&apos;</span>
+    cmp.setProps({ reversed: <span class="hljs-literal">true</span> })
+    expect(cmp.vm.reversedInput).toBe(<span class="hljs-string">&apos;ooY&apos;</span>)
+  })
+})
+</code></pre>
+<p>We can access the component instance within <code>cmp.vm</code>, so we can access the internal state, computed properties and methods. Then, to test it is just about changing the value and making sure it returns the same string when reversed is false.</p>
+<p>For the second case, it would be almost the same, with the difference that we must set the <code>reversed</code> property to true. We could navigate through <code>cmp.vm...</code> to change it, but vue-test-utils give us a helper method <code>setProps({ property: value, ... })</code> that makes it very easy.</p>
+<p>That&apos;s it, depending on the computed property it may need more test cases.</p>
+<h2 id="watchers">Watchers</h2>
+<p>Honestly, I haven&apos;t come across any case where I really need to use watchers that I computed properties couldn&apos;t solve. I&apos;ve seen them misused as well, leading to a very unclear data workflow among components and messing everything up, so don&apos;t rush on using them and think beforehand.</p>
+<p>As you can see in the <a href="https://vuejs.org/v2/guide/computed.html#Watchers" target="_blank">Vue.js docs</a>, watchers are often used to react to data changes and perform asynchronous operations, such can be performing an ajax request.</p>
+<h3 id="testing-watchers">Testing Watchers</h3>
+<p>Let&apos;s say we wanna do something when the <code>inputValue</code> from the state change. We could do an ajax request, but since that&apos;s more complicated and we&apos;ll see it in the next lesson, let&apos;s just do a <code>console.log</code>. Add a <code>watch</code> property to the <code>Form.vue</code> component options:</p>
+<pre><code class="lang-javascript">watch: {
+  inputValue(newVal, oldVal) {
+    <span class="hljs-keyword">if</span>(newVal.trim().length &amp;&amp; newVal !== oldVal) {
+      <span class="hljs-built_in">console</span>.log(newVal)
+    }
+  }
+}
+</code></pre>
+<p>Notice the <code>inputValue</code> watch function matches the state variable name. By convention, Vue will look it up in both <code>properties</code> and <code>data</code> state by using the watch function name, in this case <code>inputValue</code>, and since it will find it in <code>data</code>, it will add the watcher there.</p>
+<p>See that a watch function takes the new value as a first parameter, and the old one as the second. In this case we&apos;ve chosen to log only when it&apos;s not empty and the values are different. Usually, we&apos;d like to write a test for each case, depending on the time you have and how critical that code is.</p>
+<p>What should we test about the watch function? Well, that&apos;s something we&apos;ll also discuss further in the next lesson when we talk about testing methods, but let&apos;s say we just wanna know that it calls the <code>console.log</code> when it should. So, let&apos;s add the bare bones of the watchers test suite, within <code>Form.test.js</code>:</p>
+<pre><code class="lang-javascript">describe(<span class="hljs-string">&apos;Form.test.js&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> cmp
+  ...
+
+  describe(<span class="hljs-string">&apos;Watchers - inputValue&apos;</span>, () =&gt; {
+    <span class="hljs-keyword">let</span> spy
+
+    beforeAll(() =&gt; {
+      spy = jest.spyOn(<span class="hljs-built_in">console</span>, <span class="hljs-string">&apos;log&apos;</span>)
+    })
+
+    afterEach(() =&gt; {
+      spy.mockClear()
+    })
+
+    it(<span class="hljs-string">&apos;is not called if value is empty (trimmed)&apos;</span>, () =&gt; {
+    })
+
+    it(<span class="hljs-string">&apos;is not called if values are the same&apos;</span>, () =&gt; {
+    })
+
+    it(<span class="hljs-string">&apos;is called with the new value in other cases&apos;</span>, () =&gt; {
+    })
+  })
+})
+</code></pre>
+<p>We&apos;re using a spy on the <code>console.log</code> method, initializing before starting any test, and resetting its state after each of them, so that they start from a clean spy.</p>
+<p>To test a watch function, we just need to change the value of what&apos;s being watch, in this case the <code>inputValue</code> state. But there is something curious... let&apos;s start by the last test</p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;is called with the new value in other cases&apos;</span>, () =&gt; {
+  cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+  expect(spy).toBeCalled()
+})
+</code></pre>
+<p>We change the <code>inputValue</code>, so the <code>console.log</code> spy should be called, right? Well, if you run it, you&apos;ll notice that is not! WTF??? Wait, there is an explanation for this: unlike computed properties, watchers are <strong>deferred to the next update cycle</strong> that Vue uses to look for changes. So, basically, what&apos;s happening here is that <code>console.log</code> is indeed called, but after the test has finished.</p>
+<p>To solve this, we need to use the <a href="https://vuejs.org/v2/api/#vm-nextTick" target="_blank"><code>vm.$nextTick</code></a> function to defer code to the next update cycle. But if we write:</p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;is called with the new value in other cases&apos;</span>, () =&gt; {
+  cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+  cmp.vm.$nextTick(() =&gt; {
+    expect(spy).toBeCalled()
+  })
+})
+</code></pre>
+<p>It will still fail, since the test finishes with the <code>expect</code> function not being called. That happens because now is asynchronous and happens on the <code>$nextTick</code> callback. How can we then test it if the expect happens at a later time?</p>
+<p>Jest give us a <code>next</code> parameter that we can use in the <code>it</code> test callbacks, in a way that if it is present, the test will not finish until <code>next</code> is called, but if it&apos;s not, it will finish synchronously. So, to finally get it right:</p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;is called with the new value in other cases&apos;</span>, next =&gt; {
+  cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+  cmp.vm.$nextTick(() =&gt; {
+    expect(spy).toBeCalled()
+    next()
+  })
+})
+</code></pre>
+<p>We can apply the same strategy for the other two, with the difference that the spy shouldn&apos;t be called:</p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;is not called if value is empty (trimmed)&apos;</span>, next =&gt; {
+  cmp.vm.inputValue = <span class="hljs-string">&apos;   &apos;</span>
+  cmp.vm.$nextTick(() =&gt; {
+    expect(spy).not.toBeCalled()
+    next()
+  })
+})
+
+it(<span class="hljs-string">&apos;is not called if values are the same&apos;</span>, next =&gt; {
+  cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+
+  cmp.vm.$nextTick(() =&gt; {
+    spy.mockClear()
+    cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+
+    cmp.vm.$nextTick(() =&gt; {
+      expect(spy).not.toBeCalled()
+      next()
+    })
+  })
+})
+</code></pre>
+<p>That second one gets a bit more complex than it looked like. The default internal state is empty, so first we need to change it, wait for the next tick, then clear the mock to reset the call count, and change it again. Then after the second tick, we can check the spy and finish the test.</p>
+<p>This can get simpler if we recreate the component at the beginning, overriding the <code>data</code> property. Remember we can override any component option by using the second parameter of the <code>mount</code> or <code>shallow</code> functions:</p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;is not called if values are the same&apos;</span>, next =&gt; {
+  cmp = shallow(Form, { data: ({ inputValue: <span class="hljs-string">&apos;foo&apos;</span> }) })
+  cmp.vm.inputValue = <span class="hljs-string">&apos;foo&apos;</span>
+
+  cmp.vm.$nextTick(() =&gt; {
+    expect(spy).not.toBeCalled()
+    next()
+  })
+})
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>You&apos;ve learned in this article how to test part of the logic of Vue components: computed properties and watchers. We&apos;ve gone through different test cases we can come across testing them. Probably you&apos;ve also learned some of the Vue internals such as the <code>nextTick</code> update cycles.</p>
+<p>You can find the code of this article <a href="https://github.com/alexjoverm/vue-testing-series/tree/Test-State-Computed-Properties-and-Methods-in-Vue-js-Components-with-Jest" target="_blank">in this repo</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.html" class="navigation navigation-prev " aria-label="Previous page: 4. Test Properties and Custom Events in Vue.js Components with Jest">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.html" class="navigation navigation-next " aria-label="Next page: 6. Test Methods and Mock Dependencies in Vue.js with Jest">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5. Test Computed Properties and Watchers in Vue.js Components with Jest","tags":["VueJS","JavaScript","Testing"],"description":"Learn about testing the Computed Properties and Watchers reactivity in Vue.js.","date":"2017-09-18T11:25:20.000Z","level":"1.6","depth":1,"next":{"title":"6. Test Methods and Mock Dependencies in Vue.js with Jest","level":"1.7","depth":1,"path":"Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.md","ref":"Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest.md","articles":[]},"previous":{"title":"4. Test Properties and Custom Events in Vue.js Components with Jest","level":"1.5","depth":1,"path":"Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.md","ref":"Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Test-Computed-Properties-and-Watchers-in-Vue-js-Components-with-Jest.md","mtime":"2017-10-06T16:50:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-06T16:50:25.417Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

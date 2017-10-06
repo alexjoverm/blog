@@ -7,6 +7,7 @@ tags:
 description: Learn how to test methods and cope with mocking module dependencies.
 date: 2017-09-25 08:18:23
 ---
+# Test Methods and Mock Dependencies in Vue.js with Jest
 
 
 Learn how to test methods and cope with mocking module dependencies.
