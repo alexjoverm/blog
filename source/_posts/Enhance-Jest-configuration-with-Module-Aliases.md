@@ -4,8 +4,12 @@ tags:
   - VueJS
   - JavaScript
   - Testing
-description: Learn how to use Module Aliases Jest configuration to avoid using relative paths
+description: >-
+  Learn how to use Module Aliases Jest configuration to avoid using relative
+  paths
+date: 2017-10-07 11:33:20
 ---
+
 
 Learn how to use Module Aliases Jest configuration to avoid using relative paths.
 
