@@ -1107,16 +1107,26 @@ pre[class*='language-'] {
   margin: 0;
 }
 
-.sidebar-item .course-item {
+.sidebar-item {
   text-align: center;
 }
 
-.sidebar-item .course-item a {
+.sidebar-item a {
   color: #444;
 }
 
-.sidebar-item .course-item img {
+.sidebar-item img {
   max-width: 95px;
   display: block;
   margin: auto;
+}
+
+.sidebar-item .preface {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.v-padding-xs {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
