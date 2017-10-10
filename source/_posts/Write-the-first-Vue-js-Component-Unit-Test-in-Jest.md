@@ -48,16 +48,13 @@ npm i -D jest jest-vue-preprocessor babel-jest
 
 [`jest-vue-preprocessor`](https://github.com/vire/jest-vue-preprocessor) is needed for making jest understand `.vue` files, and [`babel-jest`](https://github.com/babel/babel-jest) for the integration with Babel.
 
-As per `vue-test-utils`, it **hasn't been released yet**, but for now you can add it to your `package.json` from the source:
+As per `vue-test-utils`, it ~~hasn't been released yet, but for now you can add it to your `package.json` from the source~~:
 
-```json
-"devDependencies": {
-  ...
-  "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git"
-}
+**Update (2017/10/10)**: it can be installed already from npm, since `beta.1` has been published.
+
+```bash
+npm i -D vue-test-utils
 ```
-
-And run `npm install`.
 
 Let's add the following Jest configuration in the `package.json`:
 
