@@ -1,22 +1,23 @@
 ---
 title: About me
 date: 2017-03-03 17:43:57
+layout: sidebar-page
 ---
 
 <div style="width: 100%; text-align: center">
 {% img avatar-img-border /alex.jpg 140 140 "'Alex avatar'" "'Alex avatar'" %}
 </div>
 
-Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
+Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I've published a [book on Leanpub](https://leanpub.com/u/alexjoverm). I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
 
-I'm software craftmanship, architecture, patterns and best practices practicioner. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. TypeScript lover. Interested on the human side of coding.
+Interested on web performance and PWA ([this blog is one](/2017/08/07/How-I-made-a-Progressive-Web-App-out-of-my-Blog/)), long term quality, reusability, patterns and best practices. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. Interested on the human side of coding and well being among the community.
 
 ## Open source
 
-I run some open source projects, with hundreds of Github Stars and more than 20K monthly downloads:
+I run some open source projects, with hundreds of Github Stars and more than 50K monthly downloads:
 
-- [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): Starter kit with zero-config for building a library in typescript, featuring RollupJS, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
-- [tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier): Use tslint with prettier without any conflict
+- [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): [![GitHub stars](https://img.shields.io/github/stars/alexjoverm/typescript-library-starter.svg?style=social&label=Stars)]() Starter kit with zero-config for building a library in typescript, featuring RollupJS, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
+- [tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier): [![GitHub stars](https://img.shields.io/github/stars/alexjoverm/tslint-config-prettier.svg?style=social&label=Stars)]() [![downloads](https://img.shields.io/npm/dm/tslint-config-prettier.svg)](https://www.npmjs.com/package/tslint-config-prettier) Use tslint with prettier without any conflict
 - [ShortcutJS](https://github.com/coosto/ShortcutJS/): Keyboard manager written in TypeScript, made for humans. First Open Source project made in [Coosto](https://github.com/coosto)
 
 I'm part of some [Github organizations](https://github.com/alexjoverm) and contribute in other projects. Some of my PR landed on repos such as:
@@ -25,11 +26,8 @@ I'm part of some [Github organizations](https://github.com/alexjoverm) and contr
  - [Vuex](https://github.com/vuejs/vuex)
  - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
  - [TypeScript-Handbook](https://github.com/Microsoft/TypeScript-Handbook)
- - [Kaop-TS](https://github.com/k1r0s/kaop-ts)
- - [HexoJS/site](https://github.com/hexojs/site)
- - [KeyboardJS](https://github.com/RobertWHurst/KeyboardJS)
- - [all-contributors-cli](https://github.com/jfmengels/all-contributors-cli)
- - [@ngrx/store logger](https://github.com/btroncone/ngrx-store-logger)...
+ - [Babel](https://github.com/babel/babel)
+ - ...
 
 ## Public speaking
 
@@ -44,30 +42,20 @@ I'm part of some [Github organizations](https://github.com/alexjoverm) and contr
 
 ## Interests
 
-I'm in continuous-learning mode, specifically for modern stuff. Some fields where I worked with:
+I'm in continuous-learning mode, specifically for modern stuff. Some fields where I'm interested in:
 
-- General craftmanship stuff: FP, FRP, DI, IoC, TDD, BDD...
-- Continuous improvement, agile, workflows and productivity
-- Typescript, Vue, Angular, Redux, RxJS, Webpack, Ionic... Modern frontend stack
+- Web Performance and PWA (Progressive Web Apps)
+- Craftmanship stuff: FP, FRP, DI, IoC, TDD, BDD...
+- Continuous improvement, workflows and productivity
+- Typescript, Vue, React, Redux, RxJS, Webpack, Angular, Ionic... Modern frontend stack
 - Sass, PostCSS
-- Nuxt, Angular Universal
-- Node, Express, Loopback, FeathersJS, APIs
-- Microservices, Docker
+- Backend in Node.js, microservices, Docker
 - SQL, NoSQL, ElasticSearch, Redis, Neo4j
-- Hexo
 - GraphQL, ApolloStack
-
-Others that I haven't touched yet, but interested in:
-
-- Other modern languages: Elixir, Haskell, Go...
-- PWA
-- PouchDB
-- More DevOps stuff
-
 
 ## Spare time
 
-I love to meet with friends, family, travel, getting lost in the nature, practice body combat, running, and spend time with my lovely cat.
+I love to meet with friends, family, getting lost in the nature, practice some sports, and spend time with my lovely cat.
 
 
 {% raw %}

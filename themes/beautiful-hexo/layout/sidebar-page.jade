@@ -1,0 +1,20 @@
+extends partial/base
+
+block header
+
+block content
+    .container.sidebar-layout
+        .row
+            .col-md-9.col-lg-9
+                header.header-section
+                    .intro-header.no-img
+                        .page-heading
+                            h1= page.title
+                            if page.subtitle
+                                h2.post-subheading= page.subtitle
+                article(role="main", class="blog-post")
+                    != page.content
+
+            include partial/sidebar
+        .row
+            include partial/comment

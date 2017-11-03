@@ -300,9 +300,8 @@ We can make it even easier by using `setMethods` helper that the official tools 
 
 ```javascript
 it('calls handleClick when click on message', () => {
-  const stub = jest.spy()
+  const stub = jest.fn()
   cmp.setMethods({ handleClick: stub })
-  cmp.update()
 
   const el = cmp.find('.message').trigger('click')
   expect(stub).toBeCalled()

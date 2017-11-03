@@ -11,9 +11,11 @@ Here are some tips that I'm practising to be a happier developer.
 
 {% asset_img happy.jpg Happy %}
 
-Are you often in a frustrated mood? Do you think sometimes that you don't meet the deadlines? Are you worried about not performing well, or getting negative feedback? Do you sometimes suffer anxiety or stress?
+Are you often in a frustrated mood? Do you think sometimes that you don't meet the deadlines? Are you worried about not performing well, or getting negative feedback, or that is too big for you? Do you sometimes suffer anxiety or stress?
 
-I've been there (and still am), and have been taking care of it for quite some time. I'm writing this article, both to remind myself and to tell you what have I learnt and found out during this time. Keep in mind that these are my points, it may work or not for you.
+I've been suffering an anxiety/panic disorder for almost a year already, and have been taking care of it for quite some time. I'm writing this article, both to remind myself and to tell you what have I learnt and found out during this time.
+
+Keep in mind that these are my points, it may work or not for you. Do you have any other you wanna share? :)
 
 ## 1. Focus on success rather than failure
 
@@ -23,7 +25,7 @@ We usually have deadlines, which makes us to come up with a delivery plan. In ad
 
 As you can see, there are many things that can go wrong (and will). So, what can we do about all that?
 
-Well, we **can't do anything to prevent this to happen**, but we can . Instead:
+Well, we **can't do anything to prevent this to happen**. But instead, we can:
 
  - **Don't blame yourself (or others)**: Remember **you do everything the best you can**, so just don't punish yourself when you get stuck, don't meet a deadline or whatever goes wrong. Probably the reason was in a bad planning, or short time.
  - Instead, **congratulate yourself** for whatever tiny thing you did or tried. What I usually do is to by the end of the day, I **write 4 or 5 things I did in a post-it** and stick it somewhere around.
@@ -41,13 +43,13 @@ Development is a team sport. One alone just cannot do much, plus it can get bori
 
 Nowadays life goes fast, so fast that we go faster with it. And we end up in a routine where we try to do too many things that we can manage to do. That makes us being really over-demanding on ourselves, leading to frustration and anxiety because of not completing the tasks, or doing it under much pressure for quite some time.
 
-You wanna prepare a talk, attend a meetup, keep your Open Source work, write on your blog, stay healthy practising sport, meet with friends, spend time with your family, run some side-project... and you work full time as well.
+You wanna prepare a talk, attend a meetup, keep your Open Source work, write on your blog, stay healthy practising sport, meet with friends, spend time with your family, run some side-project... and you work full time as well. Be careful, being too ambitious can turn against you.
 
 What can we do to about it?
 
  - **Slow down and push the break**: Minimize your task queue. Keep in mind it is better to do 2 things well done, than 4 badly/quickly done.
  - **Enjoy what you do**: When you slow down, you have more time to pay attention to what you're doing, making it be more enjoyable. That's what mindfulness stands for.
- - **Apply a time management technique**: Personally I use [Pomodoro](http://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730). The point is to enforce breaks to move and distract yourself in order to don't spend hours on a task continuously.
+ - **Apply a time management technique**: Personally I (kind of) use [Pomodoro](http://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730). The point is to enforce breaks to move and distract yourself in order to don't spend hours on a task continuously.
 
 ## 4. Keep up your motivation
 
@@ -59,7 +61,7 @@ There is nothing more wonderful that being motivated on what you're doing. It ma
 
 Keeping yourself up to date and involved in the community of your technologies is a must for keeping up your motivation. You'll grow, which makes you feel productive. You'll socialize and meet new people. You'll find people you admire and people who admire you, and that is really beautiful.
 
-You could feel like the following tips are against the point _[Manage your time and priorities](#3-Manage-your-time-and-priorities)_, but they are beneficial if you **make sure you don't overdo**, and set a **limit** for these:
+You could feel like the following tips are against the point _[Manage your time and priorities](#3-Manage-your-time-and-priorities)_, but they are beneficial as long as you **make sure you don't overdo**, and set a **limit** for these:
 
  - **Do Open Source!**: Now is easier than ever, since an [open source guide](https://opensource.guide/) has been created by github itself and lots of experienced OSS devs. I've started [doing it](https://github.com/alexjoverm) and got many good feedback from my projects users! Not to mention the feeling when you're doing something other people find useful
  - **Go to Meetups and conferences**: You'll meet lots of people physically, which opens you a lot of doors and keeps you connected to more communities and its ecosystem. If you're brave enough to speak in one, you'll get a great feeling afterwards, so go and try and see what it feels like ;).
