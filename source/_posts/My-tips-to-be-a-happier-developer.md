@@ -1,9 +1,13 @@
 ---
 title: My tips to be a happier developer
-description: Learn a few tips to be a happier and better developer and be a better team player
 tags:
- - Human side
+  - Human side
+description: >-
+  Learn a few tips to be a happier and better developer and be a better team
+  player
+date: 2017-11-13 14:58:35
 ---
+
 
 Here are some tips that I'm practising to be a happier developer.
 
@@ -13,7 +17,7 @@ Here are some tips that I'm practising to be a happier developer.
 
 Are you often in a frustrated mood? Do you think sometimes that you don't meet the deadlines? Are you worried about not performing well, or getting negative feedback, or that is too big for you? Do you sometimes suffer anxiety or stress?
 
-I've been suffering an anxiety/panic disorder for almost a year already, and have been taking care of it for quite some time. I'm writing this article, both to remind myself and to tell you what have I learnt and found out during this time.
+I've been suffering an anxiety/panic disorder for almost a year. I'm not gonna get into the details, is not a happy story and is somewhat complex, but the point is I've learned a lot on the way. I'm writing this article, both to remind myself and to tell you what have I learnt and found out during this time.
 
 Keep in mind that these are my points, it may work or not for you. Do you have any other you wanna share? :)
 

@@ -9,9 +9,9 @@ Here are my insights about organising Alicante Frontend's meetup after a year.
 
 <!-- more -->
 
-[BIRTHDAY PICTURE]
+{% asset_img birthday.png "First birthday of Alicante Frontend" %}
 
-One year ago, [Aaron](), [Alvaro]() and I started this amazing ride together. It's been a year of meeting lots of people and having lots of fun. Satisfaction, success and happiness are the words that come to my mind when I think of [Alicante Frontend](http://alicantefrontend.es/).
+One year ago, [Aaron](https://twitter.com/aarongarciah), [Alvaro](https://twitter.com/AlvYuste) and I started this amazing ride together. It's been a year of meeting lots of people and having lots of fun. Satisfaction, success and happiness are the words that come to my mind when I think of [Alicante Frontend](http://alicantefrontend.es/).
 
 We didn't know how it was going to work. Unlike bigger cities, Alicante didn't have much community. You could see cities around having communities and meetups with a stable 20-30 RSVP average. But we were decided to do it even though we didn't expect to have more than 20 people attending.
 
@@ -43,7 +43,7 @@ In Alicante Frontend, we care about involving **companies**. We believe there is
 
 Thanks to the companies that help us, we can do all kind of cool stuff that requires a minimum amount of costs: having stickers, presents for the speakers, meetup's costs...
 
-PICTURES OF SPONSORS
+{% asset_img sponsors.png "Sponsors and collaborators" %}
 
 And last but not least, Alicante Frontend is its **people**. We all come to teach, to learn, to share, and more importantly to **have fun**. That's community, doesn't matter how many you are, what matters is to enjoy meeting new people, talking about how your work is, what have you been doing lately and share experiences in general. We all are a big family.
 
@@ -54,7 +54,8 @@ Part of that happens in the **networking**, right after the event. Here we surel
 {% asset_img networking.jpg "Alicante Frontend's networking" %}
 
 
-#The future
+
+# The future
   - Have more fun (code in the dark, open hacking)
   - Bring someone
-  - Conf
+  - Conf idea
