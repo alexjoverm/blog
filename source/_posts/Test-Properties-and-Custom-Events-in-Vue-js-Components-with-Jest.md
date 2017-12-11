@@ -54,12 +54,21 @@ it('has a message property', () => {
 })
 ```
 
-The properties behave in a way that they will be received only if they're declared in the component. Meaning that if we pass a **property that is not defined, it won't be received**. So to check for the no existence of a property, the same test as above with another property should return `false`:
+The properties behave in a way that they will be received only if they're declared in the component. Meaning that if we pass a **property that is not defined, it won't be received**. So to check for the no existence of a property, use a non-existing property:
 
 ```javascript
 it('has no cat property', () => {
   cmp = createCmp({ cat: 'hey' })
   expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+})
+```
+
+However, in this case that test will fail because Vue has [non-props attributes](https://vuejs.org/v2/guide/components.html#Non-Prop-Attributes) which sets it to the root of the `Message` component, thus being recognized as a prop and then the test will return `true`. Changing it to `toBeTruty` will make it pass for this example:
+
+```javascript
+it('has no cat property', () => {
+  cmp = createCmp({ cat: 'hey' });
+  expect(cmp.hasProp('cat', 'hey')).toBeTruthy()
 })
 ```
 
