@@ -8,13 +8,13 @@ layout: sidebar-page
 {% img avatar-img-border /alex.jpg 140 140 "'Alex avatar'" "'Alex avatar'" %}
 </div>
 
-Hi there! I'm Alex Jover, a passionate FullStack JavaScript developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I've published a [book on Leanpub](https://leanpub.com/u/alexjoverm). I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
+Hi there! I'm Alex Jover, a passionate Web developer and instructor at [Egghead.io](https://egghead.io/instructors/alex-jover-morales) from Spain. I've published the [Testing Vuejs components with Jest](https://leanpub.com/u/alexjoverm) book on Leanpub. I write on [Alligator](https://alligator.io/author/alex-jover-morales). I co-organize [Alicante Frontend](https://www.meetup.com/Alicante-Frontend/) and participate at other [meetups and conferences](#Public-speaking). You can find me on twitter as [@alexjoverm](https://twitter.com/alexjoverm), writing here or working on [open source and side projects](https://github.com/alexjoverm).
 
 Interested on web performance and PWA ([this blog is one](/2017/08/07/How-I-made-a-Progressive-Web-App-out-of-my-Blog/)), long term quality, reusability, patterns and best practices. Although, when it comes to coding, I'm mainly focused on Javascript and all its ecosystem. Interested on the human side of coding and well being among the community.
 
 ## Open source
 
-I run some open source projects, with hundreds of Github Stars and more than 50K monthly downloads:
+I run some open source projects, with hundreds of Github Stars and more than 100K monthly downloads:
 
 - [typescript-library-starter](https://github.com/alexjoverm/typescript-library-starter): [![GitHub stars](https://img.shields.io/github/stars/alexjoverm/typescript-library-starter.svg?style=social&label=Stars)]() Starter kit with zero-config for building a library in typescript, featuring RollupJS, Jest, TSLint, Semantic Release, and more! _(see [Typescript Weekly](http://eepurl.com/cDFMIH))_
 - [tslint-config-prettier](https://github.com/alexjoverm/tslint-config-prettier): [![GitHub stars](https://img.shields.io/github/stars/alexjoverm/tslint-config-prettier.svg?style=social&label=Stars)]() [![downloads](https://img.shields.io/npm/dm/tslint-config-prettier.svg)](https://www.npmjs.com/package/tslint-config-prettier) Use tslint with prettier without any conflict

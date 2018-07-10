@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": false,
   "prettier.semi": false,
+  "editor.fontSize": 15,
   "prettier.singleQuotes": true,
   "cSpell.enabledLanguageIds": [
     "c",

@@ -1,9 +1,14 @@
+script.
+  window.lazyLoadOptions = {};
+
 if process.argv.indexOf('server') === -1
   script(src=url_for("/js/sw-register.js"))
 
 script(src=url_for("/js/jquery-1.11.2.min.js"))
 script(src=url_for("/js/bootstrap.min.js"))
 script(src=url_for("/js/main.js"))
+script(async, src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js")
+
 
 script(src='https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js')
 script(src='https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js')

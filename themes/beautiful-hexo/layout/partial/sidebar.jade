@@ -2,22 +2,27 @@
 .main-sidebar.col-md-3.col-lg-3
     .sidebar-item
         header.sidebar-item-header
-            h4 New Ebook!
-        div.sidebar-item-content
-            strong.preface Consider supporting this blog by buying the ebook
-            a(href="https://leanpub.com/testingvuejscomponentswithjest", target="_blank", onclick="ga('send', 'event', 'Book', 'click', 'Testing Vue.js components with Jest');")
-               img.v-padding-xs(src="/images/vuejest.jpg", alt="Testing Vue.js components with Jest")
-               | Testing Vue.js components with Jest
-    .sidebar-item
-        header.sidebar-item-header
             h4 Courses
         div.sidebar-item-content
             .course-item
+                a(href="https://egghead.io/courses/offline-first-progressive-web-apps-pwa-in-vue-js", target="_blank", onclick="ga('send', 'event', 'Course', 'click', 'Use Typescript to develop Vue.js web applications - Egghead');")
+                  img(data-src="/images/courses/pwa.png", alt="Offline-First Progressive Web Apps in Vue.js")
+                  | Offline-First Progressive Web Apps in Vue.js
+            hr
+            .course-item
                 a(href="https://egghead.io/courses/use-typescript-to-develop-vue-js-web-applications", target="_blank", onclick="ga('send', 'event', 'Course', 'click', 'Use Typescript to develop Vue.js web applications - Egghead');")
-                  img(src="/images/courses/vuets.png", alt="Use Typescript to develop Vue.js web applications")
+                  img(data-src="/images/courses/vuets.png", alt="Use Typescript to develop Vue.js web applications")
                   | Use TypeScript to Develop Vue.js Web Applications
             hr
             .course-item
                 a(href="https://egghead.io/courses/vue-js-state-management-with-vuex-and-typescript", target="_blank", onclick="ga('send', 'event', 'Course', 'click', 'Vue.js state management with Vuex and TypeScript course - Egghead');")
-                  img(src="/images/courses/vuexts.png", alt="Vue.js state management with Vuex and TypeScript course")
+                  img(data-src="/images/courses/vuexts.png", alt="Vue.js state management with Vuex and TypeScript course")
                   | Vue.js State Management with Vuex and TypeScript
+    .sidebar-item
+        header.sidebar-item-header
+            h4 Ebook
+        div.sidebar-item-content
+            strong.preface Consider supporting this blog by buying the ebook
+            a(href="https://leanpub.com/testingvuejscomponentswithjest", target="_blank", onclick="ga('send', 'event', 'Book', 'click', 'Testing Vue.js components with Jest');")
+               img.v-padding-xs(data-src="/images/vuejest.jpg", alt="Testing Vue.js components with Jest")
+               | Testing Vue.js components with Jest

@@ -6,5 +6,11 @@ module.exports = {
     'public/**/**.png',
     'public/js/**.js'
   ],
+  runtimeCaching: [
+    {
+      urlPattern: /\/\/cdn/g,
+      handler: 'networkFirst'
+    }
+  ],
   stripPrefix: 'public',
 }
