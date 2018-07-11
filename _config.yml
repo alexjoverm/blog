@@ -86,3 +86,30 @@ algolia:
 series:
   enabled: true
   folder: series
+
+# Redirects
+alias:
+  index.html: https://alexjover.com/
+  about/index.html: https://alexjover.com/about/
+  2017/09/11/Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest/index.html: https://alexjover.com/blog/2017/09/11/Test-Properties-and-Custom-Events-in-Vue-js-Components-with-Jest/
+  2017/08/21/Write-the-first-Vue-js-Component-Unit-Test-in-Jest/index.html: https://alexjover.com/blog/2017/08/21/Write-the-first-Vue-js-Component-Unit-Test-in-Jest/
+  2017/11/21/1-year-organising-Alicante-Frontend/index.html: https://alexjover.com/blog/2017/11/21/1-year-organising-Alicante-Frontend/
+  2017/11/13/My-tips-to-be-a-happier-developer/index.html: https://alexjover.com/blog/2017/11/13/My-tips-to-be-a-happier-developer/
+  2017/10/07/Enhance-Jest-configuration-with-Module-Aliases/index.html: https://alexjover.com/blog/2017/10/07/Enhance-Jest-configuration-with-Module-Aliases/
+  2017/10/02/Test-Vue-js-Slots-in-Jest/index.html: https://alexjover.com/blog/2017/10/02/Test-Vue-js-Slots-in-Jest/
+  2017/09/25/Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest/index.html: https://alexjover.com/blog/2017/09/25/Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest/
+  2017/08/28/Test-Deeply-Rendered-Vue-js-Components-in-Jest/index.html: https://alexjover.com/blog/2017/08/28/Test-Deeply-Rendered-Vue-js-Components-in-Jest/
+  2017/09/18/Test-Computed-Properties-and-Watchers-in-Vue-js-Components-with-Jest/index.html: https://alexjover.com/blog/2017/09/18/Test-Computed-Properties-and-Watchers-in-Vue-js-Components-with-Jest/
+  2017/09/04/Test-Styles-and-Structure-of-Vue-js-Components-in-Jest/index.html: https://alexjover.com/blog/2017/09/04/Test-Styles-and-Structure-of-Vue-js-Components-in-Jest/
+  2017/08/14/Apply-infinite-operations-to-an-RxJS-Observable/index.html: https://alexjover.com/blog/2017/08/14/Apply-infinite-operations-to-an-RxJS-Observable/
+  2017/03/23/Apollo-GraphQL-and-Nuxt-shenanigans/index.html: https://alexjover.com/blog/2017/03/23/Apollo-GraphQL-and-Nuxt-shenanigans/
+  2017/08/07/How-I-made-a-Progressive-Web-App-out-of-my-Blog/index.html: https://alexjover.com/blog/2017/08/07/How-I-made-a-Progressive-Web-App-out-of-my-Blog/
+  2017/07/16/Lazy-load-in-Vue-using-Webpack-s-code-splitting/index.html: https://alexjover.com/blog/2017/07/16/Lazy-load-in-Vue-using-Webpack-s-code-splitting/
+  2017/06/28/Integrate-TypeScript-in-your-Vue-project/index.html: https://alexjover.com/blog/2017/06/28/Integrate-TypeScript-in-your-Vue-project/
+  2017/06/12/Use-Prettier-with-TSLint-and-be-happy/index.html: https://alexjover.com/blog/2017/06/12/Use-Prettier-with-TSLint-and-be-happy/
+  2017/04/11/Typescript-Lookup-Types-type-safe-properties/index.html: https://alexjover.com/blog/2017/04/11/Typescript-Lookup-Types-type-safe-properties/
+  2017/03/06/Tree-shaking-with-Webpack-2-TypeScript-and-Babel/index.html: https://alexjover.com/blog/2017/03/06/Tree-shaking-with-Webpack-2-TypeScript-and-Babel/
+  tags/index.html: https://alexjover.com/blog/tags/
+  archives/index.html: https://alexjover.com/blog/archives/
+  series/index.html: https://alexjover.com/blog/series/
+  series/Unit-Testing-Vue-js-Components-with-the-Official-Vue-Testing-Tools-and-Jest/index.html: https://alexjover.com/blog/series/Unit-Testing-Vue-js-Components-with-the-Official-Vue-Testing-Tools-and-Jest/

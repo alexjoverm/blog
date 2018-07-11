@@ -16,7 +16,7 @@ header:
         - src: /bigimgs/meetup1.jpg
           desc:
 
-rss: /atom.xml
+# rss: /atom.xml
 googlefonts:
   - "Open+Sans:400italic,600italic,700italic,400,600,700"
 
