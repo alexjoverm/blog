@@ -43,7 +43,7 @@ Then we'll need to install some dependencies:
 
 ```bash
 # Install dependencies
-npm i -D jest jest-vue-preprocessor babel-jest
+npm i -D jest vue-jest babel-jest
 ```
 
 [`jest-vue-preprocessor`](https://github.com/vire/jest-vue-preprocessor) is needed for making jest understand `.vue` files, and [`babel-jest`](https://github.com/babel/babel-jest) for the integration with Babel.
@@ -70,7 +70,7 @@ Let's add the following Jest configuration in the `package.json`:
   ],
   "transform": {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-    ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
   }
 }
 ...
@@ -252,7 +252,7 @@ exports[`App.test.js has the expected html structure 1`] = `
 
 You see? Now no children have been rendered and we tested the `App` component **fully isolated** from the component tree. Also, if you have any `created` or whatever hooks in the children components, they haven't been called either 😉.
 
-If you're curious about **how shallow render is implemented**, check out the [source code](https://github.com/vuejs/vue-test-utils/blob/master/src/lib/stub-components.js) and you'll see that basically is stubbing the `components` key, the `render` method and the lifecycle hooks.
+If you're curious about **how shallow render is implemented**, check out the [source code](https://github.com/vuejs/vue-test-utils/blob/dev/packages/shared/stub-components.js) and you'll see that basically is stubbing the `components` key, the `render` method and the lifecycle hooks.
 
 In the same vein, you can implement the `MessageList.test.js` test as follows:
 
