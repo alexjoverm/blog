@@ -21,11 +21,11 @@ Although you can access the Vue instance via [`cmp.vm`](https://github.com/alexj
 
 ## The Wrapper object
 
-The `Wrapper` is the main object of `vue-test-utils`. It is the type returned by `mount`, `shallow`, `find` and `findAll` functions. You can [see here](https://github.com/vuejs/vue-test-utils/blob/master/types/index.d.ts#L34) the whole API and typings.
+The `Wrapper` is the main object of `vue-test-utils`. It is the type returned by `mount`, `shallow`, `find` and `findAll` functions. You can [see here](https://github.com/vuejs/vue-test-utils/blob/dev/packages/test-utils/types/index.d.ts#L84) the whole API and typings.
 
 ### `find` and `findAll`
 
-They accept a [Selector](https://github.com/vuejs/vue-test-utils/blob/master/types/index.d.ts#L11) as an argument, which can be both a CSS selector or a Vue Component.
+They accept a [Selector](https://github.com/vuejs/vue-test-utils/blob/dev/packages/test-utils/types/index.d.ts#L17) as an argument, which can be both a CSS selector or a Vue Component.
 
 So we can do things like:
 
@@ -83,14 +83,13 @@ it('Message is not empty', () => {
 })
 
 it('Message has a class attribute set to "message"', () => {
-  // For asserting "class", the `hasClass` method is easier
-  expect(cmp.find(Message).hasAttribute('class', 'message')).toBe(true)
+  expect(cmp.find(Message).attributes().class).toBe('message')
 })
 ```
 
-`exists`, `isEmpty` and `hasAttribute` comes in very handy for this.
+`exists`, `isEmpty` and `attributes` comes in very handy for this.
 
-Then, we have `hasClass` and `hasStyle` to assert **Styling**. Let's update the `Message.vue` component with a style, since `hasStyle` asserts only inline styles:
+Then, we have `classes` and `attributes().style` to assert **Styling**. Let's update the `Message.vue` component with a style, since `attributes().style` asserts only inline styles:
 
 ```html
 <li style="margin-top: 10px" class="message">{{message}}</li>
@@ -100,27 +99,13 @@ Here the tests:
 
 ```javascript
 it('Message component has the .message class', () => {
-  expect(cmp.find(Message).hasClass('message')).toBe(true)
+  expect(cmp.find(Message).classes()).toContain('message')
 })
 
 it('Message component has style padding-top: 10', () => {
-  expect(cmp.find(Message).hasStyle('padding-top', '10')).toBe(true)
+  expect(cmp.find(Message).attributes().style).toBe('padding-top: 10px;')
 })
 ```
-
-### `get` methods
-
-As you've seen, we have some useful utils to assert Vue components. Most use the form of `hasX`, which is great, but to have a `getX` brings better testing experience, in terms of flexibility and debugging. So you could rewrite the following example:
-
-```javascript
-// `has` form
-expect(cmp.find(Message).hasAttribute('class', 'message')).toBe(true)
-
-// `get` form
-expect(cmp.find(Message).getAttribute('class')).toBe('message')
-```
-
-This is [under discussion](https://github.com/vuejs/vue-test-utils/issues/27) and seems like it will be added to the library at some point.
 
 ## Wrapping up
 
