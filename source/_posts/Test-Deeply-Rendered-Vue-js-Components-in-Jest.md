@@ -69,7 +69,7 @@ describe('MessageList.test.js', () => {
 
   beforeEach(() => {
     cmp = mount(MessageList, {
-      // Beaware that props is overriden using `propsData`
+      // Be aware that props is overridden using `propsData`
       propsData: {
         messages: ['Cat']
       }
@@ -112,7 +112,7 @@ exports[`MessageList.test.js has the expected html structure 1`] = `
 `;
 ```
 
-Keep in mind to **avoid deep rendering when there can be side effects**, since the children component hooks, such `created` and `mount` will be triggered, and there can be HTTP calls or other side effects there that we don't want to be called. If you wanna try what I'm saying, add to the `Message.vue` component a `console.log` in the created hook:
+Keep in mind to **avoid deep rendering when there can be side effects**, since the children component hooks, such `created` and `mount` will be triggered, and there can be HTTP calls or other side effects there that we don't want to be called. If you wanna try what I'm saying, add to the `Message.vue` component a `console.log` in the `created` hook:
 
 ```javascript
 export default {
