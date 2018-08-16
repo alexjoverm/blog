@@ -211,14 +211,14 @@ Luckily, **Shallow Rendering** solves this nicely.
 `vue-test-utils` provide us with Shallow Rendering among other features. We could rewrite the previous test as follows:
 
 ```javascript
-import { shallow } from 'vue-test-utils'
+import { shallowMount } from 'vue-test-utils'
 import App from '../src/App'
 
 describe('App.test.js', () => {
   let cmp
 
   beforeEach(() => {
-    cmp = shallow(App, { // Create a shallow instance of the component
+    cmp = shallowMount(App, { // Create a shallow instance of the component
       data: {
         messages: ['Cat']
       }
@@ -257,14 +257,14 @@ If you're curious about **how shallow render is implemented**, check out the [so
 In the same vein, you can implement the `MessageList.test.js` test as follows:
 
 ```javascript
-import { shallow } from 'vue-test-utils'
+import { shallowMount } from 'vue-test-utils'
 import MessageList from '../src/components/MessageList'
 
 describe('MessageList.test.js', () => {
   let cmp
 
   beforeEach(() => {
-    cmp = shallow(MessageList, {
+    cmp = shallowMount(MessageList, {
       // Beaware that props is overriden using `propsData`
       propsData: {
         messages: ['Cat']

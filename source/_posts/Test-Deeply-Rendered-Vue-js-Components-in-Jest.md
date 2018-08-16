@@ -58,7 +58,7 @@ export default {
 
 ## Testing MessageList with Message Component
 
-To test MessageList with Deep Rendering, we just need to use `mount` instead of `shallow` in the previously created `test/MessageList.test.js`:
+To test MessageList with Deep Rendering, we just need to use `mount` instead of `shallowMount` in the previously created `test/MessageList.test.js`:
 
 ```javascript
 import { mount } from 'vue-test-utils'
@@ -88,7 +88,7 @@ describe('MessageList.test.js', () => {
 
  > Btw, have you realized about the `beforeEach` thing? That's a very clean way to create a clean component before each test, which is very important in unit testing, since it defines that test shouldn't depend on each other.
 
-Both `mount` and `shallow` use exactly the same API, the difference is in the rendering. I'll show you progressively the API along in this series.
+Both `mount` and `shallowMount` use exactly the same API, the difference is in the rendering. I'll show you progressively the API along in this series.
 
 If you run `npm t` you'll see the test are failing because the Snapshot doesn't match for `MessageList.test.js`. To regenerate them, run it with `-u` option:
 

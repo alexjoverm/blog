@@ -91,7 +91,7 @@ For example, `@/components/MessageList` will be mapped to `../src/components/Mes
 That's really it. Now you can even update your `App.test.js` file to use the alias as well, since it's usable from within the tests:
 
 ```javascript
-import { shallow } from "vue-test-utils"
+import { shallowMount } from "vue-test-utils"
 import App from "@/App"
 ...
 ```

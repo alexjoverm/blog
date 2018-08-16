@@ -101,14 +101,14 @@ It will show an input, and next to it the same string but reversed. It's just a 
 Now add it to `App.vue`, put it after the `MessageList` component, and remember to import it and include it within the `components` component option. Then, create a `test/Form.test.js` with the usual bare-bones we've used in other tests:
 
 ```javascript
-import { shallow } from 'vue-test-utils'
+import { shallowMount } from 'vue-test-utils'
 import Form from '../src/components/Form'
 
 describe('Form.test.js', () => {
   let cmp
 
   beforeEach(() => {
-    cmp = shallow(Form)
+    cmp = shallowMount(Form)
   })
 })
 ```
@@ -256,11 +256,11 @@ it('is not called if values are the same', next => {
 
 That second one gets a bit more complex than it looked like. The default internal state is empty, so first we need to change it, wait for the next tick, then clear the mock to reset the call count, and change it again. Then after the second tick, we can check the spy and finish the test.
 
-This can get simpler if we recreate the component at the beginning, overriding the `data` property. Remember we can override any component option by using the second parameter of the `mount` or `shallow` functions:
+This can get simpler if we recreate the component at the beginning, overriding the `data` property. Remember we can override any component option by using the second parameter of the `mount` or `shallowMount` functions:
 
 ```javascript
 it('is not called if values are the same', next => {
-  cmp = shallow(Form, { data: ({ inputValue: 'foo' }) })
+  cmp = shallowMount(Form, { data: ({ inputValue: 'foo' }) })
   cmp.vm.inputValue = 'foo'
 
   cmp.vm.$nextTick(() => {

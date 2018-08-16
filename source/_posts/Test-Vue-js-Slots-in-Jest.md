@@ -149,7 +149,7 @@ Probably what we want to test the most out of slots is where they end up in the 
 
 Right now, most of the tests in `MessageList.test.js` will fail, so let's remove them all (or comment them out), and focus on slot testing.
 
-One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallow` methods. So let's create a [`beforeEach` method](https://facebook.github.io/jest/docs/en/api.html#beforeeachfn) with the following code:
+One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallowMount` methods. So let's create a [`beforeEach` method](https://facebook.github.io/jest/docs/en/api.html#beforeeachfn) with the following code:
 
 ```javascript
 beforeEach(() => {

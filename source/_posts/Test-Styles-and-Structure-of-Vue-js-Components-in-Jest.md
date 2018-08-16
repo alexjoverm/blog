@@ -21,7 +21,7 @@ Although you can access the Vue instance via [`cmp.vm`](https://github.com/alexj
 
 ## The Wrapper object
 
-The `Wrapper` is the main object of `vue-test-utils`. It is the type returned by `mount`, `shallow`, `find` and `findAll` functions. You can [see here](https://github.com/vuejs/vue-test-utils/blob/dev/packages/test-utils/types/index.d.ts#L84) the whole API and typings.
+The `Wrapper` is the main object of `vue-test-utils`. It is the type returned by `mount`, `shallowMount`, `find` and `findAll` functions. You can [see here](https://github.com/vuejs/vue-test-utils/blob/dev/packages/test-utils/types/index.d.ts#L84) the whole API and typings.
 
 ### `find` and `findAll`
 
