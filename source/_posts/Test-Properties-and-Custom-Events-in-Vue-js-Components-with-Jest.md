@@ -42,7 +42,6 @@ Then we'll create a helper factory function to create a message component, give 
 ```javascript
 const createCmp = propsData => mount(Message, { propsData })
 ```
-
 ### Testing property existence
 
 Two obvious things we can test is that a property exists, or it doesn't. Remember that the `Message.vue` component has a `message` property, so let's assert that it receives correctly that property. vue-test-utils comes with a `hasProp(prop, value)` function, which is very handy for this case:
@@ -50,7 +49,7 @@ Two obvious things we can test is that a property exists, or it doesn't. Remembe
 ```javascript
 it('has a message property', () => {
   cmp = createCmp({ message: 'hey' })
-  expect(cmp.hasProp('message', 'hey')).toBeTruthy()
+  expect(cmp.props().message).toBe('hey')
 })
 ```
 
@@ -59,16 +58,16 @@ The properties behave in a way that they will be received only if they're declar
 ```javascript
 it('has no cat property', () => {
   cmp = createCmp({ cat: 'hey' })
-  expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+  expect(cmp.props().cat).toBeUndefined()
 })
 ```
 
-However, in this case that test will fail because Vue has [non-props attributes](https://vuejs.org/v2/guide/components.html#Non-Prop-Attributes) which sets it to the root of the `Message` component, thus being recognized as a prop and then the test will return `true`. Changing it to `toBeTruty` will make it pass for this example:
+However, although in this case the test will be successful, don't forget that Vue has [non-props attributes](https://vuejs.org/v2/guide/components.html#Non-Prop-Attributes) which sets it to the root of the `Message` component, so you can check that this behavior also works, making sure that the non-prop attribute exists using `attributes()`.
 
 ```javascript
 it('has no cat property', () => {
   cmp = createCmp({ cat: 'hey' });
-  expect(cmp.hasProp('cat', 'hey')).toBeTruthy()
+  expect(cmp.attributes().cat).toBe('hey')
 })
 ```
 
@@ -89,7 +88,7 @@ Then the test could be:
 ```javascript
 it('Paco is the default author', () => {
   cmp = createCmp({ message: 'hey' })
-  expect(cmp.hasProp('author', 'Paco')).toBeTruthy()
+  expect(cmp.props().author).toBe('Paco')
 })
 ```
 
@@ -121,14 +120,14 @@ props: {
 }
 ```
 
-Whenever a validation rule is not fulfilled, Vue shows a console.error. For example, for `createCmp({ message: 1 })`, the next error will be shown:
+Whenever a validation rule is not fulfilled, Vue shows a `console.error`. For example, for `createCmp({ message: 1 })`, the next error will be shown:
 
 ```
 [Vue warn]: Invalid prop: type check failed for prop "message". Expected String, got Number.
 (found in <Root>)
 ```
 
-By the date of writing, vue-test-utils doesn't have any utility to test this. We could use `jest.spyOn` to test it:
+By the date of writing, `vue-test-utils` doesn't have any utility to test this. We could use `jest.spyOn` to test it:
 
 ```javascript
 it('message is of type string', () => {
@@ -140,7 +139,7 @@ it('message is of type string', () => {
 })
 ```
 
-Here we're spying on the console.error function, and checking that it shows a message containing a specific string. This is not an ideal way to check it, since we're spying on global objects and relying on side effects.
+Here we're spying on the `console.error` function, and checking that it shows a message containing a specific string. This is not an ideal way to check it, since we're spying on global objects and relying on side effects.
 
 Fortunately, there is an easier way to do it, which is by checking `vm.$options`. Here's where Vue stores the component options "expanded". With expanded I mean: you can define your properties in a different ways:
 
@@ -162,7 +161,7 @@ props: {
 }
 ```
 
-But they all will end up in the most expanded object form (like the last one). So if we check the `cmp.vm.$option.props.message`, for the first case, they all will be in the `{ type: X }` format (although for the first example it will be `{ type: null}`)
+But they all will end up in the most expanded object form (like the last one). So if we check the `cmp.vm.$options.props.message`, for the first case, they all will be in the `{ type: X }` format (although for the first example it will be `{ type: null }`)
 
 With this in mind, we could write a test suite to test that asserts that the `message` property has the expected validation rules:
 
@@ -282,21 +281,17 @@ The first thing we can test is that when clicking a message, the `handleClick` f
 ```javascript
 it('calls handleClick when click on message', () => {
   const spy = spyOn(cmp.vm, 'handleClick')
-  cmp.update() // Forces to re-render, applying changes on template
 
   const el = cmp.find('.message').trigger('click')
   expect(cmp.vm.handleClick).toBeCalled()
 })
 ```
 
->See the `cmp.update()`? When we change things that are used in the template, `handleClick` in this case, and we want the template to apply the changes, we need to use the `update` function.
-
 Keep in mind that by using a spy the original method `handleClick` will be called. Probably you intentionally want that, but normally we want to avoid it and just check that on click the methods is indeed called. For that we can use a Jest Mock function:
 
 ```javascript
 it('calls handleClick when click on message', () => {
   cmp.vm.handleClick = jest.fn()
-  cmp.update()
 
   const el = cmp.find('.message').trigger('click')
   expect(cmp.vm.handleClick).toBeCalled()
@@ -305,7 +300,7 @@ it('calls handleClick when click on message', () => {
 
 Here we're totally replacing the `handleClick` method, accessible on the vm of the wrapper component returned by the mount function.
 
-We can make it even easier by using `setMethods` helper that the official tools provide us:
+However, the above test will fail because we didn't indicate that we want to use a Jest Mock function, and not the original method. To fix this, we use the helper method `setMethods` that the official tools provide us:
 
 ```javascript
 it('calls handleClick when click on message', () => {
@@ -333,7 +328,7 @@ it('triggers a message-clicked event when a handleClick method is called', () =>
 })
 ```
 
-See that here we're using `toBeCalledWith` so we can assert exactly which parameters we expect, making the test even more robust. Not that we're not using `cmp.update()` here, since we're making no changes that need to propagate to the template.
+See that here we're using `toBeCalledWith` so we can assert exactly which parameters we expect, making the test even more robust.
 
 ### Testing the @message-clicked triggers an event
 
@@ -343,7 +338,6 @@ For custom events, we cannot use the `trigger` method, since it's just for DOM e
 it('Calls handleMessageClick when @message-click happens', () => {
   const stub = jest.fn()
   cmp.setMethods({ handleMessageClick: stub })
-  cmp.update()
 
   const el = cmp.find(Message).vm.$emit('message-clicked', 'cat')
   expect(stub).toBeCalledWith('cat')
