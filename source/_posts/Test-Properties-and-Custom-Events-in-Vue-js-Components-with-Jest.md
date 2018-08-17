@@ -42,6 +42,7 @@ Then we'll create a helper factory function to create a message component, give 
 ```javascript
 const createCmp = propsData => mount(Message, { propsData })
 ```
+
 ### Testing property existence
 
 Two obvious things we can test is that a property exists, or it doesn't. Remember that the `Message.vue` component has a `message` property, so let's assert that it receives correctly that property. vue-test-utils comes with a `hasProp(prop, value)` function, which is very handy for this case:
