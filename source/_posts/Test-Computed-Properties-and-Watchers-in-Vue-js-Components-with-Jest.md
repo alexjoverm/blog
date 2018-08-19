@@ -101,7 +101,7 @@ It will show an input, and next to it the same string but reversed. It's just a 
 Now add it to `App.vue`, put it after the `MessageList` component, and remember to import it and include it within the `components` component option. Then, create a `test/Form.test.js` with the usual bare-bones we've used in other tests:
 
 ```javascript
-import { shallowMount } from 'vue-test-utils'
+import { shallowMount } from '@vue/test-utils'
 import Form from '../src/components/Form'
 
 describe('Form.test.js', () => {
@@ -118,12 +118,12 @@ Now create a test suite with 2 test cases:
 ```javascript
 describe('Properties', () => {
   it('returns the string in normal order if reversed property is not true', () => {
-    cmp.vm.inputValue = 'Yoo'
+    cmp.setData({ inputValue: 'Yoo' })
     expect(cmp.vm.reversedInput).toBe('Yoo')
   })
 
   it('returns the reversed string if reversed property is true', () => {
-    cmp.vm.inputValue = 'Yoo'
+    cmp.setData({ inputValue: 'Yoo' })
     cmp.setProps({ reversed: true })
     expect(cmp.vm.reversedInput).toBe('ooY')
   })
@@ -149,7 +149,7 @@ Let's say we wanna do something when the `inputValue` from the state change. We 
 ```javascript
 watch: {
   inputValue(newVal, oldVal) {
-    if(newVal.trim().length && newVal !== oldVal) {
+    if (newVal.trim().length && newVal !== oldVal) {
       console.log(newVal)
     }
   }
@@ -196,7 +196,7 @@ To test a watch function, we just need to change the value of what's being watch
 
 ```javascript
 it('is called with the new value in other cases', () => {
-  cmp.vm.inputValue = 'foo'
+  cmp.setData({ inputValue: 'foo' })
   expect(spy).toBeCalled()
 })
 ```
@@ -207,7 +207,7 @@ To solve this, we need to use the [`vm.$nextTick`](https://vuejs.org/v2/api/#vm-
 
 ```javascript
 it('is called with the new value in other cases', () => {
-  cmp.vm.inputValue = 'foo'
+  cmp.setData({ inputValue: 'foo' })
   cmp.vm.$nextTick(() => {
     expect(spy).toBeCalled()
   })
@@ -220,7 +220,7 @@ Jest give us a `next` parameter that we can use in the `it` test callbacks, in a
 
 ```javascript
 it('is called with the new value in other cases', next => {
-  cmp.vm.inputValue = 'foo'
+  cmp.setData({ inputValue: 'foo' })
   cmp.vm.$nextTick(() => {
     expect(spy).toBeCalled()
     next()
@@ -232,7 +232,7 @@ We can apply the same strategy for the other two, with the difference that the s
 
 ```javascript
 it('is not called if value is empty (trimmed)', next => {
-  cmp.vm.inputValue = '   '
+  cmp.setData({ inputValue: '   ' })
   cmp.vm.$nextTick(() => {
     expect(spy).not.toBeCalled()
     next()
@@ -240,12 +240,12 @@ it('is not called if value is empty (trimmed)', next => {
 })
 
 it('is not called if values are the same', next => {
-  cmp.vm.inputValue = 'foo'
+  cmp.setData({ inputValue: 'foo' })
 
   cmp.vm.$nextTick(() => {
     spy.mockClear()
-    cmp.vm.inputValue = 'foo'
-
+    cmp.setData({ inputValue: 'foo' })
+    
     cmp.vm.$nextTick(() => {
       expect(spy).not.toBeCalled()
       next()
@@ -256,13 +256,14 @@ it('is not called if values are the same', next => {
 
 That second one gets a bit more complex than it looked like. The default internal state is empty, so first we need to change it, wait for the next tick, then clear the mock to reset the call count, and change it again. Then after the second tick, we can check the spy and finish the test.
 
-This can get simpler if we recreate the component at the beginning, overriding the `data` property. Remember we can override any component option by using the second parameter of the `mount` or `shallowMount` functions:
+This can get simpler if we recreate the component at the beginning, overriding the `data` property. Remember we can override any component option by using the second parameter of the `mount` or `shallow` functions:
 
 ```javascript
 it('is not called if values are the same', next => {
-  cmp = shallowMount(Form, { data: ({ inputValue: 'foo' }) })
-  cmp.vm.inputValue = 'foo'
-
+  cmp = shallowMount(Form, {
+    data: () => ({ inputValue: 'foo' })
+  })
+  cmp.setData({ inputValue: 'foo' })
   cmp.vm.$nextTick(() => {
     expect(spy).not.toBeCalled()
     next()
@@ -275,17 +276,3 @@ it('is not called if values are the same', next => {
 You've learned in this article how to test part of the logic of Vue components: computed properties and watchers. We've gone through different test cases we can come across testing them. Probably you've also learned some of the Vue internals such as the `nextTick` update cycles.
 
 You can find the code of this article [in this repo](https://github.com/alexjoverm/vue-testing-series/tree/Test-State-Computed-Properties-and-Methods-in-Vue-js-Components-with-Jest).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
