@@ -63,9 +63,9 @@ Taking this as an entry point, we can add a simple alias that points to the `src
 Just with this, we can access anything taking the root project as the `@` symbol. Let's go to `src/App.vue` and change the reference to those two components:
 
 ```javascript
-  import MessageList from '@/components/MessageList'
-  import Message from '@/components/Message'
-  ...
+import MessageList from '@/components/MessageList'
+import Message from '@/components/Message'
+...
 ```
 
 And if we run `npm start` and open the browser at `localhost:8080`, that should work out of the box.
@@ -91,7 +91,7 @@ For example, `@/components/MessageList` will be mapped to `../src/components/Mes
 That's really it. Now you can even update your `App.test.js` file to use the alias as well, since it's usable from within the tests:
 
 ```javascript
-import { shallowMount } from "vue-test-utils"
+import { shallowMount } from '@vue/test-utils'
 import App from "@/App"
 ...
 ```
@@ -149,7 +149,4 @@ I haven't tried it myself, since Jest already gives you that, but if you have or
 
 Adding module aliases is very simple and can keep your codebase much cleaner and easier to maintain. Jest makes it as well very easy to define them, you just need to keep in in sync with the Webpack aliases, and you can say bye-bye to the dot-hell references.
 
-
-Find the [full example on Github](https://github.com/alexjoverm/vue-testing-series/tree/Enhance-Jest-configuration-with-Module-Aliases)
-
-
+Find the [full example on GitHub](https://github.com/alexjoverm/vue-testing-series/tree/Enhance-Jest-configuration-with-Module-Aliases)
