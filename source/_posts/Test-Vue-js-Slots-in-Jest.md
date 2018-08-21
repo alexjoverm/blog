@@ -149,7 +149,7 @@ Probably what we want to test the most out of slots is where they end up in the 
 
 Right now, most of the tests in `MessageList.test.js` will fail, so let's remove them all (or comment them out), and focus on slot testing.
 
-One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallowMount` methods. So let's create a [`beforeEach` method](https://facebook.github.io/jest/docs/en/api.html#beforeeachfn) with the following code:
+One thing we can test, is to make sure that the Message components end up within a `ul` element with class `list-messages`. In order to pass slots to the `MessageList` component, we can use the `slots` property of the options object of `mount` or `shallowMount` methods. So let's create a [`beforeEach` method](https://jestjs.io/docs/en/api.html#beforeeachfn-timeout) with the following code:
 
 ```javascript
 beforeEach(() => {
@@ -175,7 +175,7 @@ And that should be ok to go. The slots option also accepts a component declarati
 ```javascript
 import AnyComponent from 'anycomponent'
 ...
-mount(MessageList, {
+shallowMount(MessageList, {
   slots: {
     default: AnyComponent // or [AnyComponent, AnyComponent]
   }
@@ -194,22 +194,22 @@ beforeEach(() => {
     }
   }
 
-  cmp = mount(MessageList, {
+  cmp = shallowMount(MessageList, {
     slots: {
       default: messageWrapper
     }
   })
 })
 
-it('Messages are inserted in a ul.list-messages element', () => {
-  const list = cmp.find('ul.list-messages')
+it('Messages are inserted in a MessageList component', () => {
+  const list = cmp.find(MessageList)
   expect(list.find(Message).isVueInstance()).toBe(true)
 })
 ```
 
 ## Testing Named Slots
 
-The unnamed slot we used above is called the _default slot_, but we can have multiple slots by using named exports. Let's add a header to the `MessageList.vue` component:
+The unnamed slot we used above is called the _default slot_, but we can have multiple slots by using named slots. Let's add a header to the `MessageList.vue` component:
 
 ```html
 <template>
@@ -260,7 +260,7 @@ Then, the same but checking the default content gets replaced when we mock the h
 
 ```javascript
 it('Header slot is rendered withing .list-header', () => {
-  const component = mount(MessageList, {
+  const component = shallowMount(MessageList, {
     slots: {
       header: '<div>What an awesome header</div>'
     }
