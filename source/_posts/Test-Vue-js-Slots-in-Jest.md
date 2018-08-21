@@ -209,7 +209,7 @@ it('Messages are inserted in a MessageList component', () => {
 
 ## Testing Named Slots
 
-The unnamed slot we used above is called the _default slot_, but we can have multiple slots by using named exports. Let's add a header to the `MessageList.vue` component:
+The unnamed slot we used above is called the _default slot_, but we can have multiple slots by using named slots. Let's add a header to the `MessageList.vue` component:
 
 ```html
 <template>
