@@ -61,7 +61,7 @@ export default {
 To test MessageList with Deep Rendering, we just need to use `mount` instead of `shallowMount` in the previously created `test/MessageList.test.js`:
 
 ```javascript
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import MessageList from '../src/components/MessageList'
 
 describe('MessageList.test.js', () => {
