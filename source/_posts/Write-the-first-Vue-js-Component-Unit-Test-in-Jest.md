@@ -211,7 +211,7 @@ Luckily, **Shallow Rendering** solves this nicely.
 `vue-test-utils` provide us with Shallow Rendering among other features. We could rewrite the previous test as follows:
 
 ```javascript
-import { shallowMount } from 'vue-test-utils'
+import { shallowMount } from '@vue/test-utils'
 import App from '../src/App'
 
 describe('App.test.js', () => {
@@ -257,15 +257,15 @@ If you're curious about **how shallow render is implemented**, check out the [so
 In the same vein, you can implement the `MessageList.test.js` test as follows:
 
 ```javascript
-import { shallowMount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import MessageList from '../src/components/MessageList'
 
 describe('MessageList.test.js', () => {
   let cmp
 
   beforeEach(() => {
-    cmp = shallowMount(MessageList, {
-      // Beaware that props is overriden using `propsData`
+    cmp = mount(MessageList, {
+      // Be aware that props is overridden using `propsData`
       propsData: {
         messages: ['Cat']
       }
