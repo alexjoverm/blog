@@ -30,14 +30,14 @@ They accept a [Selector](https://github.com/vuejs/vue-test-utils/blob/dev/packag
 So we can do things like:
 
 ```javascript
-  let cmp = mount(MessageList)
-  expect(cmp.find('.message').element).toBeInstanceOf(HTMLElement)
+let cmp = mount(MessageList)
+expect(cmp.find('.message').element).toBeInstanceOf(HTMLElement)
 
-  // Or even call it multiple times
-  let el = cmp.find('.message').find('span').element
+// Or even call it multiple times
+let el = cmp.find('.message').find('span').element
 
-  // Although for the previous example, we could do it in one
-  let el = cmp.find('.message span').element
+// Although for the previous example, we could do it in one
+let el = cmp.find('.message span').element
 ```
 
 ### Asserting Structure and Style
