@@ -85,7 +85,7 @@ jest.mock('axios', () => ({
   get: jest.fn()
 }))
 
-import { shallowMount } from 'vue-test-utils'
+import { shallowMount } from '@vue/test-utils'
 import Form from '../src/components/Form'
 import axios from 'axios' // axios here is the mock from above!
 
@@ -185,5 +185,3 @@ That will ensure each test starts with clean mocks and modules, as it should be 
 Jest mocking feature, along with snapshot testing, are what I love the most of Jest! It makes very easy what usually is quite hard to test, and focus on writing faster and better isolated tests and keep your codebase bullet-proof.
 
 You can find the code of this article [in this repo](https://github.com/alexjoverm/vue-testing-series/tree/Test-State-Computed-Properties-and-Methods-in-Vue-js-Components-with-Jest).
-
-
