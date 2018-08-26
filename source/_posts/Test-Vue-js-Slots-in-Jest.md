@@ -153,7 +153,7 @@ One thing we can test, is to make sure that the Message components end up within
 
 ```javascript
 beforeEach(() => {
-  cmp = mount(MessageList, {
+  cmp = shallowMount(MessageList, {
     slots: {
       default: '<div class="fake-msg"></div>'
     }
